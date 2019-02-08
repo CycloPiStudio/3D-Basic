@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/fondo.jpg" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pieza1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza2/Pieza2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador0Salir/Potenciador0.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador2/Potenciador2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=10]
+
+[node name="nivel1" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Fondo" type="Node2D" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="fondo" type="Sprite" parent="Fondo" index="0"]
+
+position = Vector2( 1.9447, 5.53735 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="PosicionSalida" type="Position2D" parent="." index="1"]
+
+[node name="Pieza1" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 367.636, 275.291 )
+
+[node name="Pieza2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 352.672, 196.389 )
+
+[node name="HUD" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="Potenciador1" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 382.471, 81.8388 )
+
+[node name="Potenciador0" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 193.579, 251.553 )
+
+[node name="Potenciador2" parent="." index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 336.811, 388.628 )
+
+[node name="Enemigo5" parent="." index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 78.4986, 405.854 )
+
+[node name="AudioMusicNivel_01" type="AudioStreamPlayer2D" parent="." index="9"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+

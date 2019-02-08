@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel4/nivel4.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel4/fondo4.jpg" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pieza1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza2/Pieza2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2a.png" type="Texture" id=7]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador0Salir/Potenciador0.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador2/Potenciador2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=11]
+
+[node name="nivel4" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Fondo" type="Node2D" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="fondo" type="Sprite" parent="Fondo" index="0"]
+
+position = Vector2( 1.9447, 5.53735 )
+texture = ExtResource( 2 )
+offset = Vector2( 512, 300 )
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
+
+[node name="PosicionSalida" type="Position2D" parent="." index="1"]
+
+[node name="Pieza1" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 469.636, 274.291 )
+
+[node name="Pieza8" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 378.636, 279.291 )
+
+[node name="Pieza9" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 297.636, 274.291 )
+
+[node name="Pieza3" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 568.589, 271.19 )
+
+[node name="Pieza4" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 636.258, 269.139 )
+
+[node name="Pieza5" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 722.38, 254.786 )
+rotation = -1.02557
+
+[node name="Pieza6" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 734.684, 172.764 )
+rotation = -1.02557
+
+[node name="Pieza7" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 734.684, 72.287 )
+rotation = -1.02557
+
+[node name="Pieza2" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 613.672, 80.389 )
+
+[node name="Pieza10" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 527.672, 77.389 )
+
+[node name="Pieza11" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 298.672, 75.389 )
+rotation = -0.017638
+
+[node name="HUD" parent="." index="13" instance=ExtResource( 5 )]
+
+[node name="Enemigo2" parent="." index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 201.258, 267.25 )
+
+[node name="Enemigo2" parent="Enemigo2/Enemigo" index="0"]
+
+texture = ExtResource( 7 )
+
+[node name="tiempo de disparo" parent="Enemigo2/Enemigo" index="3"]
+
+wait_time = 0.5
+
+[node name="Enemigo3" parent="." index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 463.258, 184.25 )
+
+[node name="Potenciador1" parent="." index="16" instance=ExtResource( 8 )]
+
+position = Vector2( 299.471, 177.839 )
+
+[node name="Potenciador0" parent="." index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 618.042, 171.582 )
+
+[node name="Potenciador2" parent="." index="18" instance=ExtResource( 10 )]
+
+position = Vector2( 209.811, 175.628 )
+
+[node name="AudioMusicNivel_01" type="AudioStreamPlayer2D" parent="." index="19"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+
+[editable path="Enemigo2"]
