@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 1/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.png" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Juego/Personajes/Sonidos/Disparo.wav" type="AudioStream" id=3]
+[ext_resource path="res://Ejecutable/Juego/Personajes/Sonidos/Dano.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29, 32.5 )
+
+[node name="Personaje1" type="Node2D" index="0"]
+
+[node name="Personaje" type="KinematicBody2D" parent="." index="0" groups=[
+"Player",
+]]
+
+input_pickable = false
+collision_layer = 13
+collision_mask = 13
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+
+[node name="Personaje1" type="Sprite" parent="Personaje" index="0"]
+
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 6, 8, 113, 120 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="Colision" type="CollisionShape2D" parent="Personaje" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="PositionBala" type="Position2D" parent="Personaje" index="2"]
+
+[node name="AudioDisparo" type="AudioStreamPlayer2D" parent="Personaje" index="3"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AudioDano" type="AudioStreamPlayer2D" parent="Personaje" index="4"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+

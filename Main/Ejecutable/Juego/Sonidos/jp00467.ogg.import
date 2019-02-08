@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jp00467.ogg-c1300896e2bb76b5145d6dda6109b7ca.oggstr"
+
+[deps]
+
+source_file="res://Ejecutable/Juego/Sonidos/jp00467.ogg"
+dest_files=[ "res://.import/jp00467.ogg-c1300896e2bb76b5145d6dda6109b7ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
