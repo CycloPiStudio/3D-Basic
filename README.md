@@ -1,2 +1,2 @@
 # 3D-Basic
-base de juego en 3
+Base de juego en 3D
