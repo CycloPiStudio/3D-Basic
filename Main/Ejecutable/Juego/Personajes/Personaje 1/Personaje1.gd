@@ -35,13 +35,13 @@ func process_input(delta):
 
     var input_movement_vector = Vector2()
 
-    if Input.is_action_pressed("movement_forward"):
+    if Input.is_action_pressed("palante"):
         input_movement_vector.y += 1
-    if Input.is_action_pressed("movement_backward"):
+    if Input.is_action_pressed("patras"):
         input_movement_vector.y -= 1
-    if Input.is_action_pressed("movement_left"):
+    if Input.is_action_pressed("paizquierda"):
         input_movement_vector.x -= 1
-    if Input.is_action_pressed("movement_right"):
+    if Input.is_action_pressed("paderecha"):
         input_movement_vector.x = 1
 
     input_movement_vector = input_movement_vector.normalized()
