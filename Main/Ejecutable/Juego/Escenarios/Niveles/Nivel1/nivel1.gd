@@ -1,3 +1,4 @@
+#	esto hay cambiarlo o quitarlo
 extends Node2D
 var cancion
 
