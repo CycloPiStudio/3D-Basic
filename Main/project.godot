@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
+config/name="Plantilla 3D 2019"
 run/main_scene="res://Ejecutable/Global/Global Menus/Global Menus.tscn"
 boot_splash/image="res://Cyclo-pi.png"
 config/icon="res://icon.png"
@@ -35,7 +35,3 @@ paizquierda=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_nam
 paderecha=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
  ]
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
