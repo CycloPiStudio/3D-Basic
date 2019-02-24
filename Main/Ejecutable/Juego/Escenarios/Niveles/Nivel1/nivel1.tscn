@@ -7,7 +7,7 @@
 
 [node name="PosicionSalida" type="Position3D" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.6274, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09692, 0 )
 
 [node name="PieyPot" type="Spatial" parent="." index="1"]
 
