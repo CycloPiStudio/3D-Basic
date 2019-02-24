@@ -47,8 +47,10 @@ func _unhandled_input(event):
 				get_tree().quit()
 			KEY_W: #FORWARD
 				Direction.z -= 1
+				get_parent().get_node("Googlin/AnimationPlayer").play("caminar")
 			KEY_S: #BACKBAWRD
 				Direction.z += 1
+				get_parent().get_node("Googlin/AnimationPlayer").play("caminar")
 			KEY_A: #LEFT
 				Direction.x -= 1
 			KEY_D: #RIGHT
