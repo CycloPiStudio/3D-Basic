@@ -1,98 +1,94 @@
-extends KinematicBody
+extends Spatial
 
-const GRAVITY = -24.8
-var vel = Vector3()
-const MAX_SPEED = 10
-const JUMP_SPEED = 18
-const ACCEL= 4.5
+export(NodePath) var PlayerPath  = "" #You must specify this in the inspector!
+export(float) var MovementSpeed = 20
+export(float) var Acceleration = 3
+export(float) var MaxJump = 19
+export(float) var MouseSensitivity = 2
+export(float) var RotationLimit = 45
+export(float) var MaxZoom = 0.5
+export(float) var MinZoom = 1.5
+export(float) var ZoomSpeed = 2
 
-var dir = Vector3()
-
-const DEACCEL= 16
-const MAX_SLOPE_ANGLE = 40
-
-var camera
-var rotation_helper
-
-var MOUSE_SENSITIVITY = 0.05
+var Player
+var InnerGimbal
+var Direction = Vector3()
+var Rotation = Vector2()
+var gravity = -10
+var Movement = Vector3()
+var ZoomFactor = 1
+var ActualZoom = 1
+var Speed = Vector3()
+var CurrentVerticalSpeed = Vector3()
+var JumpAcceleration = 3
+var IsAirborne = false
 
 func _ready():
-	camera = $Rotation_Helper/Camera
-	rotation_helper = $Rotation_Helper
-
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Player = get_node(PlayerPath)
+	InnerGimbal =  $InnerGimbal
+	pass
+
+func _unhandled_input(event):
+	
+	if event is InputEventMouseMotion :
+		Rotation = event.relative
+	
+	if event is InputEventMouseButton:
+		match event.button_index:
+			BUTTON_WHEEL_UP:
+				ZoomFactor -= 0.05
+			BUTTON_WHEEL_DOWN:
+				ZoomFactor += 0.05
+		ZoomFactor = clamp(ZoomFactor, MaxZoom, MinZoom)
+	if event is InputEventKey and event.pressed:
+		match event.scancode:
+			KEY_ESCAPE:
+				get_tree().quit()
+			KEY_W: #FORWARD
+				Direction.z -= 1
+			KEY_S: #BACKBAWRD
+				Direction.z += 1
+			KEY_A: #LEFT
+				Direction.x -= 1
+			KEY_D: #RIGHT
+				Direction.x += 1
+	if event is InputEventKey and not event.pressed:
+		match event.scancode:
+			KEY_W:
+				Direction.z += 1
+			KEY_S:
+				Direction.z -= 1
+			KEY_A:
+				Direction.x += 1
+			KEY_D:
+				Direction.x -= 1
+			KEY_SPACE:
+				if not IsAirborne:
+					CurrentVerticalSpeed = Vector3(0,MaxJump,0)
+					IsAirborne = true
+	Direction.z = clamp(Direction.z, -1,1)
+	Direction.x = clamp(Direction.x, -1,1)
+	
 
 func _physics_process(delta):
-	process_input(delta)
-	process_movement(delta)
-
-func process_input(delta):
-
-    # ----------------------------------
-    # Walking
-    dir = Vector3()
-    var cam_xform = camera.get_global_transform()
-
-    var input_movement_vector = Vector2()
-
-    if Input.is_action_pressed("palante"):
-        input_movement_vector.y += 1
-    if Input.is_action_pressed("patras"):
-        input_movement_vector.y -= 1
-    if Input.is_action_pressed("paizquierda"):
-        input_movement_vector.x -= 1
-    if Input.is_action_pressed("paderecha"):
-        input_movement_vector.x = 1
-
-    input_movement_vector = input_movement_vector.normalized()
-
-    dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
-    dir += cam_xform.basis.x.normalized() * input_movement_vector.x
-    # ----------------------------------
-
-    # ----------------------------------
-    # Jumping
-    if is_on_floor():
-        if Input.is_action_just_pressed("movement_jump"):
-            vel.y = JUMP_SPEED
-    # ----------------------------------
-
-    # ----------------------------------
-    # Capturing/Freeing the cursor
-    if Input.is_action_just_pressed("ui_cancel"):
-        if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-            Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-        else:
-            Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-    # ----------------------------------
-
-func process_movement(delta):
-    dir.y = 0
-    dir = dir.normalized()
-
-    vel.y += delta*GRAVITY
-
-    var hvel = vel
-    hvel.y = 0
-
-    var target = dir
-    target *= MAX_SPEED
-
-    var accel
-    if dir.dot(hvel) > 0:
-        accel = ACCEL
-    else:
-        accel = DEACCEL
-
-    hvel = hvel.linear_interpolate(target, accel*delta)
-    vel.x = hvel.x
-    vel.z = hvel.z
-    vel = move_and_slide(vel,Vector3(0,1,0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
-
-func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY))
-		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
-		var camera_rot = rotation_helper.rotation_degrees
-		camera_rot.x = clamp(camera_rot.x, -70, 70)
-		rotation_helper.rotation_degrees = camera_rot
+	#Rotation
+	Player.rotate_y(deg2rad(-Rotation.x)*delta*MouseSensitivity)
+	InnerGimbal.rotate_x(deg2rad(-Rotation.y)*delta*MouseSensitivity)
+	InnerGimbal.rotation_degrees.x = clamp(InnerGimbal.rotation_degrees.x, -RotationLimit, RotationLimit)
+	Rotation = Vector2()
+	
+	#Movement
+	var MaxSpeed = MovementSpeed *Direction.normalized()
+	Speed = Speed.linear_interpolate(MaxSpeed, delta * Acceleration)
+	Movement = Player.transform.basis * (Speed)
+	CurrentVerticalSpeed.y += gravity * delta * JumpAcceleration
+	Movement += CurrentVerticalSpeed
+	Player.move_and_slide(Movement,Vector3(0,1,0))
+	if Player.is_on_floor() :
+		CurrentVerticalSpeed.y = 0
+		IsAirborne = false
+	
+	#Zoom
+	ActualZoom = lerp(ActualZoom, ZoomFactor, delta * ZoomSpeed)
+	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
