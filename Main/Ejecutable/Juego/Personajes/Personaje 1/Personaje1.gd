@@ -55,6 +55,11 @@ func _unhandled_input(event):
 				Direction.x -= 1
 			KEY_D: #RIGHT
 				Direction.x += 1
+			KEY_SPACE:
+				if not IsAirborne:
+					CurrentVerticalSpeed = Vector3(0,MaxJump,0)
+					IsAirborne = true
+
 	if event is InputEventKey and not event.pressed:
 		match event.scancode:
 			KEY_W:
@@ -65,13 +70,10 @@ func _unhandled_input(event):
 				Direction.x += 1
 			KEY_D:
 				Direction.x -= 1
-			KEY_SPACE:
-				if not IsAirborne:
-					CurrentVerticalSpeed = Vector3(0,MaxJump,0)
-					IsAirborne = true
+
 	Direction.z = clamp(Direction.z, -1,1)
 	Direction.x = clamp(Direction.x, -1,1)
-	
+
 
 func _physics_process(delta):
 	#Rotation
@@ -94,3 +96,4 @@ func _physics_process(delta):
 	#Zoom
 	ActualZoom = lerp(ActualZoom, ZoomFactor, delta * ZoomSpeed)
 	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
+
