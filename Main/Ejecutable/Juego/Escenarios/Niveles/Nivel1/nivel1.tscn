@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pieza1planaAlfa.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pelotikaka.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=3]
 
 [node name="Nodo_Nivel_1" type="Spatial" index="0"]
 
@@ -10,6 +11,8 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09692, 0 )
 
 [node name="PieyPot" type="Spatial" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="PieyPot" index="0"]
 
@@ -43,8 +46,10 @@ _sections_unfolded = [ "Shadow" ]
 
 transform = Transform( 1, 0, 0, 0, 0.967515, 0.252814, 0, -0.252814, 0.967515, 0, 0.463514, 1.88079 )
 
-[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Pelotikaka" parent="PieyPot" index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.09236 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82153, 7.25049, -2.2771 )
+
+[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 3 )]
 
 
