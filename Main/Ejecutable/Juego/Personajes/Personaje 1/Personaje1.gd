@@ -23,6 +23,11 @@ var CurrentVerticalSpeed = Vector3()
 var JumpAcceleration = 3
 var IsAirborne = false
 
+# var pal cambio gameover
+var preGameOver = preload("res://Ejecutable/Menus/Game Over/GameOver.tscn").instance()
+var Personaje1Muerto
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
@@ -96,4 +101,20 @@ func _physics_process(delta):
 	#Zoom
 	ActualZoom = lerp(ActualZoom, ZoomFactor, delta * ZoomSpeed)
 	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
-
+	
+	#Colisión
+	if Player.is_on_ceiling():
+		
+		Global.vida -= 1
+		print("colision!!") 
+		
+	#la muerte de la cucuracha :) :) 
+	if Global.vida < 0:
+		print("muere")
+		
+#		Esto no va bien se queda pillao el ratón
+#		get_node("/root/Global Menus").add_child(preGameOver)
+#		$".".queue_free()
+#		get_tree().get_root() # Access via scene main loop.
+#		Personaje1Muerto = get_parent()
+#		Personaje1Muerto.get_parent().get_parent().queue_free()
