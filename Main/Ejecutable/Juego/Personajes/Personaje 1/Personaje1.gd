@@ -29,7 +29,7 @@ var Personaje1Muerto
 
 
 func _ready():
-	Global.vida = 10
+	Global.vida = 10000
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
