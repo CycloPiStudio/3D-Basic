@@ -27,9 +27,8 @@ var IsAirborne = false
 var preGameOver = preload("res://Ejecutable/Menus/Game Over/GameOver.tscn").instance()
 var Personaje1Muerto
 
-
 func _ready():
-	Global.vida = 10000
+	Global.vida = 100000
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
@@ -53,10 +52,10 @@ func _unhandled_input(event):
 				get_tree().quit()
 			KEY_W: #FORWARD
 				Direction.z -= 1
-				get_parent().get_node("Googlin/AnimationPlayer").play("caminar")
+				
 			KEY_S: #BACKBAWRD
 				Direction.z += 1
-				get_parent().get_node("Googlin/AnimationPlayer").play("caminar")
+				
 			KEY_A: #LEFT
 				Direction.x -= 1
 			KEY_D: #RIGHT
@@ -79,6 +78,7 @@ func _unhandled_input(event):
 
 	Direction.z = clamp(Direction.z, -1,1)
 	Direction.x = clamp(Direction.x, -1,1)
+	
 
 
 func _physics_process(delta):
@@ -95,6 +95,7 @@ func _physics_process(delta):
 	CurrentVerticalSpeed.y += gravity * delta * JumpAcceleration
 	Movement += CurrentVerticalSpeed
 	Player.move_and_slide(Movement,Vector3(0,1,0))
+	
 	if Player.is_on_floor() :
 		CurrentVerticalSpeed.y = 0
 		IsAirborne = false
@@ -103,12 +104,30 @@ func _physics_process(delta):
 	ActualZoom = lerp(ActualZoom, ZoomFactor, delta * ZoomSpeed)
 	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
 	
+	
+	
+	print("Speed", Speed)
+	print("m", Movement)
+	#Animación:
+	if ((Movement.x <= -0.5 or Movement.x >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
+		print("Speed", Speed)
+		print("m", Movement)
+		#aquí animación andar lateral
+		get_parent().get_node("Googlin/AnimationPlayer").play("caminar",-1,3)
+	if ((Movement.z <= -0.5 or Movement.z >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
+		#aquí animación andar palante
+		get_parent().get_node("Googlin/AnimationPlayer").play("caminar",-1,3)
+
+		
+
+#	else:
+#		get_parent().get_node("Googlin/AnimationPlayer").stop()
+#
+	
 	#Colisión
 	if Player.is_on_wall():
-		
 		Global.vida -= 1
-#		print(get_collider_id())
-#		print(collider)
+		
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
 		print("muere")
