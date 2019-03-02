@@ -104,10 +104,6 @@ func _physics_process(delta):
 	ActualZoom = lerp(ActualZoom, ZoomFactor, delta * ZoomSpeed)
 	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
 	
-	
-	
-	#print("Speed", Speed)
-	#print("m", Movement)
 	#Animación:
 	if ((Movement.x <= -0.5 or Movement.x >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
 		#print("Speed", Speed)
