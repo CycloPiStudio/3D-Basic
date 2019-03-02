@@ -106,12 +106,12 @@ func _physics_process(delta):
 	
 	
 	
-	print("Speed", Speed)
-	print("m", Movement)
+	#print("Speed", Speed)
+	#print("m", Movement)
 	#Animación:
 	if ((Movement.x <= -0.5 or Movement.x >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
-		print("Speed", Speed)
-		print("m", Movement)
+		#print("Speed", Speed)
+		#print("m", Movement)
 		#aquí animación andar lateral
 		get_parent().get_node("Googlin/AnimationPlayer").play("caminar",-1,3)
 	if ((Movement.z <= -0.5 or Movement.z >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
