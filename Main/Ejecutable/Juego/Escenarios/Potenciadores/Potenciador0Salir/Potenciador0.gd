@@ -3,10 +3,10 @@ extends Spatial
 var preGameOver = preload("res://Ejecutable/Menus/Win/Win.tscn").instance()
 var Personaje1Muerto
 
-func _ready():
+#func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+#	pass
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -15,7 +15,7 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	print(Global.nivel)
-	if Global.nivel == "Nodo_Nivel_1":
+	if Global.nivel == "nivel1":
 		print("aqui lleho")
 		Global.pantalla = 1
 	if Global.nivel == "nivel2":
@@ -25,5 +25,4 @@ func _on_Area_body_entered(body):
 	$".".queue_free()
 	get_tree().get_root() # Access via scene main loop.
 	Personaje1Muerto = get_parent().get_parent().queue_free()
-
 	pass # replace with function body
