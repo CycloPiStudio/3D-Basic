@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pieza1planaAlfa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pelotikaka.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador0Salir/Potenciador0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador2/Potenciador2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=6]
 
-[node name="Nodo_Nivel_1" type="Spatial"]
+[node name="Nodo_Nivel_1" type="Spatial" index="0"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="PosicionSalida" type="Position3D" parent="." index="0"]
 
@@ -13,7 +17,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09692, 0 )
 
 [node name="PieyPot" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="PieyPot" index="0"]
@@ -46,14 +49,23 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="Pieza1planaAlfa" parent="PieyPot" index="1" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 0.967515, 0.252814, 0, -0.252814, 0.967515, 0, 0.463514, 1.88079 )
+transform = Transform( 0.992134, -0.031647, 0.121113, 0, 0.967515, 0.252814, -0.125179, -0.250825, 0.959905, -3.29968, 0.819471, -1.1623 )
 
 [node name="Pelotikaka" parent="PieyPot" index="2" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82153, 7.25049, -2.2771 )
 
-[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Potenciador_0_Salir" parent="PieyPot" index="3" instance=ExtResource( 3 )]
 
-[node name="HUD" parent="." index="3" instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.94426, 0.642398, 2.90142 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Potenciador2" parent="PieyPot" index="4" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84192, 0.15625, 1.01837 )
+
+[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 6 )]
 
 
