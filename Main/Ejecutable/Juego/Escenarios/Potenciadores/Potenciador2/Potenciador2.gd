@@ -25,6 +25,10 @@ func _ready():
 	pass
 
 func _process(delta):
+	if  get_node("Scene Root/AnimationPlayer").is_playing() == false:
+		get_node("Scene Root/AnimationPlayer").play("default")
+#	print(get_node("Scene Root2/AnimationPlayer").get_animation_list())
+#	print(get_node("Scene Root2/AnimationPlayer").get_animation("default").resource_name)
 	if banderaVisible:
 		#esto pa mover el numeriko
 		PuntosP1.set_position(Vector2(PuntosP1.get_position().x , PuntosP1.get_position().y+VeloNum*delta))
@@ -33,7 +37,6 @@ func _process(delta):
 		# esto pal máximo de color llevar cuidao
 		if contColor >= 1:
 			contColor = 1
-			
 		PuntosP1.set("custom_colors/font_color",Color(0.5,0,contColor))
 	
 	else:
