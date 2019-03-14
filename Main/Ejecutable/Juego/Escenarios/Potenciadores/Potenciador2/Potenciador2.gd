@@ -53,20 +53,21 @@ func _process(delta):
 #	pass
 
 func _on_Area_body_entered(body):
-	Global.puntos += SumaPuntos
-	get_node("Hub_puntos/Sprite").set_position(posicionSalida)
-	get_node("AudioPotenciador2").play()
-	add_child(prePuntosP1)
-	tiempoEntra = OS.get_ticks_msec()
-	PuntosP1 =get_node("Datos_comunes/Label_datos_comunes")
-	PuntosP1.set_position(posicionSalida)
-	PuntosP1.set_text(""+ str(SumaPuntos) + " puntos")
-	PuntosP1.set("custom_colors/font_color",Color(1,0,0))
-	
-#	print($".".set_position(Vector2(-300,-300))) #aqui aqui error aqui
-	## error: como solo se "esconde" puedes entrar varia veces
-	# error: solucion mover fuera de la pantalla
-#	$".".hide()
-	banderaVisible = true
-	likidao = true
-	pass # replace with function body
+	if body.is_in_group("Player"):
+		Global.puntos += SumaPuntos
+		get_node("Hub_puntos/Sprite").set_position(posicionSalida)
+		get_node("AudioPotenciador2").play()
+		add_child(prePuntosP1)
+		tiempoEntra = OS.get_ticks_msec()
+		PuntosP1 =get_node("Datos_comunes/Label_datos_comunes")
+		PuntosP1.set_position(posicionSalida)
+		PuntosP1.set_text(""+ str(SumaPuntos) + " puntos")
+		PuntosP1.set("custom_colors/font_color",Color(1,0,0))
+		
+	#	print($".".set_position(Vector2(-300,-300))) #aqui aqui error aqui
+		## error: como solo se "esconde" puedes entrar varia veces
+		# error: solucion mover fuera de la pantalla
+	#	$".".hide()
+		banderaVisible = true
+		likidao = true
+		pass # replace with function body
