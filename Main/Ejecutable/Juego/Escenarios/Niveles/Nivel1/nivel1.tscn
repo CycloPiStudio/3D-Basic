@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pieza1planaAlfa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pieza1/Pelotikaka.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador2/Potenciador2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador0Salir/Potenciador0.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.gd" type="Script" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=8]
 
 [node name="nivel1" type="Spatial" index="0"]
 
@@ -30,7 +32,7 @@ light_negative = false
 light_specular = 0.5
 light_bake_mode = 1
 light_cull_mask = -1
-shadow_enabled = true
+shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_bias = 0.1
 shadow_contact = 0.0
@@ -63,8 +65,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84192, 0.15625, 1.01837 )
 
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.82105, 0.605214, 2.92139 )
 
-[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Potenciador1espada" type="Spatial" parent="PieyPot" index="5" instance=ExtResource( 5 )]
 
-[node name="HUD" parent="." index="3" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40465, 0.0451193, 0.00216389 )
+script = ExtResource( 6 )
+
+[node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 7 )]
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 8 )]
 
 
