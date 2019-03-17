@@ -8,6 +8,7 @@ var cogida = false
 var contAP = 0 # contador animación parado
 const TopeContAP = 40
 var posi
+var hueso = 4
 
 func _ready():
 #	print("Arma (espada) sobre el terreno, en:", espada.get_global_transform()[3])
@@ -16,12 +17,18 @@ func _ready():
 
 func _process(delta):
 	
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
 	if cogida:
-		posi = NodoEsqueleto.get_global_transform()
+		posi[0] = NodoEsqueleto.get_global_transform()[0]+ NodoEsqueleto.get_bone_pose(hueso)[0]
+		posi[1] = NodoEsqueleto.get_global_transform()[1]+ NodoEsqueleto.get_bone_pose(hueso)[1]
+		posi[2] = NodoEsqueleto.get_global_transform()[2]+ NodoEsqueleto.get_bone_pose(hueso)[2]
+		posi[3] = NodoEsqueleto.get_global_transform()[3]+ NodoEsqueleto.get_bone_pose(hueso)[3]
+	
+#		posi[3] = NodoEsqueleto.get_global_transform()[3]+ Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)
 		set_global_transform(posi)
-		print("aqui")
+#		print(NodoEsqueleto.get_bone_pose(hueso)[3])
+#		NodoEsqueleto.get_bone_pose(hueso)[1]
+#		set_transform(NodoEsqueleto.get_bone_pose(hueso)[0],NodoEsqueleto.get_bone_pose(hueso)[1],NodoEsqueleto.get_bone_pose(hueso)[2],NodoEsqueleto.get_bone_pose(hueso)[3])
+#		set_transform(NodoEsqueleto.get_bone_pose (3)[1],NodoEsqueleto.get_bone_pose (3)[2],NodoEsqueleto.get_bone_pose (3)[3],Vector3(0,0,0))
 	else:
 		if contAP < TopeContAP :
 			posi = espada.get_global_transform()
@@ -36,14 +43,13 @@ func _process(delta):
 			contAP +=1
 		else:
 			contAP = 0
-			
 
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
-		print("Coge espada sobre el terreno, en:", espada.get_global_transform()[3])
+#		print("Coge espada sobre el terreno, en:", espada.get_global_transform()[3])
 		print ("aqui entramos")
-		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
+#		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
 		
 		cogida = true
 	pass # replace with function body
