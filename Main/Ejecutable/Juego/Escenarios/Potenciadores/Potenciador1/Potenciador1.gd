@@ -1,59 +1,51 @@
-extends Node2D
+extends Spatial
 
-var prePuntosP1 = preload("res://Ejecutable/Juego/HUD/HUD Datos Comunes/Datos_comunes.tscn").instance()
-var PuntosP1
-var SumaVida = 100
-
-var tiempoEntra = 20
-
-var banderaVisible = false
-var VeloNum =100
-var contColor
-var posicion
+# class member variables go here, for example:
+# var a = 2
+onready var espada = $".".get_node("Area")
+onready var NodoEsqueleto = get_node("/root/partida/PosicionSalida/personaje/Googlin/Armature/Skeleton")
+var cogida = false
+var contAP = 0 # contador animación parado
+const TopeContAP = 40
+var posi
 
 func _ready():
-	posicion = $".".get_position()
-
-
-func _process(delta):
-
-	if banderaVisible:
-		#esto pa mover el numeriko
-		PuntosP1.set_position(Vector2(PuntosP1.get_position().x , PuntosP1.get_position().y+VeloNum*delta))
-		contColor = contColor + delta
-		# esto pal máximo de color llevar cuidao
-		if contColor >= 1:
-			contColor = 1
-			
-		PuntosP1.set("custom_colors/font_color",Color(0.5,0,contColor))
-	
-	else:
-		contColor = delta
-		
-	if OS.get_ticks_msec() - tiempoEntra  > 2000 and banderaVisible:
-		$".".queue_free()
-		print("mato potenciador 1")
+#	print("Arma (espada) sobre el terreno, en:", espada.get_global_transform()[3])
+#	print("Arbol:", get_node("/root/partida/PosicionSalida/personaje/Googlin/Armature/Skeleton/Cube"))
 	pass
 
-
-func _on_Area2D_body_entered(body):
+#func _process(delta):
 	
-	print(get_node("AudioPotenciador").play())
-	Global.puntos += SumaVida
-	print("entra en el potenciador 1")
-	add_child(prePuntosP1)
-	tiempoEntra = OS.get_ticks_msec()
-	PuntosP1 =get_node("Datos_comunes/Label_datos_comunes")	
-#	PuntosP1 =get_node("/root/partida/Potenciador1/Datos_comunes/Label_datos_comunes")	
-	PuntosP1.set_position(posicion)#	GraficaVida.set_text("Aquí pondré la vida actualizada")
-	PuntosP1.set_text(""+ str(SumaVida) + " puntos")
-	PuntosP1.set("custom_colors/font_color",Color(1,0,0))
-	print($".".set_position(Vector2(-300,-300)))
-	# error: como solo se "esconde" puedes entrar varia veces
-	# error: solucion mover fuera de la pantalla
-#	$".".hide()
-	banderaVisible = true
-	
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	if cogida:
+##		posi = NodoEsqueleto.get_global_transform()
+##		set_global_transform(posi)
+#		print("aqui")
+#	else:
+#		if contAP < TopeContAP :
+#			posi = espada.get_global_transform()
+##			print(posi[3])
+#			posi[3].y +=1*delta
+#			set_global_transform(posi)
+#			contAP +=1
+#		elif contAP < 2*TopeContAP:
+#			posi = espada.get_global_transform()
+##			print(posi[3])
+#			posi[3].y -=1*delta
+#			set_global_transform(posi)
+#			contAP +=1
+##		else:
+##			contAP = 0
+			
 
 
-	pass 
+func _on_Area_body_entered(body):
+	print("Esqueleto sobre el terreno")
+	if body.is_in_group("Player"):
+		print("Coge espada sobre el terreno, en:", espada.get_global_transform()[3])
+		print ("aqui entramos")
+		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
+		
+		cogida = true
+	pass # replace with function body
