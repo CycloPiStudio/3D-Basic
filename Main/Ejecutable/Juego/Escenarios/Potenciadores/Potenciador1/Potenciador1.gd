@@ -18,17 +18,15 @@ func _ready():
 func _process(delta):
 	
 	if cogida:
-		posi[0] = NodoEsqueleto.get_global_transform()[0]+ NodoEsqueleto.get_bone_pose(hueso)[0]
-		posi[1] = NodoEsqueleto.get_global_transform()[1]+ NodoEsqueleto.get_bone_pose(hueso)[1]
-		posi[2] = NodoEsqueleto.get_global_transform()[2]+ NodoEsqueleto.get_bone_pose(hueso)[2]
-		posi[3] = NodoEsqueleto.get_global_transform()[3]+ NodoEsqueleto.get_bone_pose(hueso)[3]
-	
-#		posi[3] = NodoEsqueleto.get_global_transform()[3]+ Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)
-		set_global_transform(posi)
-#		print(NodoEsqueleto.get_bone_pose(hueso)[3])
-#		NodoEsqueleto.get_bone_pose(hueso)[1]
-#		set_transform(NodoEsqueleto.get_bone_pose(hueso)[0],NodoEsqueleto.get_bone_pose(hueso)[1],NodoEsqueleto.get_bone_pose(hueso)[2],NodoEsqueleto.get_bone_pose(hueso)[3])
-#		set_transform(NodoEsqueleto.get_bone_pose (3)[1],NodoEsqueleto.get_bone_pose (3)[2],NodoEsqueleto.get_bone_pose (3)[3],Vector3(0,0,0))
+		posi = NodoEsqueleto.get_bone_pose(hueso)
+		posi[1] = NodoEsqueleto.get_bone_pose(hueso)[1]*(-1)
+		posi[3] = NodoEsqueleto.get_bone_pose(hueso)[3]+Vector3(-0.5,3,-1)
+
+#		posi = NodoEsqueleto.get_bone_pose(hueso)
+
+##		posi[3] = NodoEsqueleto.get_global_transform()[3]+ Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)
+		set_transform(posi)
+#		
 	else:
 		if contAP < TopeContAP :
 			posi = espada.get_global_transform()
@@ -50,6 +48,10 @@ func _on_Area_body_entered(body):
 #		print("Coge espada sobre el terreno, en:", espada.get_global_transform()[3])
 		print ("aqui entramos")
 #		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
+#		set_global_transform(Transform(NodoEsqueleto.get_global_transform()[0], NodoEsqueleto.get_global_transform()[1], NodoEsqueleto.get_global_transform()[2], Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)))
 		
+		get_parent().remove_child($".")
+		
+		NodoEsqueleto.add_child($".")
 		cogida = true
 	pass # replace with function body
