@@ -19,10 +19,11 @@ func _process(delta):
 	
 	if cogida:
 		posi = NodoEsqueleto.get_bone_pose(hueso)
-		posi[1] = NodoEsqueleto.get_bone_pose(hueso)[1]*(-1)
-		posi[3] = NodoEsqueleto.get_bone_pose(hueso)[3]+Vector3(-0.5,3,-1)
+#		posi[1] = NodoEsqueleto.get_bone_pose(hueso)[1]*(-1)
+		posi[3] = NodoEsqueleto.get_bone_pose(hueso)[3]+Vector3(-1.2,2,-.5)
 
 #		posi = NodoEsqueleto.get_bone_pose(hueso)
+		
 
 ##		posi[3] = NodoEsqueleto.get_global_transform()[3]+ Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)
 		set_transform(posi)
@@ -49,7 +50,8 @@ func _on_Area_body_entered(body):
 		print ("aqui entramos")
 #		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
 #		set_global_transform(Transform(NodoEsqueleto.get_global_transform()[0], NodoEsqueleto.get_global_transform()[1], NodoEsqueleto.get_global_transform()[2], Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)))
-		
+#		espada.rotate_z(1)
+		espada.rotate_y(-1)
 		get_parent().remove_child($".")
 		
 		NodoEsqueleto.add_child($".")
