@@ -40,4 +40,5 @@ func _on_Continue_pressed():
 	get_tree().paused = false
 	get_node("/root/Global Menus/boton").play()
 	$"Pause-PopUp".hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass # replace with function body
