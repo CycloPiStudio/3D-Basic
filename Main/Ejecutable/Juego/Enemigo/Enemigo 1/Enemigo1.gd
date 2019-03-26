@@ -1,53 +1,67 @@
-extends Node2D
+extends Spatial
 
-onready var pos = $"Personaje".position
-var punto
-var velocidad = 200
+export(NodePath) var PlayerPath  = "" #You must specify this in the inspector!
+export(float) var MovementSpeed = 11
+export(float) var Acceleration = 3
+export(float) var MaxJump = 10
+export(float) var MouseSensitivity = 2
+export(float) var RotationLimit = 45
+export(float) var MaxZoom = 0.5
+export(float) var MinZoom = 1.5
+export(float) var ZoomSpeed = 2
+
+var Player
+var InnerGimbal
+var Direction = Vector3()
+var Rotation = Vector2()
+var gravity = -10
+var Movement = Vector3()
+var ZoomFactor = 1
+var ActualZoom = 1
+var Speed = Vector3()
+var CurrentVerticalSpeed = Vector3()
+var JumpAcceleration = 3
+var IsAirborne = false
+
+var paseo = 0
+var topepaseo = 11
 
 func _ready():
-
-	set_process(true)
-	punto = Vector2($"Personaje".position.x,$"Personaje".position.x + 100)
+	Player = get_node("KinematicBody")
+	InnerGimbal =  $InnerGimbal
 	pass
 
-func _process(delta):
-	if Input.is_action_pressed("ui_up"):
-		pos.y -= velocidad * delta
-		punto.y = pos.y - 2*velocidad
-	if Input.is_action_pressed("ui_down"):
-		pos.y += velocidad * delta
-		punto.y = pos.y + 2 * velocidad
-	if Input.is_action_pressed("ui_right"):
-		pos.x += velocidad * delta
-		punto.x += pos.x + 2 * velocidad
-	if Input.is_action_pressed("ui_left"):
-		pos.x -= velocidad * delta
-		punto.x = pos.x - 2 * velocidad
-		
-		
-	#set_position(Vector2(pos)  )
-	#	orientacion, vale así?
-	look_at(Vector2(punto))
-	print ( delta)
-	pass
-	
-	
-	
-#	pero to esto que es ¡¡¡¡¡¡¡
-# 
 
-#	var velocity = Vector2() # The player's movement vector.
-#	if Input.is_action_pressed("ui_right"):
-#        velocity.x += 1
-#	if Input.is_action_pressed("ui_left"):
-#        velocity.x -= 1
-#	if Input.is_action_pressed("ui_down"):
-#        velocity.y += 1
-#	if Input.is_action_pressed("ui_up"):
-#        velocity.y -= 1
-#	if velocity.length() > 0:
-#        velocity = velocity.normalized() * velocidad
-#	set_position(Vector2(velocity))
-#        $".".play()
-#	else:
-#        $".".stop()
+func _physics_process(delta):
+	
+	#Dando caña
+	if paseo <= topepaseo:
+		Direction.x -= 1
+		Direction.x = clamp(Direction.x, -1,1)
+		paseo += 1
+	elif paseo <= 2*topepaseo:
+		Direction.z -= 0.5
+		Direction.z = clamp(Direction.z, -1,1)
+		paseo += 1
+	elif paseo <= 3*topepaseo:
+		Direction.x += 0.5
+		Direction.x = clamp(Direction.x, -1,1)
+		paseo += 1
+	elif paseo <= 4*topepaseo:
+		Direction.z += 0.5
+		Direction.z = clamp(Direction.z, -1,1)
+		paseo += 1
+	elif paseo <= 5*topepaseo:
+		paseo = 0
+	
+	#Movement
+	var MaxSpeed = MovementSpeed *Direction.normalized()
+	Speed = Speed.linear_interpolate(MaxSpeed, delta * Acceleration)
+	Movement = Player.transform.basis * (Speed)
+	CurrentVerticalSpeed.y += gravity * delta * JumpAcceleration
+	Movement += CurrentVerticalSpeed
+	Player.move_and_slide(Movement,Vector3(0,1,0))
+	
+	if Player.is_on_floor() :
+		CurrentVerticalSpeed.y = 0
+		IsAirborne = false
