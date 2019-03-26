@@ -5,7 +5,7 @@
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador2/Potenciador2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador0Salir/Potenciador0.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador1/Potenciador1.gd" type="Script" id=6]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 1/Enemigo11.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/TerrenoPrueba.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=8]
 
@@ -65,10 +65,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84192, 0.15625, 1.01837 )
 
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.82105, 0.605214, 2.92139 )
 
-[node name="Potenciador1espada" type="Spatial" parent="PieyPot" index="5" instance=ExtResource( 5 )]
+[node name="Potenciador1espada" parent="PieyPot" index="5" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40465, 0.0451193, 0.00216389 )
-script = ExtResource( 6 )
+
+[node name="Enemigo11" parent="PieyPot" index="6" instance=ExtResource( 6 )]
+
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.5065, 1.452, 2.27057 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TerrenoPrueba" parent="." index="2" instance=ExtResource( 7 )]
 
