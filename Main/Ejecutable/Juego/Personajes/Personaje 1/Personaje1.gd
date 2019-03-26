@@ -106,19 +106,19 @@ func _physics_process(delta):
 	InnerGimbal.set_scale(Vector3(ActualZoom,ActualZoom,ActualZoom))
 	
 	#Animación:
-	if ((Movement.x <= -0.5 or Movement.x >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
+	if ((Movement.x <= -0.5 or Movement.x >= 0.5) and get_parent().get_node("Gooblin/AnimationPlayer").is_playing() == false):
 		#print("Speed", Speed)
 		#print("m", Movement)
 		#aquí animación andar lateral
-		get_parent().get_node("Googlin/AnimationPlayer").play("caminar",-1,3)
-	if ((Movement.z <= -0.5 or Movement.z >= 0.5) and get_parent().get_node("Googlin/AnimationPlayer").is_playing() == false):
+		get_parent().get_node("Gooblin/AnimationPlayer").play("caminar",-1,3)
+	if ((Movement.z <= -0.5 or Movement.z >= 0.5) and get_parent().get_node("Gooblin/AnimationPlayer").is_playing() == false):
 		#aquí animación andar palante
-		get_parent().get_node("Googlin/AnimationPlayer").play("caminar",-1,3)
+		get_parent().get_node("Gooblin/AnimationPlayer").play("caminar",-1,3)
 
 		
 
 #	else:
-#		get_parent().get_node("Googlin/AnimationPlayer").stop()
+#		get_parent().get_node("Gooblin/AnimationPlayer").stop()
 #
 	
 	#Colisión
