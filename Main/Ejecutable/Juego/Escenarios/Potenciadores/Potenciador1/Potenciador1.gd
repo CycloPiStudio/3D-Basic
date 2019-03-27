@@ -3,12 +3,21 @@ extends Spatial
 # class member variables go here, for example:
 # var a = 2
 onready var espada = $".".get_node("Area")
-onready var NodoEsqueleto = get_node("/root/partida/PosicionSalida/personaje/Googlin/Armature/Skeleton")
+
+
+#onready var NodoEsqueleto = get_node("/root/partida/PosicionSalida/personaje/Googlin/Armature/Skeleton")
+
 var cogida = false
 var contAP = 0 # contador animación parado
 const TopeContAP = 40
 var posi
 var hueso = 4
+	
+onready var rutaPlayer = (Global.personaje.get_path())
+onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
+onready var NodoEsqueleto = get_node((str(Global.personaje.get_path()) + "/" + str(get_node(rutaPlayer).get_child(0).name) + "/rig/Skeleton"))
+
+
 
 func _ready():
 #	print("Arma (espada) sobre el terreno, en:", espada.get_global_transform()[3])
@@ -16,7 +25,8 @@ func _ready():
 	pass
 
 func _process(delta):
-	
+
+
 	if cogida:
 		posi = NodoEsqueleto.get_bone_pose(hueso)
 #		posi[1] = NodoEsqueleto.get_bone_pose(hueso)[1]*(-1)
