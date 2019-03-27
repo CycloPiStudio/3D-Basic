@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2/Robopi-4-anima.dae" type="PackedScene" id=1]
+[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2/Modelos/Robopi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 1/3rdPersonController.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -26,14 +26,11 @@ axis_lock_angular_z = false
 collision/safe_margin = 0.001
 _sections_unfolded = [ "Transform", "collision" ]
 
-[node name="Googlin" parent="." index="0" instance=ExtResource( 1 )]
-
-transform = Transform( 1, 0, 0, 0, 0.736702, 0.187478, 0, -0.140608, 0.982269, 0, -0.2, 0 )
-_sections_unfolded = [ "Transform" ]
+[node name="Robopi" parent="." index="0" instance=ExtResource( 1 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 0.274798, 0, 0, 0, -3.42276e-008, -0.783036, 0, 0.783036, -3.42276e-008, 0, 0.658846, 0 )
+transform = Transform( 0.274798, 0, 0, 0, -3.42276e-08, -0.783036, 0, 0.783036, -3.42276e-08, 0, 0.658846, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
