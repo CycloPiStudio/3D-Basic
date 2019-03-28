@@ -53,7 +53,7 @@ func _unhandled_input(event):
 		match event.scancode:
 			KEY_ESCAPE:
 				#get_tree().quit()
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			KEY_W: #FORWARD
 				Direction.z -= 1
 				
