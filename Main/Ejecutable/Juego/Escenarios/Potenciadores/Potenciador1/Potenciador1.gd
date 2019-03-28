@@ -66,4 +66,5 @@ func _on_Area_body_entered(body):
 		
 		NodoEsqueleto.add_child($".")
 		cogida = true
+		NodoEsqueleto.bind_child_node_to_bone( 3, espada )
 	pass # replace with function body
