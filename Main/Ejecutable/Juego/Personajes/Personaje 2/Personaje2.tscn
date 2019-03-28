@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2/Modelos/Robopi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2/Modelo/Robopi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 1/3rdPersonController.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
