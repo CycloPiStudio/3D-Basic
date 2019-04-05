@@ -44,7 +44,7 @@ func _process(delta):
 		
 	if OS.get_ticks_msec() - tiempoEntra  > 2000 and banderaVisible:
 		$".".queue_free()
-		print("mato potenciador 1")
+#		print("mato potenciador 2")
 	
 #	if likidao:
 #		$".".queue_free()
