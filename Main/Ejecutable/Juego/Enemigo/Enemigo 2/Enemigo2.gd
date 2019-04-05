@@ -9,5 +9,5 @@ func _ready():
 
 func _on_Timer_timeout():
 	Arma.Disparo()
-	print ("time out")
+#	print ("time out")
 	pass 
