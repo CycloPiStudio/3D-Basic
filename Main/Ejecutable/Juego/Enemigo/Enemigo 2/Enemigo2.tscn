@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador4/Potenciador4arma.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/P.3_Cannon.tscn" type="PackedScene" id=2]
+
 
 [node name="Enemigo2" type="Spatial" index="0"]
 
