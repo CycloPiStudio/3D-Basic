@@ -8,9 +8,9 @@ extends RigidBody
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	print(get_parent().get_name())
-	print(get_parent().get_global_transform().basis)
-	print($".".get_global_transform().basis[0]*20)
+	#print(get_parent().get_name())
+	#print(get_parent().get_global_transform().basis)
+	#print($".".get_global_transform().basis[0]*20)
 
 	apply_impulse(Vector3(0,0,0), $".".get_global_transform().basis[0]*20)
 	pass
