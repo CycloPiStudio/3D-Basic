@@ -27,4 +27,4 @@ var topecont = 100
 func Disparo():
 	var node = bala.instance()
 	get_parent().add_child(node)
-	print (get_parent().name)
+#	print (get_parent().name)
