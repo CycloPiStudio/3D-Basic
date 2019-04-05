@@ -57,7 +57,7 @@ func _process(delta):
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
 #		print("Coge espada sobre el terreno, en:", espada.get_global_transform()[3])
-		print ("aqui entramos")
+#		print ("aqui entramos")
 #		print("Esqueleto sobre el terreno, en:", NodoEsqueleto.get_global_transform()[3])
 #		set_global_transform(Transform(NodoEsqueleto.get_global_transform()[0], NodoEsqueleto.get_global_transform()[1], NodoEsqueleto.get_global_transform()[2], Vector3(NodoEsqueleto.get_bone_pose(hueso)[3].x+0.1,NodoEsqueleto.get_bone_pose(hueso)[3].y, NodoEsqueleto.get_bone_pose(hueso)[3].z+0.2)))
 #		espada.rotate_z(1)
