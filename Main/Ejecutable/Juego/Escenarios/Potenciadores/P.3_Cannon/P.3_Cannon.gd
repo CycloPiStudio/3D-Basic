@@ -1,6 +1,6 @@
 extends Spatial
 
-var bala = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/Potenciador4/Balika/balika.tscn")
+var bala = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/Balika/balika.tscn")
 onready var posicion = $Position3D
 var cont = 0
 var topecont = 100
