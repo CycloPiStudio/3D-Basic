@@ -130,7 +130,7 @@ func _physics_process(delta):
 		
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
-		print("muere")
+#		print("muere")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #		Esto no va bien se queda pillao el ratón
 		get_node("/root/Global Menus").add_child(preGameOver)
