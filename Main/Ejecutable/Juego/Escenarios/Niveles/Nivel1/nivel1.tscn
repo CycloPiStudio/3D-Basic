@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD Personaje/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.2_Puntos/P.2_Puntos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/P.0_Ganar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/sueloBasico2.dae" type="PackedScene" id=4]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi1_Panel_2D/Pi1_Panel_2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi2_Pelota/Pi2_Pelotikaka.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=7]
 
 [node name="nivel1" type="Spatial" index="0"]
 
@@ -23,25 +24,28 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Potenciador2" parent="Potenciadores" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84192, 0.15625, 1.01837 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0636, 0.072998, 1.01837 )
 
 [node name="Potenciador0Salir" parent="Potenciadores" index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.82105, 0.605214, 2.92139 )
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -3.37893, 0.489491, 2.79876 )
 
 [node name="Terreno" parent="." index="3" instance=ExtResource( 4 )]
 
 [node name="Piezas" type="Spatial" parent="." index="4"]
 
-editor/display_folded = true
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Pi1_Panel_2D" parent="Piezas" index="0" instance=ExtResource( 5 )]
 
-transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -5.84203, 2.66154, 0.407683 )
+transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 0.780913 )
+
+[node name="Pi2_Pelotikaka" parent="Piezas" index="1" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66551, 2.67395, -2.57294 )
 
 [node name="Iluminacion" type="Spatial" parent="." index="5"]
-
-editor/display_folded = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion" index="0"]
 
@@ -73,7 +77,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="Enemigos" type="Spatial" parent="." index="6"]
 
-[node name="Enemigo2" parent="Enemigos" index="0" instance=ExtResource( 6 )]
+[node name="Enemigo2" parent="Enemigos" index="0" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03803, 0.514639, 0 )
 
