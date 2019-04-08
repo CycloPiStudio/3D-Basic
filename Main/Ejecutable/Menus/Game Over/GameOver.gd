@@ -7,7 +7,7 @@ onready var MenuPrincipal = preload("res://Ejecutable/Menus/Menu Principal/MenuP
 
 func _ready():
 	set_process(true)
-	print($".".get_node("AudioGameOver").play())
+	$".".get_node("AudioGameOver").play()
 	pass
 
 func _process(delta):
