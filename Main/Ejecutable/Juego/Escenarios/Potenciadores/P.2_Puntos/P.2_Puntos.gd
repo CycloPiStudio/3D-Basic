@@ -13,6 +13,8 @@ var VeloNum =100
 var contColor
 var posicion
 var posicionSalida = Vector2(700,0)
+var posiPot = Vector3()
+var posiPotTransform
 
 
 
@@ -30,6 +32,11 @@ func _process(delta):
 #	print(get_node("Scene Root2/AnimationPlayer").get_animation_list())
 #	print(get_node("Scene Root2/AnimationPlayer").get_animation("default").resource_name)
 	if banderaVisible:
+		#esto pa mover el potenciador
+		posiPot.y = posiPot.y+1
+		posiPotTransform[3] = posiPot
+		print(posiPotTransform)
+		print($".".set_global_transform(posiPotTransform))
 		#esto pa mover el numeriko
 		PuntosP1.set_position(Vector2(PuntosP1.get_position().x , PuntosP1.get_position().y+VeloNum*delta))
 		get_node("Hub_puntos/Sprite").set_position(PuntosP1.get_position())
@@ -68,6 +75,11 @@ func _on_Area_body_entered(body):
 		## error: como solo se "esconde" puedes entrar varia veces
 		# error: solucion mover fuera de la pantalla
 	#	$".".hide()
+		#Coger poscion de potenciador pa moverlo después
+		posiPot = $".".get_global_transform()[3]
+		posiPotTransform = $".".get_global_transform()
+		
+		
 		banderaVisible = true
 		likidao = true
 		pass # replace with function body
