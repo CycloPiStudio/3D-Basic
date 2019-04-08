@@ -31,7 +31,7 @@ onready var rutaPlayer = (Global.personaje.get_path())
 onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 
 func _ready():
-	Global.vida = 100000
+	Global.vida = 1000
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
