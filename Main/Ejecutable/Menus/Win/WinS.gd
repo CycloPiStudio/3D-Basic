@@ -18,7 +18,7 @@ var GrafPuntos
 
 func _ready():
 #	set_process(true)
-	print($".".get_node("AudioWin").play())
+	$".".get_node("AudioWin").play()
 	
 	add_child(prePuntos)
 	MiNodoHUDWin = get_children()
@@ -77,7 +77,7 @@ func _process(delta):
 			
 		
 		else: 
-			print("fuera")
+			#print("fuera")
 	
 			get_node("/root/Global Menus").add_child(SelecNivel)
 			get_parent().get_node("Musica Menus").play()
