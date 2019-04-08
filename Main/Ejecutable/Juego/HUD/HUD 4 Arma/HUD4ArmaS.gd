@@ -9,7 +9,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	graf_vida = get_node("/root/partida/HUD/HUD4armaNodo/Datos_comunes/Label_datos_comunes")
-	print(graf_vida) 
+	#print(graf_vida) 
 	graf_vida.set_text("Aquí pondré el arma actualizada")
 	graf_vida.set_position(Vector2(815,180))
 	pass
