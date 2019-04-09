@@ -4,10 +4,10 @@ var bala = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/B
 onready var posicion = $Position3D
 var cont = 0
 var topecont = 100
-var posCannon
+var posPoseedorCannon
 
 func _ready():
-	posCannon = (get_parent().get_global_transform())
+	posPoseedorCannon = (get_parent().get_global_transform())
 #	# Called when the node is added to the scene for the first time.
 #	# Initialization here
 #	pass
@@ -29,5 +29,5 @@ func _ready():
 func Disparo():
 	var node = bala.instance()
 	get_parent().get_parent().add_child(node)
-	node.set_global_transform(posCannon)
+	node.set_global_transform(posPoseedorCannon)
 #	print (get_parent().name)
