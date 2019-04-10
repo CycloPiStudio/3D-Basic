@@ -1,13 +1,34 @@
 extends Spatial
 onready var Arma = $P3_Cannon
-var posEnemigo = get_global_transform()
-#var rotEnemigo = rotate_object_local()
+#var posEnemigo = get_global_transform()
+#var rotEnemigo 
+
 func _ready():
 	
 	pass
 
 func _process(delta):
-	rotate_object_local(Vector3(0, 1, 0), PI/300)
+	rotate(Vector3(0,1,0), PI/300)
+#	rotEnemigo = get_rotation()
+	
+#	print (get_rotation())
+	
+
+	
+#	giro = transform[3] 
+#	giro = giro * Vector3(0.1,0.01,0.01)
+#	print (giro)
+#	print (Transform)
+#	rotate_object_local(Vector3(0, 1, 0), PI/300)
+#	giro = Transform()
+#	var pos = giro.xform(pos)
+#	print (posEnemigo[3] + rotation_degrees(10,0,0))
+
+#var t = Transform()
+#pos = t.xform(pos) # transform 3D position
+#pos = t.basis.xform(pos) # (only rotate)
+#pos = t.origin + pos # (only translate)
+
 	
 	pass
 
