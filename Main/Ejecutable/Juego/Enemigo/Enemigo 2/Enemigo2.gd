@@ -1,5 +1,9 @@
 extends Spatial
 onready var Arma = $P3_Cannon
+
+#Pa mensajes
+var preNoMensa = preload("res://Ejecutable/Juego/HUD/HUD 8 Mensaje/Hud_mensaje_info.tscn")
+var NoMensa
 #var posEnemigo = get_global_transform()
 #var rotEnemigo 
 
@@ -36,3 +40,12 @@ func _on_Timer_timeout():
 	Arma.Disparo()
 #	print ("time out")
 	pass 
+
+func _on_Area_body_entered(body):
+	if body.is_in_group("Player"):
+		# instancia nodo mensaje
+		NoMensa = preNoMensa.instance()
+		get_parent().add_child(NoMensa)
+		# poner texto del mensje y la posicion: + bajo mas centrado
+		NoMensa.mostra_mensa("Impacto del malo : " + str(get_name()),8,200)
+	pass # replace with function body
