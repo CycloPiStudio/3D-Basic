@@ -1,13 +1,8 @@
 extends RigidBody
 
-
+var preNoMensa = preload("res://Ejecutable/Juego/HUD/HUD 8 Mensaje/Hud_mensaje_info.tscn").instance()
+var NoMensa 
 #func _ready():
-
-#	print(get_parent().get_name())
-#	print(get_parent().get_global_transform().basis)
-#	print($".".get_global_transform().basis[0]*20)
-
-#	apply_impulse(Vector3(0,0,0), $".".get_global_transform().basis[0]*20)
 #	pass
 
 #func _process(delta):
@@ -24,6 +19,12 @@ func _on_Timer_timeout():
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
+			# función pa sacar mensaje
+			
+			get_parent().get_parent().get_parent().add_child(preNoMensa)
+			NoMensa = get_node("/root/Hud_mensaje_info")
+			NoMensa.mostra_mensa("Impacto de "+str($".".get_name()))
+			
 			print("yo por mi juego: mato")
 			print("hay que hacer una función de matar")
 			print("Impacto de la bala en el player")
