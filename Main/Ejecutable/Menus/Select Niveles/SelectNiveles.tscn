@@ -8,24 +8,28 @@
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=2]
+size = 20
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=4]
+size = 20
 font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=6]
+size = 20
 font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=8]
+size = 20
 font_data = SubResource( 7 )
 
 [node name="SelectNiveles" type="Node"]
@@ -41,29 +45,29 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Nivel1" type="Button" parent="VBoxContainer"]
-margin_right = 57.0
-margin_bottom = 8.0
+margin_right = 122.0
+margin_bottom = 27.0
 custom_fonts/font = SubResource( 2 )
 text = "Nivel 1"
 
 [node name="Nivel2" type="Button" parent="VBoxContainer"]
-margin_top = 12.0
-margin_right = 57.0
-margin_bottom = 20.0
+margin_top = 31.0
+margin_right = 122.0
+margin_bottom = 58.0
 custom_fonts/font = SubResource( 4 )
 text = "Nivel 2"
 
 [node name="Nivel3" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 57.0
-margin_bottom = 32.0
+margin_top = 62.0
+margin_right = 122.0
+margin_bottom = 89.0
 custom_fonts/font = SubResource( 6 )
 text = "Nivel 3"
 
 [node name="Nivel4" type="Button" parent="VBoxContainer"]
-margin_top = 36.0
-margin_right = 57.0
-margin_bottom = 44.0
+margin_top = 93.0
+margin_right = 122.0
+margin_bottom = 120.0
 custom_fonts/font = SubResource( 8 )
 text = "Nivel 4"
 
