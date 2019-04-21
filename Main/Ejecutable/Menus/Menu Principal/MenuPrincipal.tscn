@@ -9,18 +9,21 @@
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=8]
+size = 20
 font_data = SubResource( 7 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=10]
+size = 20
 font_data = SubResource( 9 )
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
 
 [sub_resource type="DynamicFont" id=12]
+size = 20
 font_data = SubResource( 11 )
 
 [node name="MenuPrincipal" type="Node"]
@@ -31,8 +34,8 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Jugar" type="Button" parent="VBoxContainer"]
-margin_right = 65.0
-margin_bottom = 8.0
+margin_right = 136.0
+margin_bottom = 27.0
 custom_fonts/font = SubResource( 8 )
 text = "Jugar"
 
@@ -41,9 +44,9 @@ position = Vector2( 11, 17 )
 stream = ExtResource( 2 )
 
 [node name="Creditos" type="Button" parent="VBoxContainer"]
-margin_top = 12.0
-margin_right = 65.0
-margin_bottom = 20.0
+margin_top = 31.0
+margin_right = 136.0
+margin_bottom = 58.0
 custom_fonts/font = SubResource( 10 )
 text = "Creditos"
 
@@ -52,9 +55,9 @@ position = Vector2( 9, 19 )
 stream = ExtResource( 2 )
 
 [node name="Salir" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 65.0
-margin_bottom = 32.0
+margin_top = 62.0
+margin_right = 136.0
+margin_bottom = 89.0
 custom_fonts/font = SubResource( 12 )
 text = "Salir"
 
