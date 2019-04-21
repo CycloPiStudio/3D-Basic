@@ -1,10 +1,8 @@
 extends Spatial
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var sonido_arma
 var preBazoka = load("res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn")
-#var preBazoka = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn")
+
 var Bazoka
 var PoseedorBazoka
 var Posicion
@@ -19,9 +17,8 @@ var hueso = 4
 var preBala = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/Balika/balika.tscn")
 var bala
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
+#func _ready():
+#	print(get_node("Audio_carga_arma").play())
 #	pass
 
 func _unhandled_input(event):
@@ -32,6 +29,7 @@ func _unhandled_input(event):
 				get_parent().get_parent().add_child(bala)
 				bala.set_global_transform($".".get_global_transform())
 				bala.apply_impulse($".".get_rotation(), bala.get_global_transform().basis[0]*50)
+				get_node("Audio_disparo").play()
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
@@ -42,6 +40,10 @@ func _on_Area_body_entered(body):
 		Bazoka.rotate_y(1.56)
 		NodoEsqueleto.add_child(Bazoka)
 #		Bazoka.get_node("Area/CollisionShape")
+		sonido_arma = get_node("Audio_carga_arma")
+		$".".remove_child(sonido_arma)
+		get_parent().add_child(sonido_arma)
+		sonido_arma.play()
 		queue_free()
 		print("HOAR")
 	pass # replace with function body
