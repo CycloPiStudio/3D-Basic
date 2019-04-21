@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 
 onready var MenPrincipal = load("res://Ejecutable/Menus/Menu Principal/MenuPrincipal.tscn").instance()
 
@@ -32,6 +32,7 @@ func _on_Pause_pressed():
 	get_tree().paused = true
 	get_node("/root/Global Menus/boton").play()
 	$"Pause-PopUp".show()
+	$"Pause-PopUp".set_position(Vector2(get_viewport().size.x/2 , get_viewport().size.y/2))
 
 	pass # replace with function body
 
