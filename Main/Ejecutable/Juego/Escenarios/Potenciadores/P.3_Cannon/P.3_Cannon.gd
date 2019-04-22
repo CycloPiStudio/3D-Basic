@@ -18,6 +18,6 @@ func Disparo():
 	var bala = preBala.instance()
 	get_parent().get_parent().add_child(bala) #instancia la bala a un nodo superior al cañon 
 	bala.set_global_transform(posPoseedorCannon) # posiciona la bala en la posicion del cañon 
-#	bala.set_rotation(rotPoseedorCannon) #  rota la bala segun el cañon
-	bala.apply_impulse(rotPoseedorCannon, bala.get_global_transform().basis[0]*15) #impulsa la bala segun el cañon
+	bala.set_rotation(rotPoseedorCannon) #  rota la bala segun el cañon
+	bala.apply_impulse(Vector3(0,0,0), bala.get_global_transform().basis[0]*15) #impulsa la bala segun el cañon
 
