@@ -7,14 +7,17 @@ var NoMensa
 #var posEnemigo = get_global_transform()
 #var rotEnemigo 
 
+onready var player = get_node("/root/partida/PosicionSalida/personaje")
 func _ready():
 	
 	pass
 
 func _process(delta):
-	rotate(Vector3(0,1,0), PI/300)
+	$".".look_at_from_position($".".get_global_transform()[3], player.get_global_transform()[3], Vector3(0,1,0))
+	$".".rotate_y(PI/2)
+	#	rotate(Vector3(0,1,0), PI/300)
 #	rotEnemigo = get_rotation()
-	
+	print(player.name)
 #	print (get_rotation())
 	
 
