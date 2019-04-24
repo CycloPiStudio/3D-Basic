@@ -17,7 +17,7 @@ func _process(delta):
 #	$".".rotate_y(PI/2)
 	#	rotate(Vector3(0,1,0), PI/300)
 #	rotEnemigo = get_rotation()
-	print(player.name)
+#	print(player.name)
 #	print (get_rotation())
 	
 
