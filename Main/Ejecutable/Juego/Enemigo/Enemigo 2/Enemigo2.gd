@@ -13,7 +13,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	$".".look_at_from_position($".".get_global_transform()[3], player.get_global_transform()[3], Vector3(0,1,0))
+	$".".look_at_from_position($".".get_global_transform()[3], player.get_global_transform()[3] + Vector3(0,0.5,0), Vector3(0,1,0))
 #	$".".rotate_y(PI/2)
 	#	rotate(Vector3(0,1,0), PI/300)
 #	rotEnemigo = get_rotation()
