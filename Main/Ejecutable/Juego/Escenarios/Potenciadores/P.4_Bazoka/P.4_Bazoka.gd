@@ -37,7 +37,7 @@ func _on_Area_body_entered(body):
 		posi = NodoEsqueleto.get_bone_pose(hueso)
 		posi[3] = NodoEsqueleto.get_bone_pose(hueso)[3]+Vector3(-0.5,2,-.5)
 		Bazoka.set_global_transform(posi)
-		Bazoka.rotate_y(1.56)
+		Bazoka.rotate_y(-1.56)
 		NodoEsqueleto.add_child(Bazoka)
 #		Bazoka.get_node("Area/CollisionShape")
 		sonido_arma = get_node("Audio_carga_arma")
