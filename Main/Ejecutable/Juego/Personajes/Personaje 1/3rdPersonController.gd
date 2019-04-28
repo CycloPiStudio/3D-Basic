@@ -30,8 +30,10 @@ var Personaje1Muerto
 onready var rutaPlayer = (Global.personaje.get_path())
 onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 
+onready var SonidoDanno = get_node("/root/partida/PosicionSalida/personaje/AudioDanno")
+
 func _ready():
-	Global.vida = 1000
+	Global.vida = 10000
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
@@ -127,6 +129,9 @@ func _physics_process(delta):
 	#Colisión
 	if Player.is_on_wall():
 		Global.vida -= 1
+		SonidoDanno.play()
+		
+		
 		
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
