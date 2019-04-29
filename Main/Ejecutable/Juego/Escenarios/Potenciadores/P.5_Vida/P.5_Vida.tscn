@@ -6,7 +6,7 @@
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.2_Puntos/Modelo/images/ImagenPotenciador2.png" type="Texture" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.546992, 0.701133, 0.494756 )
+extents = Vector3( 0.652186, 0.859576, 0.623487 )
 
 [node name="P5_Vida" type="Spatial"]
 script = ExtResource( 1 )
@@ -23,9 +23,9 @@ stream = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355303, 0 )
 shape = SubResource( 1 )
 
-[node name="Hub_puntos" type="Node2D" parent="."]
+[node name="Hub_vida" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Hub_puntos"]
+[node name="Sprite" type="Sprite" parent="Hub_vida"]
 position = Vector2( 335.605, -56.9717 )
 texture = ExtResource( 4 )
 offset = Vector2( 20, 0 )
