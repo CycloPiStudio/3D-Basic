@@ -16,20 +16,23 @@ var hueso = 4
 
 var preBala = preload("res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/Balika/balika.tscn")
 var bala
+var cogida = false
 
 #func _ready():
 #	print(get_node("Audio_carga_arma").play())
 #	pass
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		match event.button_index:
-			BUTTON_LEFT:
-				bala = preBala.instance()
-				get_parent().get_parent().add_child(bala)
-				bala.set_global_transform($".".get_global_transform())
-				bala.apply_impulse($".".get_rotation(), bala.get_global_transform().basis[0]*50)
-				get_node("Audio_disparo").play()
+	if cogida == true:
+		if event is InputEventMouseButton:
+			match event.button_index:
+				BUTTON_LEFT:
+					bala = preBala.instance()
+					get_parent().get_parent().add_child(bala)
+					bala.set_global_transform($".".get_global_transform())
+					bala.apply_impulse($".".get_rotation(), bala.get_global_transform().basis[0]*50)
+					get_node("Audio_disparo").play()
+		pass
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
@@ -44,6 +47,9 @@ func _on_Area_body_entered(body):
 		$".".remove_child(sonido_arma)
 		get_parent().add_child(sonido_arma)
 		sonido_arma.play()
+		print("Hay que sacar cartel: coge arma")
+		Bazoka.cogida = true
+		Global.arma = 1
 		queue_free()
-		print("HOAR")
+		
 	pass # replace with function body
