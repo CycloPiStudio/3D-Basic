@@ -61,29 +61,22 @@ func _on_Timer_timeout():
 	pass 
 
 func _on_Area_body_entered(body):
-	proyectil = get_node(body.get_path())# coge el body 
-	if proyectil.get_parent().get_name() == "rig":
-		vidaMalo -= 1
-		AudioDannoMalo.play()
-		print("Acho el malo:", vidaMalo)
+	proyectil = get_node(body.get_path())# coge el body
+	
+	if proyectil.get_parent().get_name() == "rig" and Global.arma == 1:
+		mata_malo(10)
+		
+	if proyectil.get_parent().get_name() == "rig" and Global.arma == 2:
+		mata_malo(20)
 	
 	if vidaMalo < 0:
-		print("malo muerto")
 		AudioMuerteMalo.play()
 		banderaMaloMuerto = true
-
-#		var i
 		posiPot = $".".get_global_transform()[3]
 		posiPotTransform = $".".get_global_transform()
 		TiempoMuerte.start()
-		
 		print("malo muerto")
-#		for i in 1200:
-#			posiPot.y = posiPot.y + i*Midelta*0.005
-#			posiPotTransform[3] = posiPot
-#			$".".set_global_transform(posiPotTransform)
-#			queue_free()
-		
+	
 	if body.is_in_group("Player"):
 		# instancia nodo mensaje
 		NoMensa = preNoMensa.instance()
@@ -92,7 +85,10 @@ func _on_Area_body_entered(body):
 		NoMensa.mostra_mensa("Impacto del malo : " + str(get_name()),8,200)
 	pass # replace with function body
 
-
+func mata_malo(danno_malo):
+		vidaMalo -= danno_malo
+		AudioDannoMalo.play()
+		print("Acho el malo:", vidaMalo)
 
 func _on_TiempoMuerte_timeout():
 	queue_free()
