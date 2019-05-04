@@ -13,6 +13,7 @@ func _on_Button_datos_comunes_pressed():
 		nodoAbuelo.queue_free()	
 	if nodoAbuelo.name == "Pause-PopUp":
 		get_node("/root/partida").queue_free()
+		get_tree().paused = false
 #	print(nodoAbuelo.name)	
 	
 	pass
