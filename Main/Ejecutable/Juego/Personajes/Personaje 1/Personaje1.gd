@@ -1,9 +1,10 @@
 extends KinematicBody
 
-var vida 
+var vida = 10000.0
 
 func _ready():
-	vida = Global.vida
+	Global.vida = vida
+
 	pass
 
 func _process(delta):
