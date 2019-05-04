@@ -33,7 +33,6 @@ onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 onready var SonidoDanno = get_node("/root/partida/PosicionSalida/personaje/AudioDanno")
 
 func _ready():
-	Global.vida = 10000
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
