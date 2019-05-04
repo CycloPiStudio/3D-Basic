@@ -47,7 +47,7 @@ func _on_Area_body_entered(body):
 		$".".remove_child(sonido_arma)
 		get_parent().add_child(sonido_arma)
 		sonido_arma.play()
-		print("Hay que sacar cartel: coge arma")
+#		print("Hay que sacar cartel: coge arma")
 		Bazoka.cogida = true
 		Global.arma = 1
 		queue_free()
