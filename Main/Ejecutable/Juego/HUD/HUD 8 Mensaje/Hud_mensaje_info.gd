@@ -9,11 +9,11 @@ var mensaText
 func _process(delta):
 	Node_mensa = get_node("Mensaje")
 	Node_mensa.set_position(Vector2(Node_mensa.get_position().x,Node_mensa.get_position().y+1))
-	print(Node_mensa)
+#	print(Node_mensa)
 	pass
 	
 func _on_Timer_timeout():
-	print("esto que que que")
+#	print("esto que que que")
 	queue_free()
 	pass # replace with function body
 
