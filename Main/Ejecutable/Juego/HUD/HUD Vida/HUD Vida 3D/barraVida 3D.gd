@@ -17,7 +17,7 @@ func _process(delta):
 #	print ("Nombre del padre: " + str(get_parent().name))
 #	print ("Padre: " + str(vidaPadre))
 #	print ("MAX: " + str(vidaMax))
-	vida = vidaPadre / vidaMax
+	vida = float(vidaPadre) / float(vidaMax)
 	barraVida.set_scale(Vector3(vida,1,1))
 
 
