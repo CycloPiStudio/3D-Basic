@@ -33,7 +33,7 @@ func _load_scene(nivel):
 	partida.set_name("partida")
 	partida.get_node("PosicionSalida").add_child(Global.personaje)
 	get_parent().get_parent().add_child(partida)
-	print (Global.personaje.get_path())
+#	print (Global.personaje.get_path())
 	get_parent().get_node("Musica Menus").stop()
 	$".".queue_free()
 
