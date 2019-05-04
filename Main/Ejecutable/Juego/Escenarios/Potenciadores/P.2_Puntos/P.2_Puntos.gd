@@ -35,8 +35,8 @@ func _process(delta):
 		#esto pa mover el potenciador
 		posiPot.y = posiPot.y+1
 		posiPotTransform[3] = posiPot
-		print(posiPotTransform)
-		print($".".set_global_transform(posiPotTransform))
+		posiPotTransform
+		$".".set_global_transform(posiPotTransform)
 		#esto pa mover el numeriko
 		PuntosP1.set_position(Vector2(PuntosP1.get_position().x , PuntosP1.get_position().y+VeloNum*delta))
 		get_node("Hub_puntos/Sprite").set_position(PuntosP1.get_position())
