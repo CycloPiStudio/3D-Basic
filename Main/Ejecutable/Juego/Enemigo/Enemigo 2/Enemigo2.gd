@@ -53,7 +53,7 @@ func _on_Area_body_entered(body):
 		posiPot = $".".get_global_transform()[3]
 		posiPotTransform = $".".get_global_transform()
 		TiempoMuerte.start()
-		print("malo muerto")
+#		print("malo muerto")
 	
 	if body.is_in_group("Player"):
 		# instancia nodo mensaje
@@ -66,7 +66,7 @@ func _on_Area_body_entered(body):
 func mata_malo(danno_malo):
 	vida -= danno_malo
 	AudioDannoMalo.play()
-	print("Acho el malo:", vida)
+#	print("Acho el malo:", vida)
 	# instancia nodo mensaje
 	NoMensa = preNoMensa.instance()
 	get_parent().add_child(NoMensa)
