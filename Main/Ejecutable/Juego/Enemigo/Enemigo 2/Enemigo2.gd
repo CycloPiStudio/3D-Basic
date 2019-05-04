@@ -6,7 +6,7 @@ var preNoMensa = preload("res://Ejecutable/Juego/HUD/HUD 8 Mensaje/Hud_mensaje_i
 var NoMensa 
 #var posEnemigo = get_global_transform()
 #var rotEnemigo 
-var vidaMalo = 100
+var vida = 1000
 var proyectil
 onready var AudioDannoMalo = get_node("AudioDannoMalo")
 onready var AudioMuerteMalo = get_node("AudioMuerteMalo")
@@ -47,7 +47,7 @@ func _on_Area_body_entered(body):
 	if proyectil.get_parent().get_name() == "rig" and Global.arma == 2:
 		mata_malo(20)
 	
-	if vidaMalo < 0:
+	if vida < 0:
 		AudioMuerteMalo.play()
 		banderaMaloMuerto = true
 		posiPot = $".".get_global_transform()[3]
@@ -64,9 +64,9 @@ func _on_Area_body_entered(body):
 	pass # replace with function body
 
 func mata_malo(danno_malo):
-	vidaMalo -= danno_malo
+	vida -= danno_malo
 	AudioDannoMalo.play()
-	print("Acho el malo:", vidaMalo)
+	print("Acho el malo:", vida)
 	# instancia nodo mensaje
 	NoMensa = preNoMensa.instance()
 	get_parent().add_child(NoMensa)
