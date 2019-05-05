@@ -10,7 +10,7 @@ var tiempoEntra = 20
 
 var banderaVisible = false
 var VeloNum =100
-var contColor
+var contColor = 0.0
 var posicion
 var posicionSalida = Vector2(700,0)
 var posiPot = Vector3()
