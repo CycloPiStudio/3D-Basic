@@ -45,7 +45,7 @@ func _on_Area_body_entered(body):
 		mata_malo(10)
 		
 	if proyectil.get_parent().get_name() == "rig" and Global.arma == 2:
-		mata_malo(20)
+		mata_malo(200)
 	
 	if vida < 0:
 		AudioMuerteMalo.play()
