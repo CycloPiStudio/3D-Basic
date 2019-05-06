@@ -21,7 +21,7 @@ func _process(delta):
 	
 	if collision:
 		if collision.get_collider().is_in_group("Player"):
-			print (Global.vida)
+#			print (Global.vida)
 			Global.vida -= 10
 	
 #	var colision = get_slide_collision(0)
