@@ -13,6 +13,7 @@ func _process(delta):
 	var direccion = posPlayer - posicion
 		
 	$".".move_and_slide( direccion, Vector3( 0, 0, 0 ), 0.05, 4, 0.785398 )
+	$".".look_at_from_position(posicion, posPlayer + Vector3(0,0.5,0), Vector3(0,1,0))
 	
 #	var colision = get_slide_collision(0)
 #	print (colision)
