@@ -12,15 +12,15 @@ func _process(delta):
 	posPlayer = player.get_global_transform()[3]
 	var direccion = posPlayer - posicion
 		
-	$".".move_and_slide( direccion, Vector3( 0, 0, 0 ), false, 4, 0.785398, true )
+	$".".move_and_slide( direccion, Vector3( 0, 0, 0 ), 0.05, 4, 0.785398 )
 	
-	var colision = get_slide_collision(0)
+#	var colision = get_slide_collision(0)
 #	print (colision)
-	if  str(colision) != "[Object:null]":
+#	if  str(colision) != "[Object:null]":
 #		print("objeto No nulo")
 #		print(get_slide_collision(0).collider.get_parent().is_in_group("Player"))
 #		print(get_slide_collision(0).collider.get_parent().name)
-	
+#	
 #	if body.is_in_group("Player"):
 #		player.vida = player.vida - danno
 #		print("vidaplayer: " +str(player.vida))
