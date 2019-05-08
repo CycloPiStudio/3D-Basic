@@ -19,13 +19,12 @@ func _process(delta):
 #	$".".look_at( objetivoXZ, Vector3(0,1,0))
 
 	$".".look_at_from_position(posicion, objetivoXZ, Vector3(0,1,0))
-	print (objetivoXZ)
+#	print (objetivoXZ)
 		
 	var collision = move_and_collide(direccion)
 #	print (collision)
 
 	if collision:
 		if collision.get_collider().is_in_group("Player"):
-#			print (Global.vida)
+			print (Global.vida)
 			Global.vida -= 10
-
