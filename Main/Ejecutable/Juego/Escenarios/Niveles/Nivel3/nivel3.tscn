@@ -10,86 +10,51 @@
 [ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=9]
 
-[node name="nivel3" type="Spatial" index="0"]
+[node name="nivel3" type="Spatial"]
 
-[node name="PosicionSalida" type="Position3D" parent="." index="0"]
-
+[node name="PosicionSalida" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09692, 0 )
 
-[node name="Potenciadores" type="Spatial" parent="." index="1"]
+[node name="Potenciadores" type="Spatial" parent="."]
 
-[node name="Potenciador2" parent="Potenciadores" index="0" instance=ExtResource( 1 )]
-
+[node name="Potenciador2" parent="Potenciadores" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81629, 0.072998, 1.01837 )
 
-[node name="Potenciador0Salir" parent="Potenciadores" index="1" instance=ExtResource( 2 )]
-
+[node name="Potenciador0Salir" parent="Potenciadores" instance=ExtResource( 2 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.30935, 0.489491, 2.79876 )
 
-[node name="P4_Bazoka" parent="Potenciadores" index="2" instance=ExtResource( 3 )]
-
+[node name="P4_Bazoka" parent="Potenciadores" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100006, 0.771351, 3.54529 )
 
-[node name="P5_Vida" parent="Potenciadores" index="3" instance=ExtResource( 4 )]
-
+[node name="P5_Vida" parent="Potenciadores" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723055, 0, -3.4568 )
 
-[node name="Scene Root" parent="Potenciadores" index="4" instance=ExtResource( 5 )]
+[node name="Scene Root" parent="Potenciadores" instance=ExtResource( 5 )]
 
-[node name="Piezas" type="Spatial" parent="." index="2"]
+[node name="Piezas" type="Spatial" parent="."]
 
-[node name="Pi1_Panel_2D" parent="Piezas" index="0" instance=ExtResource( 6 )]
-
+[node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 6 )]
 transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
 
-[node name="Pi2_Pelotikaka" parent="Piezas" index="1" instance=ExtResource( 7 )]
-
+[node name="Pi2_Pelotikaka" parent="Piezas" instance=ExtResource( 7 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.66551, 2.67395, -2.57294 )
 
-[node name="Iluminacion" type="Spatial" parent="." index="3"]
+[node name="Iluminacion" type="Spatial" parent="."]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion" index="0"]
-
+[node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion"]
 transform = Transform( 0.874292, 0.112432, -0.4722, 0.108045, 0.903322, 0.415132, 0.473223, -0.413966, 0.777619, 0, 1.91752, 3.53064 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.1
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-directional_shadow_mode = 2
-directional_shadow_split_1 = 0.1
-directional_shadow_split_2 = 0.2
-directional_shadow_split_3 = 0.5
-directional_shadow_blend_splits = false
-directional_shadow_normal_bias = 0.8
-directional_shadow_bias_split_scale = 0.25
-directional_shadow_depth_range = 0
-directional_shadow_max_distance = 200.0
 
-[node name="Enemigos" type="Spatial" parent="." index="4"]
+[node name="Enemigos" type="Spatial" parent="."]
 
-[node name="Enemigo2" parent="Enemigos" index="0" instance=ExtResource( 8 )]
-
+[node name="Enemigo2" parent="Enemigos" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03803, 0.514639, 0 )
 
-[node name="HUD" parent="." index="5" instance=ExtResource( 9 )]
+[node name="HUD" parent="." instance=ExtResource( 9 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+[node name="Camera" parent="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa/Viewport" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.64072, 0 )
+size = 18.4
 
+[editable path="HUD"]
 
+[editable path="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa"]
