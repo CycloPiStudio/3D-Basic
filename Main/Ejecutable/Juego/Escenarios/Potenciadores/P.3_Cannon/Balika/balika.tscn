@@ -11,7 +11,7 @@ extents = Vector3( 0.0812426, 0.0699589, 0.0699589 )
 
 extents = Vector3( 0.30244, 0.122777, 0.0997164 )
 
-[node name="RigidBody" type="RigidBody" index="0"]
+[node name="Bala" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
