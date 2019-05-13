@@ -4,7 +4,7 @@ extends KinematicBody
 onready var player = get_node("/root/partida/PosicionSalida/personaje")
 var posicion
 var posPlayer 
-var vida = 100
+var vida = 500
 
 	
 func _process(delta):
@@ -28,3 +28,10 @@ func _process(delta):
 		if collision.get_collider().is_in_group("Player"):
 #			print (Global.vida)
 			Global.vida -= 10
+		
+		if collision.get_collider().name == "Bala":
+			print (vida)
+			vida -= 10
+	if vida <= 0:
+		queue_free()
+		
