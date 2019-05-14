@@ -5,14 +5,10 @@
 [sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
 emission_enabled = true
-emission = Color( 0.831373, 0.14902, 0.14902, 1 )
+emission = Color( 1, 1, 1, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
-anisotropy_enabled = true
-anisotropy = 0.25
-subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.65
 
 [node name="Luminoso" type="Spatial"]
 
