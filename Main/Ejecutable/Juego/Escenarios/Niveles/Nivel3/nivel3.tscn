@@ -1,9 +1,258 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel3/Modelo/nivel_3.dae" type="PackedScene" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel3/Modelo/nivel3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.2_Puntos/P.2_Puntos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/P.0_Ganar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.5_Vida/P.5_Vida.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi1_Panel_2D/Pi1_Panel_2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi2_Pelota/Pi2_Pelotikaka.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=9]
 
 [node name="nivel3" type="Spatial" index="0"]
 
-[node name="Scene Root" parent="." index="0" instance=ExtResource( 1 )]
+[node name="Terreno" parent="." index="0" instance=ExtResource( 1 )]
+
+[node name="PosicionSalida" type="Position3D" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09692, 0 )
+
+[node name="Potenciadores" type="Spatial" parent="." index="2"]
+
+[node name="Potenciador2" parent="Potenciadores" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81629, 0.072998, 1.01837 )
+
+[node name="Potenciador0Salir" parent="Potenciadores" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.30935, 0.489491, 2.79876 )
+
+[node name="P4_Bazoka" parent="Potenciadores" index="2" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100006, 0.771351, 3.54529 )
+
+[node name="P5_Vida" parent="Potenciadores" index="3" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723055, 0, -3.4568 )
+
+[node name="Piezas" type="Spatial" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Pi1_Panel_2D" parent="Piezas" index="0" instance=ExtResource( 6 )]
+
+transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
+
+[node name="Pi2_Pelotikaka" parent="Piezas" index="1" instance=ExtResource( 7 )]
+
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.66551, 2.67395, -2.57294 )
+
+[node name="Iluminacion" type="Spatial" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion" index="0"]
+
+transform = Transform( 0.874292, 0.112432, -0.4722, 0.108045, 0.903322, 0.415132, 0.473223, -0.413966, 0.777619, 0, 1.91752, 3.53064 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+
+[node name="Enemigos" type="Spatial" parent="." index="5"]
+
+editor/display_folded = true
+
+[node name="Enemigo2" parent="Enemigos" index="0" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03803, 0.514639, 0 )
+
+[node name="HUD" parent="." index="6" instance=ExtResource( 9 )]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HBoxContainer" parent="HUD" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="VBoxContainer2" parent="HUD/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 805.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_vertical = 1
+alignment = 0
+
+[node name="HUD Vida" parent="HUD/HBoxContainer/VBoxContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 805.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VBoxContainer" parent="HUD/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 809.0
+margin_right = 1017.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="HUD2tiempo" parent="HUD/HBoxContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HUD3puntosNodo" parent="HUD/HBoxContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Pause" parent="HUD/HBoxContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HUD 9 Mapa" parent="HUD/HBoxContainer/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Viewport" parent="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa" index="1"]
+
+arvr = false
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+
+[node name="Camera" parent="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa/Viewport" index="0"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 5.64072, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+fov = 70.0
+size = 18.4
+near = 0.05
+far = 100.0
 
 
+[editable path="HUD"]
+[editable path="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa"]
