@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Ejecutable/Menus/Select Niveles/SelectNiveles.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Menus/Creditos/titulo.png" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Menus/Select Niveles/Imagenes/titulo.png" type="Texture" id=2]
 [ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -73,12 +73,10 @@ text = "Nivel 4"
 
 [node name="Boton Menu principal" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-
 [connection signal="pressed" from="VBoxContainer/Nivel1" to="." method="_on_Nivel1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Nivel2" to="." method="_on_Nivel2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Nivel3" to="." method="_on_Nivel3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Nivel4" to="." method="_on_Nivel4_pressed"]
 [connection signal="script_changed" from="Boton Menu principal" to="." method="_on_Boton_Menu_principal_script_changed"]
-[connection signal="pressed" from="Boton Menu principal/Button" to="." method="_on_Button_pressed"]
 
 [editable path="Boton Menu principal"]
