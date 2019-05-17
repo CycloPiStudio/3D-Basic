@@ -30,7 +30,7 @@ func _process(delta):
 			Global.vida -= 10
 		
 		if collision.get_collider().name == "Bala":
-			print (vida)
+#			print (vida)
 			vida -= 10
 	if vida <= 0:
 		queue_free()
