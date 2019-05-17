@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD 9 Mapa/HUD 9 Mapa.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD 9 Mapa/Imagenes/Player.png" type="Texture" id=2]
 
 [node name="HUD 9 Mapa" type="MarginContainer"]
 script = ExtResource( 1 )
@@ -14,3 +15,6 @@ size = Vector2( 100, 100 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 projection = 1
 current = true
+
+[node name="Player" type="Sprite" parent="."]
+texture = ExtResource( 2 )
