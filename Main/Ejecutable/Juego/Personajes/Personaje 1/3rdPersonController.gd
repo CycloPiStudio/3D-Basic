@@ -4,7 +4,7 @@ export(NodePath) var PlayerPath  = "" #You must specify this in the inspector!
 export(float) var MovementSpeed = 20
 export(float) var Acceleration = 3
 export(float) var MaxJump = 10
-export(float) var MouseSensitivity = 2
+export(float) var MouseSensitivity = 5
 export(float) var RotationLimit = 45
 export(float) var MaxZoom = 0.5
 export(float) var MinZoom = 1.5
@@ -41,7 +41,7 @@ func _ready():
 func _unhandled_input(event):
 	
 	if event is InputEventMouseMotion :
-		Rotation = event.relative
+		Rotation = event.relative * MouseSensitivity
 	
 	if event is InputEventMouseButton:
 		match event.button_index:
