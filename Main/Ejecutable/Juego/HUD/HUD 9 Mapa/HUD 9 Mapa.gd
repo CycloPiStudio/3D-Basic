@@ -15,4 +15,4 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	print ($"ViewPortSprite".texture.get_size().x)
+	$"ViewPortSprite".texture.get_size().x
