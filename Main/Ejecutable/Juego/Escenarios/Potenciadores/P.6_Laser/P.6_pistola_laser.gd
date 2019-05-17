@@ -20,7 +20,6 @@ var bala
 var cogida = false
 var posicion
 
-
 #func _ready():
 #	print(get_node("Audio_carga_arma").play())
 #	pass
