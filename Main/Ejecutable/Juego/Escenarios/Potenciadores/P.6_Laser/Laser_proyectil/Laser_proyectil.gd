@@ -10,7 +10,7 @@ var posicion
 
 func _ready():
 	print($".".get_name())
-	$".".rotate_y(1.56)
+#	$".".rotate_y(1.56)
 	$".".set_scale(Vector3(1,1,1))
 	tiempo_escala.start()
 	
@@ -40,7 +40,7 @@ func _on_Area_body_entered(body):
 	pass # replace with function body
 
 func _on_Tiemposcala_timeout():
-	$".".set_scale(Vector3((1+(contador)),1,1))
+	$".".set_scale(Vector3(1,1,-(1+(contador))))
 	posicion = get_transform()
 	print(get_transform())
 	contador += 1
