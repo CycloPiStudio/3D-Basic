@@ -22,6 +22,10 @@ var cogida = false
 #	print(get_node("Audio_carga_arma").play())
 #	pass
 
+func _process(delta):
+	
+	$".".rotate_x(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+
 func _unhandled_input(event):
 	if cogida == true:
 		if event is InputEventMouseButton:
