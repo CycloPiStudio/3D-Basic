@@ -26,6 +26,7 @@ var IsAirborne = false
 # var pal cambio gameover
 var preGameOver = preload("res://Ejecutable/Menus/Game Over/GameOver.tscn").instance()
 var Personaje1Muerto
+var ang_vertical
 
 onready var rutaPlayer = (Global.personaje.get_path())
 onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
@@ -90,6 +91,7 @@ func _physics_process(delta):
 	#Rotation
 	Player.rotate_y(deg2rad(-Rotation.x)*delta*MouseSensitivity)
 	InnerGimbal.rotate_x(deg2rad(-Rotation.y)*delta*MouseSensitivity)
+	ang_vertical = deg2rad(-Rotation.y)*delta*MouseSensitivity
 	InnerGimbal.rotation_degrees.x = clamp(InnerGimbal.rotation_degrees.x, -RotationLimit, RotationLimit)
 	Rotation = Vector2()
 	
