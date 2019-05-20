@@ -9,3 +9,6 @@ Se esta siguiendo  la siguiente organización:
     -Modelo. Dentro de esta pueden estar los archivos:
         -modelo.blend, modelo.dae, modelo.tscn y la carpeta imagenes, para las texturas.
     -Sonido. Con los sonidos que unicamente use ese modelo.
+
+<img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" />
+
