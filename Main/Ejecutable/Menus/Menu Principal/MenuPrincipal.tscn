@@ -34,6 +34,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Jugar" type="Button" parent="VBoxContainer"]
+editor/display_folded = true
 margin_right = 136.0
 margin_bottom = 27.0
 custom_fonts/font = SubResource( 2 )
@@ -43,11 +44,24 @@ text = "Jugar"
 position = Vector2( 11, 17 )
 stream = ExtResource( 2 )
 
-[node name="Creditos" type="Button" parent="VBoxContainer"]
+[node name="Cargar" type="Button" parent="VBoxContainer"]
+editor/display_folded = true
 margin_top = 31.0
 margin_right = 136.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 4 )
+text = "Cargar"
+
+[node name="boton" type="AudioStreamPlayer2D" parent="VBoxContainer/Cargar"]
+position = Vector2( 8, 17 )
+stream = ExtResource( 2 )
+
+[node name="Creditos" type="Button" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 62.0
+margin_right = 136.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 6 )
 text = "Creditos"
 
 [node name="boton" type="AudioStreamPlayer2D" parent="VBoxContainer/Creditos"]
@@ -55,10 +69,11 @@ position = Vector2( 9, 19 )
 stream = ExtResource( 2 )
 
 [node name="Salir" type="Button" parent="VBoxContainer"]
-margin_top = 62.0
+editor/display_folded = true
+margin_top = 93.0
 margin_right = 136.0
-margin_bottom = 89.0
-custom_fonts/font = SubResource( 6 )
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 4 )
 text = "Salir"
 
 [node name="boton" type="AudioStreamPlayer2D" parent="VBoxContainer/Salir"]
@@ -74,5 +89,6 @@ position = Vector2( 739.442, 294.421 )
 scale = Vector2( 0.83037, 0.821087 )
 texture = ExtResource( 4 )
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Cargar" to="." method="_on_Cargar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
