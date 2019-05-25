@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Ejecutable/Menus/Cargar/Cargar.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Global/Fuentes/04B_30__.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="Cargar" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Boton Menu principal" parent="." instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 26.3158
+margin_top = 61.0526
+margin_right = 137.316
+margin_bottom = 88.0526
+custom_fonts/font = SubResource( 1 )
+text = "Cargar"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
