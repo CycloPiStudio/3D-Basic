@@ -4,7 +4,7 @@
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.7_Guardar/Modelo/Baul.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1, 0.727594, 1 )
+extents = Vector3( 0.248218, 0.182978, 0.245911 )
 
 [node name="Guardar" type="Spatial"]
 script = ExtResource( 1 )
@@ -14,5 +14,5 @@ script = ExtResource( 1 )
 [node name="Area" type="Area" parent="Baul "]
 
 [node name="CollisionShape" type="CollisionShape" parent="Baul /Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.765571, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.198214, 0 )
 shape = SubResource( 1 )
