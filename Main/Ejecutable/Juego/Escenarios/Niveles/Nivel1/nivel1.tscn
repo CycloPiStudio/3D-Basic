@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.2_Puntos/P.2_Puntos.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/P.0_Ganar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.5_Vida/P.5_Vida.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/sueloBasico2.dae" type="PackedScene" id=5]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi1_Panel_2D/Pi1_Panel_2D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi2_Pelota/Pi2_Pelotikaka.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi3_Ladrillo/Pi3_Ladrillo.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 1/Enemigo1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.7_Guardar/Guardar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/sueloBasico2.dae" type="PackedScene" id=6]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi1_Panel_2D/Pi1_Panel_2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi2_Pelota/Pi2_Pelotikaka.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi3_Ladrillo/Pi3_Ladrillo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 2/Enemigo2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Ejecutable/Juego/Enemigo/Enemigo 1/Enemigo1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=12]
 
 [node name="nivel1" type="Spatial"]
 
@@ -31,17 +32,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100006, 0.771351, 4.34143 )
 [node name="P5_Vida" parent="Potenciadores" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723055, 0, -3.4568 )
 
-[node name="Terreno" parent="." instance=ExtResource( 5 )]
+[node name="Guardar" parent="Potenciadores" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00580108, -1.96261 )
+
+[node name="Terreno" parent="." instance=ExtResource( 6 )]
 
 [node name="Piezas" type="Spatial" parent="."]
 
-[node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 6 )]
+[node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 7 )]
 transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
 
-[node name="Pi2_Pelotikaka" parent="Piezas" instance=ExtResource( 7 )]
+[node name="Pi2_Pelotikaka" parent="Piezas" instance=ExtResource( 8 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.66551, 2.67395, -2.57294 )
 
-[node name="Pi3_Ladrillo" parent="Piezas" instance=ExtResource( 8 )]
+[node name="Pi3_Ladrillo" parent="Piezas" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299316, 0.296387, -4.26099 )
 
 [node name="Iluminacion" type="Spatial" parent="."]
@@ -51,13 +55,13 @@ transform = Transform( 0.874292, 0.112432, -0.4722, 0.108045, 0.903322, 0.415132
 
 [node name="Enemigos" type="Spatial" parent="."]
 
-[node name="Enemigo2" parent="Enemigos" instance=ExtResource( 9 )]
+[node name="Enemigo2" parent="Enemigos" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03803, 0.514639, 0 )
 
-[node name="Enemigo1" parent="Enemigos" instance=ExtResource( 10 )]
+[node name="Enemigo1" parent="Enemigos" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47151, 1.12835, 0 )
 
-[node name="HUD" parent="." instance=ExtResource( 11 )]
+[node name="HUD" parent="." instance=ExtResource( 12 )]
 
 [node name="Camera" parent="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa/Viewport" index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 37.5949, 0 )
@@ -66,3 +70,4 @@ size = 13.1
 [editable path="HUD"]
 
 [editable path="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa"]
+
