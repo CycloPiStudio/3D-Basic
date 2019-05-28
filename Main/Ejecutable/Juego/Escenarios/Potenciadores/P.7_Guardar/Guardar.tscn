@@ -42,6 +42,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.198214, 0 )
 shape = SubResource( 1 )
 disabled = false
 
+[node name="Popup" type="Popup" parent="." index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+
+[node name="LineEdit" type="LineEdit" parent="Popup" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 58.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
 [connection signal="body_entered" from="Baul /Area" to="." method="_on_Area_body_entered"]
+
+[connection signal="text_entered" from="Popup/LineEdit" to="." method="_on_LineEdit_text_entered"]
 
 
