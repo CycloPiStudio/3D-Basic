@@ -12,4 +12,9 @@ var pantalla = 0
 
 func guardar():
 	print("guarda")
+	pass
+	
+func cargar():
+	print ("cargar partida")
+	pass
 		
