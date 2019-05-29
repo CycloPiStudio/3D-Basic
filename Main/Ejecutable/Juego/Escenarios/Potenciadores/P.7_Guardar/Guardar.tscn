@@ -4,85 +4,50 @@
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.7_Guardar/Modelo/Baul.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-
 extents = Vector3( 0.248218, 0.182978, 0.245911 )
 
-[node name="Guardar" type="Spatial" index="0"]
-
+[node name="Guardar" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Baul " parent="." index="0" instance=ExtResource( 2 )]
+[node name="Baul " parent="." instance=ExtResource( 2 )]
 
-[node name="Area" type="Area" parent="Baul " index="2"]
-
+[node name="Area" type="Area" parent="Baul "]
 input_ray_pickable = false
-input_capture_on_drag = false
-space_override = 0
-gravity_point = false
-gravity_distance_scale = 0.0
-gravity_vec = Vector3( 0, -1, 0 )
-gravity = 9.8
-linear_damp = 0.1
-angular_damp = 1.0
-priority = 0.0
-monitoring = true
-monitorable = true
-collision_layer = 1
-collision_mask = 1
-audio_bus_override = false
-audio_bus_name = "Master"
-reverb_bus_enable = false
-reverb_bus_name = "Master"
-reverb_bus_amount = 0.0
-reverb_bus_uniformity = 0.0
 
-[node name="CollisionShape" type="CollisionShape" parent="Baul /Area" index="0"]
-
+[node name="CollisionShape" type="CollisionShape" parent="Baul /Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.198214, 0 )
 shape = SubResource( 1 )
-disabled = false
 
-[node name="Popup" type="Popup" parent="." index="1"]
+[node name="Timer" type="Timer" parent="Baul /Area"]
+wait_time = 5.0
+one_shot = true
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
+[node name="Popup" type="Popup" parent="."]
+pause_mode = 2
+visible = true
+margin_right = 1025.0
+margin_bottom = 598.0
 
-[node name="LineEdit" type="LineEdit" parent="Popup" index="0"]
+[node name="LineEdit" type="LineEdit" parent="Popup"]
+margin_top = 171.0
+margin_right = 1023.0
+margin_bottom = 384.0
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 58.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
+[node name="1" type="Button" parent="Popup"]
+margin_left = 4.29593
+margin_top = 52.983
+margin_right = 38.2959
+margin_bottom = 72.983
+text = "1"
 
+[node name="Restaurar partida" type="Button" parent="Popup"]
+margin_left = 90.2143
+margin_top = 47.2551
+margin_right = 210.214
+margin_bottom = 67.2551
+text = "Restaurar partida"
 [connection signal="body_entered" from="Baul /Area" to="." method="_on_Area_body_entered"]
-
-[connection signal="text_entered" from="Popup/LineEdit" to="." method="_on_LineEdit_text_entered"]
-
-
+[connection signal="timeout" from="Baul /Area/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="text_changed" from="Popup/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="Popup/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Popup/Restaurar partida" to="." method="_on_Restaurar_partida_pressed"]
