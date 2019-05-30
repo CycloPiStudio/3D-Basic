@@ -38,7 +38,7 @@ func _on_Restaurar_partida_pressed():
 	$Popup.hide()
 	tiempo = true
 	Global.guardar(argumento)
-	$"Baul /Area/Timer".start(5)
+	$"Baul /Area/Timer".start()
 
 
 
