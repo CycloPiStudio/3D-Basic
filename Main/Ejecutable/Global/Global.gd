@@ -28,7 +28,7 @@ func _ready():
 
 func guardar(var nombre_guardado):
 	var save = File.new()
-	save.open("user://game_save" + String(nombre_guardado) + ".sav", File.WRITE)
+	save.open("res://game_save" + str(nombre_guardado) + ".sav", File.WRITE)
 	
 	var datos_guardar = datos_partida
 	datos_guardar.puntos = puntos
@@ -44,10 +44,10 @@ func guardar(var nombre_guardado):
 	
 func cargar(var nombre_guardado):
 	var cargar = File.new()
-	if !cargar.file_exists("user://game_saves" + String(nombre_guardado) + ".sav"):
+	if !cargar.file_exists("res://game_saves" + str(nombre_guardado) + ".sav"):
 		print ("No hay partidas guardadas")
 		return	
-	cargar.open("user://game_saves" + String(nombre_guardado) + ".sav", File.READ)
+	cargar.open("res://game_saves" + str(nombre_guardado) + ".sav", File.READ)
 	
 	var datos_cargar = datos_partida
 	
