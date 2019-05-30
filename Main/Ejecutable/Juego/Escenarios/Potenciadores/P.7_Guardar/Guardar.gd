@@ -37,6 +37,7 @@ func _on_Restaurar_partida_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
+	Global.guardar(argumento)
 	$"Baul /Area/Timer".start(5)
 
 
