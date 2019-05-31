@@ -1,5 +1,6 @@
 extends Node
 
+
 var nombre_guardado = 0
 var personaje = 0
 var RutaPersonajeSelect = 0
@@ -23,13 +24,15 @@ func _ready():
 		rutaGuardar.open("user://")
 		rutaGuardar.make_dir("user://game_saves")
 	
-		
+func _process(delta):
+	print (nombre_guardado)
 
 
 
-func guardar(var nombre_guardado):
+func guardar(nombre_guardado):
 	var save = File.new()
-	save.open("user://game_save/" + str(nombre_guardado) + ".sav", File.WRITE)
+	var sav = File.new()
+	save.open("user://game_saves/" + str(nombre_guardado) + ".sav", File.WRITE)
 	
 	var datos_guardar = datos_partida
 	datos_guardar.puntos = puntos
@@ -43,7 +46,7 @@ func guardar(var nombre_guardado):
 	print("guarda")
 	pass
 	
-func cargar(var nombre_guardado):
+func cargar(nombre_guardado):
 	var cargar = File.new()
 	if !cargar.file_exists("user://game_saves/" + str(nombre_guardado) + ".sav"):
 		print ("No hay partidas guardadas")
