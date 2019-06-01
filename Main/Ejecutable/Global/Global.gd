@@ -5,6 +5,7 @@ var nombre_guardado = 0
 var personaje = 0
 var RutaPersonajeSelect = 0
 var nivel = 0
+var RutaNivelSelect = 0
 var vida = 0
 var puntos = 0
 var arma = 0
@@ -14,21 +15,21 @@ var datos_partida = {
 puntos = 0,
 arma = 0,
 pantalla = 0,
-nivel = 0,
-vida = 0
+RutaNivelSelect = 0,
+vida = 0,
+RutaPersonajeSelect = 0
 }
 
+func _process(delta):
+#	print (RutaNivelSelect)
+	pass
+	
 func _ready():
 	var rutaGuardar = Directory.new()
 	if !rutaGuardar.dir_exists("user://game_saves"):
 		rutaGuardar.open("user://")
 		rutaGuardar.make_dir("user://game_saves")
 	
-func _process(delta):
-	print (nombre_guardado)
-
-
-
 func guardar(nombre_guardado):
 	var save = File.new()
 	var sav = File.new()
@@ -38,8 +39,9 @@ func guardar(nombre_guardado):
 	datos_guardar.puntos = puntos
 	datos_guardar.arma = arma
 	datos_guardar.pantalla = pantalla
-	datos_guardar.nivel = nivel
+	datos_guardar.RutaNivelSelect = RutaNivelSelect
 	datos_guardar.vida = vida
+	datos_guardar.RutaPersonajeSelect = RutaPersonajeSelect
 	
 	save.store_line(to_json(datos_guardar))
 	save.close()
@@ -64,9 +66,33 @@ func cargar(nombre_guardado):
 	puntos = datos_cargar.puntos 
 	arma = datos_cargar.arma
 	pantalla = datos_cargar.pantalla
-	nivel = datos_cargar.nivel
+	RutaNivelSelect = datos_cargar.RutaNivelSelect
 	vida = datos_cargar.vida
+	RutaPersonajeSelect = datos_cargar.RutaPersonajeSelect
+	cargarNivel(RutaNivelSelect)
+	cargarPlayer(RutaPersonajeSelect)
 	
 	print ("cargar partida")
+	
+func cargarPlayer(RutaPersonajeSelect):
+	personaje = load(RutaPersonajeSelect).instance()
+	personaje.set_name("personaje")
+	print ("carga player")
+	
+var partida	
+func cargarNivel(RutaNivelSelect):
+	partida = load(str(RutaNivelSelect)).instance()
+	RutaNivelSelect = partida.get_name()
+	personaje = load(str(RutaPersonajeSelect)).instance()
+	personaje.set_name("personaje")
+	partida.set_name("partida")
+	partida.get_node("PosicionSalida").add_child(personaje)
+#	print (get_parent().name)
+	get_parent().add_child(partida)
+#	print (Global.personaje.get_path())
+#	get_parent().get_node("Musica Menus").stop()
+#	$".".queue_free()
+	
+
 	pass
 		
