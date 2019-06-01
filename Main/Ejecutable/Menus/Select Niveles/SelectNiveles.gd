@@ -26,6 +26,7 @@ func _process(delta):
 	pass
 
 func _load_scene(nivel):
+	Global.RutaNivelSelect = nivel
 	partida = load(nivel).instance()
 	Global.nivel = partida.get_name()
 	Global.personaje = load(Global.RutaPersonajeSelect).instance()
