@@ -17,14 +17,14 @@ func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
 #		print ("colision con player")
 #		print(Global.nivel)
-		if Global.nivel == "nivel1":
-			Global.pantalla = 1
-		if Global.nivel == "nivel2":
-			Global.pantalla = 2
-		if Global.nivel == "nivel3":
-			Global.pantalla = 3
-		if Global.nivel == "nivel4":
-			Global.pantalla = 4
+		if str(Global.nivel) == "nivel1":
+			Global.nivel = 1
+		if str(Global.nivel) == "nivel2":
+			Global.nivel = 2
+		if str(Global.nivel) == "nivel3":
+			Global.nivel = 3
+		if str(Global.nivel) == "nivel4":
+			Global.nivel = 4
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_node("/root/Global Menus").add_child(preGameOver)
