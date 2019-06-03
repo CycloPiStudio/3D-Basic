@@ -9,12 +9,12 @@ var RutaNivelSelect = 0
 var vida = 0
 var puntos = 0
 var arma = 0
-var pantalla = 0
+
 
 var datos_partida = {
 puntos = 0,
 arma = 0,
-pantalla = 0,
+nivel = 0,
 RutaNivelSelect = 0,
 vida = 0,
 RutaPersonajeSelect = 0
@@ -38,7 +38,7 @@ func guardar(nombre_guardado):
 	var datos_guardar = datos_partida
 	datos_guardar.puntos = puntos
 	datos_guardar.arma = arma
-	datos_guardar.pantalla = pantalla
+	datos_guardar.nivel = nivel
 	datos_guardar.RutaNivelSelect = RutaNivelSelect
 	datos_guardar.vida = vida
 	datos_guardar.RutaPersonajeSelect = RutaPersonajeSelect
@@ -66,7 +66,7 @@ func cargar(nombre_guardado):
 			
 	puntos = datos_cargar.puntos 
 	arma = datos_cargar.arma
-	pantalla = datos_cargar.pantalla
+	nivel = datos_cargar.nivel
 	RutaNivelSelect = datos_cargar.RutaNivelSelect
 	vida = datos_cargar.vida
 	RutaPersonajeSelect = datos_cargar.RutaPersonajeSelect
