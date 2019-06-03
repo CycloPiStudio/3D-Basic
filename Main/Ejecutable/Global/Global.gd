@@ -49,14 +49,15 @@ func guardar(nombre_guardado):
 	pass
 	
 func cargar(nombre_guardado):
+#	Crea el directorio sobre el que guardar
 	var cargar = File.new()
 	if !cargar.file_exists("user://game_saves/" + str(nombre_guardado) + ".sav"):
 		print ("No hay partidas guardadas")
 		return	
 	cargar.open("user://game_saves/" + str(nombre_guardado) + ".sav", File.READ)
 	
+#	Comprueba las variables a cargar y las carga
 	var datos_cargar = datos_partida
-	
 	if !cargar.eof_reached():
 		var dato_previsto = parse_json(cargar.get_line())
 		if dato_previsto != null:
@@ -69,8 +70,11 @@ func cargar(nombre_guardado):
 	RutaNivelSelect = datos_cargar.RutaNivelSelect
 	vida = datos_cargar.vida
 	RutaPersonajeSelect = datos_cargar.RutaPersonajeSelect
+	
+#	monta la partida cargada
 	cargarNivel(RutaNivelSelect)
 	cargarPlayer(RutaPersonajeSelect)
+	$"/root/Global Menus/Cargar".queue_free()
 	
 	print ("cargar partida")
 	
@@ -87,12 +91,8 @@ func cargarNivel(RutaNivelSelect):
 	personaje.set_name("personaje")
 	partida.set_name("partida")
 	partida.get_node("PosicionSalida").add_child(personaje)
-#	print (get_parent().name)
 	get_parent().add_child(partida)
 #	print (Global.personaje.get_path())
-#	get_parent().get_node("Musica Menus").stop()
-#	$".".queue_free()
-	
-
+	get_parent().get_node("Global Menus/Musica Menus/").stop()
 	pass
 		
