@@ -14,6 +14,7 @@ func _on_LineEdit_text_changed(new_text):
 
 func _on_Cargar_pressed():
 	Global.cargar(Global.nombre_guardado)
+	get_parent().get_node("boton").play()
 	pass # replace with function body
 	
 var partidasGuardadas = Directory.new()
