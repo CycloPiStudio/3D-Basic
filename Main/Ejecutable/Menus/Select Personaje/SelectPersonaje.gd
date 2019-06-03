@@ -20,17 +20,20 @@ func _process(delta):
 	modelo.rotation_degrees.y += delta * SPEED
 	pass
 	
-func _load_scene(personaje):
-	Global.personaje = load(personaje).instance()
-	Global.personaje.set_name("personaje")
-	Global.RutaPersonajeSelect = personaje
+func PasarASelectecNivel():
+#	Global.personaje = load(personaje).instance()
+#	Global.personaje.set_name("personaje")
+#	Global.RutaPersonajeSelect = personaje
 	get_node("/root/Global Menus").add_child(SelecNiveles)
+	Global.personaje.get_path()
 	$".".queue_free()
 	
 
 func _on_Player_1_pressed():
-	_load_scene("res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.tscn")
+	Global.cargarPlayer("res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.tscn")
+	Global.RutaPersonajeSelect = str("res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.tscn")
 	get_parent().get_node("boton").play()
+	PasarASelectecNivel()
 	pass 
 func _on_Player_1_mouse_entered():
 	$"HUD 3D/Viewport/modelo/Scene RootP1".show()
@@ -41,8 +44,10 @@ func _on_Player_1_mouse_exited():
 
 
 func _on_Player_2_pressed():
-	_load_scene("res://Ejecutable/Juego/Personajes/Personaje 2/Personaje2.tscn")
+	Global.cargarPlayer("res://Ejecutable/Juego/Personajes/Personaje 2/Personaje2.tscn")
+	Global.RutaPersonajeSelect = str("res://Ejecutable/Juego/Personajes/Personaje 2/Personaje2.tscn")
 	get_parent().get_node("boton").play()
+	PasarASelectecNivel()
 	pass 
 func _on_Player_2_mouse_entered():
 	$"HUD 3D/Viewport/modelo/Scene RootP2".show()
