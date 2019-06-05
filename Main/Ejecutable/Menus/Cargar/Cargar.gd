@@ -1,8 +1,11 @@
 extends Node
 
-
+onready var botonGuardados = preload("res://Ejecutable/Juego/HUD/HUD Datos Comunes/Boton.tscn")
+signal boton
 
 func _ready():
+	$Guardados.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/2))
+	
 	mostrarGuardados()
 	pass 
 
@@ -24,15 +27,28 @@ func mostrarGuardados():
 	$Label.set_text(str(listarGuardados()))
 	
 func listarGuardados():	
+	var Boton = botonGuardados.instance()
 	partidasGuardadas.list_dir_begin()
-	var file_name = partidasGuardadas.get_next()
+	file_name = partidasGuardadas.get_next()
 	while (file_name != ""):
-		if partidasGuardadas.current_is_dir():
+		if !partidasGuardadas.current_is_dir():
+			$Guardados.add_child(Boton)
+			$Guardados/Boton/Button_datos_comunes.set_text(file_name)
+
+			$Guardados/Boton/Button_datos_comunes.connect(Boton, self, _cargarPartida())
 			print("Found directory: " + file_name)
+			pass
 		else:
+			$Guardados.add_child(Boton)
+			$Guardados/Boton/Button_datos_comunes.set_text(file_name)
 			print("Found file: " + file_name)
+			pass
 		file_name = partidasGuardadas.get_next()
 		
+var file_name
+func _cargarPartida(file_name):
+	Global.cargar(file_name)
+	
 #func mostrarGuardados():
 #	var partidasGuardadas = Directory.new()
 #	partidasGuardadas.open("user://game_saves")
