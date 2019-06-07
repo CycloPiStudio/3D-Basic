@@ -7,7 +7,7 @@
 
 extents = Vector3( 0.248218, 0.182978, 0.245911 )
 
-[node name="Guardar" type="Spatial" index="0"]
+[node name="Guardar" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -92,16 +92,30 @@ text = "Restaurar partida"
 flat = false
 align = 1
 
-[node name="Guardado 1" type="CheckBox" parent="Popup" index="1"]
+[node name="Guardados" type="VBoxContainer" parent="Popup" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 84.0
-margin_top = 167.0
-margin_right = 108.0
-margin_bottom = 191.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Guardado 1" type="CheckBox" parent="Popup/Guardados" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -116,7 +130,7 @@ group = null
 flat = false
 align = 0
 
-[node name="Nombre1" type="LineEdit" parent="Popup/Guardado 1" index="0"]
+[node name="Nombre1" type="LineEdit" parent="Popup/Guardados/Guardado 1" index="0"]
 
 visible = false
 anchor_left = 0.0
@@ -141,7 +155,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="NombreGuardado1" type="Label" parent="Popup/Guardado 1" index="1"]
+[node name="NombreGuardado1" type="Label" parent="Popup/Guardados/Guardado 1" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -161,8 +175,291 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Guardar1" type="Button" parent="Popup/Guardado 1" index="2"]
+[node name="Guardar1" type="Button" parent="Popup/Guardados/Guardado 1" index="2"]
 
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 229.0
+margin_top = 3.0
+margin_right = 262.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Guardar"
+flat = false
+align = 1
+
+[node name="Guardado 2" type="CheckBox" parent="Popup/Guardados" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 28.0
+margin_right = 40.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+
+[node name="Nombre2" type="LineEdit" parent="Popup/Guardados/Guardado 2" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 38.0
+margin_top = 1.0
+margin_right = 214.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="NombreGuardado2" type="Label" parent="Popup/Guardados/Guardado 2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 6.0
+margin_right = 84.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Guardar2" type="Button" parent="Popup/Guardados/Guardado 2" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 229.0
+margin_top = 3.0
+margin_right = 262.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Guardar"
+flat = false
+align = 1
+
+[node name="Guardado 3" type="CheckBox" parent="Popup/Guardados" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 56.0
+margin_right = 40.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+
+[node name="Nombre3" type="LineEdit" parent="Popup/Guardados/Guardado 3" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 38.0
+margin_top = 1.0
+margin_right = 214.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="NombreGuardado3" type="Label" parent="Popup/Guardados/Guardado 3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 6.0
+margin_right = 84.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Guardar3" type="Button" parent="Popup/Guardados/Guardado 3" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 229.0
+margin_top = 3.0
+margin_right = 262.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Guardar"
+flat = false
+align = 1
+
+[node name="Guardado 4" type="CheckBox" parent="Popup/Guardados" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 84.0
+margin_right = 40.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+
+[node name="Nombre4" type="LineEdit" parent="Popup/Guardados/Guardado 4" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 38.0
+margin_top = 1.0
+margin_right = 214.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="NombreGuardado4" type="Label" parent="Popup/Guardados/Guardado 4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 44.0
+margin_top = 6.0
+margin_right = 84.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Guardar4" type="Button" parent="Popup/Guardados/Guardado 4" index="2"]
+
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -192,10 +489,28 @@ align = 1
 
 [connection signal="pressed" from="Popup/Restaurar partida" to="." method="_on_Restaurar_partida_pressed"]
 
-[connection signal="pressed" from="Popup/Guardado 1" to="." method="_on_Guardado_1_pressed"]
+[connection signal="pressed" from="Popup/Guardados/Guardado 1" to="." method="_on_Guardado_1_pressed"]
 
-[connection signal="text_changed" from="Popup/Guardado 1/Nombre1" to="." method="_on_Nombre1_text_changed"]
+[connection signal="text_changed" from="Popup/Guardados/Guardado 1/Nombre1" to="." method="_on_Nombre1_text_changed"]
 
-[connection signal="pressed" from="Popup/Guardado 1/Guardar1" to="." method="_on_Guardar1_pressed"]
+[connection signal="pressed" from="Popup/Guardados/Guardado 1/Guardar1" to="." method="_on_Guardar1_pressed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 2" to="." method="_on_Guardado_2_pressed"]
+
+[connection signal="text_changed" from="Popup/Guardados/Guardado 2/Nombre2" to="." method="_on_Nombre2_text_changed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 2/Guardar2" to="." method="_on_Guardar2_pressed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 3" to="." method="_on_Guardado_3_pressed"]
+
+[connection signal="text_changed" from="Popup/Guardados/Guardado 3/Nombre3" to="." method="_on_Nombre3_text_changed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 3/Guardar3" to="." method="_on_Guardar3_pressed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 4" to="." method="_on_Guardado_4_pressed"]
+
+[connection signal="text_changed" from="Popup/Guardados/Guardado 4/Nombre4" to="." method="_on_Nombre4_text_changed"]
+
+[connection signal="pressed" from="Popup/Guardados/Guardado 4/Guardar4" to="." method="_on_Guardar4_pressed"]
 
 
