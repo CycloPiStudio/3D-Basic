@@ -1,7 +1,13 @@
 extends Node
 
+#Partidas guardadas _______________________________
+var nombre_guardado1 = "Vacío"
+var nombre_guardado2 = "Vacío"
+var nombre_guardado3 = "Vacío"
+var nombre_guardado4 = "Vacío"
+#__________________________________________________
 
-var nombre_guardado = 0
+
 var personaje = 0
 var RutaPersonajeSelect = 0
 var nivel = 0
