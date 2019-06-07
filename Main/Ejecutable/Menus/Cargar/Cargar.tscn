@@ -125,10 +125,85 @@ group = null
 flat = false
 align = 1
 
+[node name="Cargar2" type="Button" parent="Guardados" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+
+[node name="Cargar3" type="Button" parent="Guardados" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 40.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+
+[node name="Cargar4" type="Button" parent="Guardados" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 40.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+
 [connection signal="pressed" from="Cargar" to="." method="_on_Cargar_pressed"]
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
 
 [connection signal="pressed" from="Guardados/Cargar1" to="." method="_on_Cargar1_pressed"]
+
+[connection signal="pressed" from="Guardados/Cargar2" to="." method="_on_Cargar2_pressed"]
+
+[connection signal="pressed" from="Guardados/Cargar3" to="." method="_on_Cargar3_pressed"]
+
+[connection signal="pressed" from="Guardados/Cargar4" to="." method="_on_Cargar4_pressed"]
 
 

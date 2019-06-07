@@ -5,6 +5,9 @@ signal boton
 
 func _ready():
 	$Guardados/Cargar1.set_text(Global.nombre_guardado1)
+	$Guardados/Cargar2.set_text(Global.nombre_guardado2)
+	$Guardados/Cargar3.set_text(Global.nombre_guardado3)
+	$Guardados/Cargar4.set_text(Global.nombre_guardado4)
 	$Guardados.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/2))
 	
 	mostrarGuardados()
@@ -29,30 +32,16 @@ func mostrarGuardados():
 	pass
 	
 	
-#	$Label.set_text(str(listarGuardados()))
-var numGuardados = 0
+
 func listarGuardados():	
 	var Boton = botonGuardados.instance()
 	partidasGuardadas.list_dir_begin()
 	file_name = partidasGuardadas.get_next()
 	while (file_name != ""):
 		if !partidasGuardadas.current_is_dir():
-			numGuardados = numGuardados + 1
-			
-#			for i in numGuardados:
-#				Boton.set_name(file_name)
-#				var nombre = str(file_name)
-#				$Guardados.add_child(nombre)
-#				$Guardados/Boton/Button_datos_comunes.set_text(file_name)
-#
-##			$Guardados/Boton/Button_datos_comunes.connect(Boton, self, _cargarPartida())
 			print("Found directory: " + file_name)
 			pass
 		else:
-			numGuardados = numGuardados + 1
-			print (numGuardados)
-			$Guardados.add_child(Boton)
-			$Guardados/Boton/Button_datos_comunes.set_text(file_name)
 			print("Found file: " + file_name)
 			pass
 		file_name = partidasGuardadas.get_next()
@@ -77,4 +66,13 @@ func _cargarPartida(file_name):
 
 func _on_Cargar1_pressed():
 	Global.cargar(Global.nombre_guardado1)
+	pass # replace with function body
+func _on_Cargar2_pressed():
+	Global.cargar(Global.nombre_guardado2)
+	pass # replace with function body
+func _on_Cargar3_pressed():
+	Global.cargar(Global.nombre_guardado3)
+	pass # replace with function body
+func _on_Cargar4_pressed():
+	Global.cargar(Global.nombre_guardado4)
 	pass # replace with function body
