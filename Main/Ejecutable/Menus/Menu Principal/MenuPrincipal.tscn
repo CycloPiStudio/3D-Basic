@@ -35,7 +35,7 @@ margin_bottom = 40.0
 
 [node name="Jugar" type="Button" parent="VBoxContainer"]
 editor/display_folded = true
-margin_right = 136.0
+margin_right = 183.0
 margin_bottom = 27.0
 custom_fonts/font = SubResource( 2 )
 text = "Jugar"
@@ -47,7 +47,7 @@ stream = ExtResource( 2 )
 [node name="Cargar" type="Button" parent="VBoxContainer"]
 editor/display_folded = true
 margin_top = 31.0
-margin_right = 136.0
+margin_right = 183.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 4 )
 text = "Cargar"
@@ -59,7 +59,7 @@ stream = ExtResource( 2 )
 [node name="Creditos" type="Button" parent="VBoxContainer"]
 editor/display_folded = true
 margin_top = 62.0
-margin_right = 136.0
+margin_right = 183.0
 margin_bottom = 89.0
 custom_fonts/font = SubResource( 6 )
 text = "Creditos"
@@ -68,11 +68,23 @@ text = "Creditos"
 position = Vector2( 9, 19 )
 stream = ExtResource( 2 )
 
-[node name="Salir" type="Button" parent="VBoxContainer"]
+[node name="Multiplayer" type="Button" parent="VBoxContainer"]
 editor/display_folded = true
 margin_top = 93.0
-margin_right = 136.0
+margin_right = 183.0
 margin_bottom = 120.0
+custom_fonts/font = SubResource( 6 )
+text = "Multiplayer"
+
+[node name="boton" type="AudioStreamPlayer2D" parent="VBoxContainer/Multiplayer"]
+position = Vector2( 9, 19 )
+stream = ExtResource( 2 )
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 124.0
+margin_right = 183.0
+margin_bottom = 151.0
 custom_fonts/font = SubResource( 4 )
 text = "Salir"
 
@@ -91,4 +103,5 @@ texture = ExtResource( 4 )
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Cargar" to="." method="_on_Cargar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_Creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Multiplayer" to="." method="_on_Multiplayer_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
