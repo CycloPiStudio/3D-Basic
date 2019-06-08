@@ -27,6 +27,11 @@ func _ready():
 
 #	pass
 
+func _input(ev):
+	if Input.is_key_pressed(KEY_P):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		_on_Pause_pressed()
+
 
 func _on_Pause_pressed():
 	get_tree().paused = true
