@@ -1,10 +1,18 @@
 extends Node
 
 #Partidas guardadas _______________________________
+var guardadoPersistente = null
 var nombre_guardado1 = "Vacío"
 var nombre_guardado2 = "Vacío"
 var nombre_guardado3 = "Vacío"
 var nombre_guardado4 = "Vacío"
+
+var persistencia = {
+nombre_guardado1 = "Vacío",
+nombre_guardado2 = "Vacío",
+nombre_guardado3 = "Vacío",
+nombre_guardado4 = "Vacío"
+}
 #__________________________________________________
 
 
@@ -31,11 +39,29 @@ func _process(delta):
 	pass
 	
 func _ready():
+	
 	var rutaGuardar = Directory.new()
 	if !rutaGuardar.dir_exists("user://game_saves"):
 		rutaGuardar.open("user://")
 		rutaGuardar.make_dir("user://game_saves")
-	
+		
+	guardadoPersistente = File.new()
+	if !guardadoPersistente.file_exists("user://game_saves/guardado_persistenete.sav"):
+		guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.WRITE)
+		guardadoPersistente.close()
+	else:
+		guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.READ)
+		var datosPersistentes = persistencia
+		if !guardadoPersistente.eof_reached():
+			var dato_previsto = parse_json(guardadoPersistente.get_line())
+			if dato_previsto != null:
+				datosPersistentes = dato_previsto
+		nombre_guardado1 = datosPersistentes.guardado1
+		nombre_guardado2 = datosPersistentes.guardado2
+		nombre_guardado3 = datosPersistentes.guardado3
+		nombre_guardado4 = datosPersistentes.guardado4
+		guardadoPersistente.close()
+		
 func guardar(nombre_guardado):
 	var save = File.new()
 	var sav = File.new()
