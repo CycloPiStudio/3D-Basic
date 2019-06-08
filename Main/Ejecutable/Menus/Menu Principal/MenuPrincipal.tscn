@@ -80,11 +80,23 @@ text = "Multiplayer"
 position = Vector2( 9, 19 )
 stream = ExtResource( 2 )
 
-[node name="Salir" type="Button" parent="VBoxContainer"]
+[node name="Controles" type="Button" parent="VBoxContainer"]
 editor/display_folded = true
 margin_top = 124.0
 margin_right = 183.0
 margin_bottom = 151.0
+custom_fonts/font = SubResource( 6 )
+text = "Controles"
+
+[node name="boton" type="AudioStreamPlayer2D" parent="VBoxContainer/Controles"]
+position = Vector2( 9, 19 )
+stream = ExtResource( 2 )
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 155.0
+margin_right = 183.0
+margin_bottom = 182.0
 custom_fonts/font = SubResource( 4 )
 text = "Salir"
 
@@ -104,4 +116,5 @@ texture = ExtResource( 4 )
 [connection signal="pressed" from="VBoxContainer/Cargar" to="." method="_on_Cargar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="pressed" from="VBoxContainer/Multiplayer" to="." method="_on_Multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controles" to="." method="_on_Controles_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]

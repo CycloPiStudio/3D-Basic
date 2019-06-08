@@ -4,6 +4,7 @@ var Creditos = preload("res://Ejecutable/Menus/Creditos/Creditos.tscn").instance
 var Jugar = preload("res://Ejecutable/Menus/Select Personaje/SelectPersonaje.tscn").instance()
 var Cargar = preload("res://Ejecutable/Menus/Cargar/Cargar.tscn").instance()
 var Multiplayer = preload("res://Ejecutable/Menus/MultiPlayer/Menu muliplayer.tscn").instance()
+var Controles = preload("res://Ejecutable/Menus/Controles/controles.tscn").instance()
 
 func _ready():
 	$VBoxContainer.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/4))
@@ -21,12 +22,10 @@ func _on_Jugar_pressed():
 	$".".queue_free()
 	pass 
 
-
 func _on_Salir_pressed():
 	get_tree().quit()
 	get_parent().get_node("boton").play()
 	pass 
-
 
 func _on_Cargar_pressed():
 	get_node("/root/Global Menus").add_child(Cargar)
@@ -36,6 +35,12 @@ func _on_Cargar_pressed():
 
 func _on_Multiplayer_pressed():
 	get_node("/root/Global Menus").add_child(Multiplayer)
+	get_parent().get_node("boton").play()
+	$".".queue_free()
+	pass # Replace with function body.
+
+func _on_Controles_pressed():
+	get_node("/root/Global Menus").add_child(Controles)
 	get_parent().get_node("boton").play()
 	$".".queue_free()
 	pass # Replace with function body.
