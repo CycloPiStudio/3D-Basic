@@ -1,5 +1,14 @@
 extends Node
 
+var personaje = 0
+var RutaPersonajeSelect = 0
+var nivel = 0
+var RutaNivelSelect = 0
+var vida = 0
+var puntos = 0
+var arma = 0
+var partida	
+
 #Partidas guardadas _______________________________
 var guardadoPersistente = null
 var nombre_guardado1 = "Vacío"
@@ -13,18 +22,6 @@ nombre_guardado2 = "Vacío",
 nombre_guardado3 = "Vacío",
 nombre_guardado4 = "Vacío"
 }
-#__________________________________________________
-
-
-var personaje = 0
-var RutaPersonajeSelect = 0
-var nivel = 0
-var RutaNivelSelect = 0
-var vida = 0
-var puntos = 0
-var arma = 0
-
-
 var datos_partida = {
 puntos = 0,
 arma = 0,
@@ -33,12 +30,30 @@ RutaNivelSelect = 0,
 vida = 0,
 RutaPersonajeSelect = 0
 }
+#__________________________________________________
+
+#Inventario__________________________________________
+var datos_inventario = {
+	Arma = "Vacio",
+	Monedas = "Vacio",
+	Vida = "Vacio",
+	}
+#var inventarioPersistente = {
+#	}
+#___________________________________________________
+
+
 
 func _process(delta):
 #	print (RutaNivelSelect)
 	pass
 	
 func _ready():
+	crearArchivoGuardado()
+	
+	
+	
+func crearArchivoGuardado():
 	
 	var rutaGuardar = Directory.new()
 	if !rutaGuardar.dir_exists("user://game_saves"):
@@ -62,6 +77,31 @@ func _ready():
 		nombre_guardado3 = datosPersistentes.nombre_guardado3
 		nombre_guardado4 = datosPersistentes.nombre_guardado4
 		guardadoPersistente.close()
+	
+func crearArchivoInventario():
+	var rutaInventario = Directory.new()
+	if !rutaInventario.dir_exists("user://game_inventario"):
+		rutaInventario.open("user://")
+		rutaInventario.make_dir("user://game_inventario")
+		
+	inventario = File.new()
+	if !inventario.file_exists("user://game_inventario/inventario_guardado.sav"):
+		inventario.open("user://game_inventario/inventario_guardado.sav", File.WRITE)
+		inventario.store_line(to_json(datos_inventario))
+		inventario.close()
+	else:
+		inventario.open("user://game_inventario/inventario_guardado.sav", File.READ)
+		var datosPersistentes = persistencia
+		if !guardadoPersistente.eof_reached():
+			var dato_previsto = parse_json(guardadoPersistente.get_line())
+			if dato_previsto != null:
+				datosPersistentes = dato_previsto
+		nombre_guardado1 = datosPersistentes.nombre_guardado1
+		nombre_guardado2 = datosPersistentes.nombre_guardado2
+		nombre_guardado3 = datosPersistentes.nombre_guardado3
+		nombre_guardado4 = datosPersistentes.nombre_guardado4
+		guardadoPersistente.close()
+	pass
 		
 func guardar(nombre_guardado):
 	var save = File.new()
@@ -116,7 +156,6 @@ func cargarPlayer(RutaPersonajeSelect):
 	personaje.set_name("personaje")
 	print ("carga player")
 	
-var partida	
 func cargarNivel(RutaNivelSelect):
 	partida = load(str(RutaNivelSelect)).instance()
 	RutaNivelSelect = partida.get_name()
