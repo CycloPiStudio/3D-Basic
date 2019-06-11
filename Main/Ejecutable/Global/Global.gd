@@ -48,6 +48,7 @@ func _ready():
 	guardadoPersistente = File.new()
 	if !guardadoPersistente.file_exists("user://game_saves/guardado_persistenete.sav"):
 		guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.WRITE)
+		guardadoPersistente.store_line(to_json(persistencia))
 		guardadoPersistente.close()
 	else:
 		guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.READ)
@@ -56,10 +57,10 @@ func _ready():
 			var dato_previsto = parse_json(guardadoPersistente.get_line())
 			if dato_previsto != null:
 				datosPersistentes = dato_previsto
-		nombre_guardado1 = datosPersistentes.guardado1
-		nombre_guardado2 = datosPersistentes.guardado2
-		nombre_guardado3 = datosPersistentes.guardado3
-		nombre_guardado4 = datosPersistentes.guardado4
+		nombre_guardado1 = datosPersistentes.nombre_guardado1
+		nombre_guardado2 = datosPersistentes.nombre_guardado2
+		nombre_guardado3 = datosPersistentes.nombre_guardado3
+		nombre_guardado4 = datosPersistentes.nombre_guardado4
 		guardadoPersistente.close()
 		
 func guardar(nombre_guardado):
