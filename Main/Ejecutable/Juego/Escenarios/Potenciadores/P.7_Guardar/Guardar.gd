@@ -169,15 +169,15 @@ func _on_Guardar4_pressed():
 
 func guardadoPersistente(nombre):
 	Global.guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.WRITE)
-	var guardado1 
-	var guardado2 
-	var guardado3 
-	var guardado4 
+	var nombre_guardado1 
+	var nombre_guardado2 
+	var nombre_guardado3 
+	var nombre_guardado4 
 	var persistencia = {
-	guardado1 = Global.nombre_guardado1,
-	guardado2 = Global.nombre_guardado2,
-	guardado3 = Global.nombre_guardado3,
-	guardado4 = Global.nombre_guardado4
+	nombre_guardado1 = Global.nombre_guardado1,
+	nombre_guardado2 = Global.nombre_guardado2,
+	nombre_guardado3 = Global.nombre_guardado3,
+	nombre_guardado4 = Global.nombre_guardado4
 	}
 	
 	Global.guardadoPersistente.store_line(to_json(persistencia))	
