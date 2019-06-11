@@ -31,6 +31,7 @@ func _ready():
 	
 
 # Ranura 1 de guardado___________________________________________
+var guarda1
 func _on_Guardado_1_pressed():
 	$"Popup/Guardados/Guardado 1/Nombre1".show()
 	$"Popup/Guardados/Guardado 2/Nombre2".hide()
@@ -52,19 +53,21 @@ func _on_Guardado_1_pressed():
 	$"Popup/Guardados/Guardado 4".set_pressed(false)
 	pass
 func _on_Nombre1_text_changed(new_text):
-	Global.nombre_guardado1 = new_text
+	guarda1 = new_text
 	pass
 func _on_Guardar1_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
+	Global.nombre_guardado1 =guarda1
 	Global.guardar(Global.nombre_guardado1)
 	$"Baul /Area/Timer".start()
 	guardadoPersistente(Global.nombre_guardado1)
 	pass	
 
 # Ranura 2 de guardado___________________________________________
+var guarda2
 func _on_Guardado_2_pressed():
 	$"Popup/Guardados/Guardado 1/Nombre1".hide()
 	$"Popup/Guardados/Guardado 2/Nombre2".show()
@@ -86,19 +89,21 @@ func _on_Guardado_2_pressed():
 	$"Popup/Guardados/Guardado 4".set_pressed(false)
 	pass # replace with function body
 func _on_Nombre2_text_changed(new_text):
-	Global.nombre_guardado2 = new_text
+	guarda2 = new_text
 	pass # replace with function body
 func _on_Guardar2_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
+	Global.nombre_guardado2 = guarda2
 	Global.guardar(Global.nombre_guardado2)
 	$"Baul /Area/Timer".start()
 	guardadoPersistente(Global.nombre_guardado2)
 	pass # replace with function body
 
 # Ranura 3 de guardado___________________________________________
+var guarda3
 func _on_Guardado_3_pressed():
 	$"Popup/Guardados/Guardado 1/Nombre1".hide()
 	$"Popup/Guardados/Guardado 2/Nombre2".hide()
@@ -120,19 +125,21 @@ func _on_Guardado_3_pressed():
 	$"Popup/Guardados/Guardado 4".set_pressed(false)
 	pass # replace with function body
 func _on_Nombre3_text_changed(new_text):
-	Global.nombre_guardado3 = new_text
+	guarda3 = new_text
 	pass # replace with function body
 func _on_Guardar3_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
+	Global.nombre_guardado3 = guarda3
 	Global.guardar(Global.nombre_guardado3)
 	$"Baul /Area/Timer".start()
 	guardadoPersistente(Global.nombre_guardado3)
 	pass # replace with function body
 
 # Ranura 4 de guardado___________________________________________
+var guarda4
 func _on_Guardado_4_pressed():
 	$"Popup/Guardados/Guardado 1/Nombre1".hide()
 	$"Popup/Guardados/Guardado 2/Nombre2".hide()
@@ -154,13 +161,14 @@ func _on_Guardado_4_pressed():
 	$"Popup/Guardados/Guardado 3".set_pressed(false)
 	pass # replace with function body
 func _on_Nombre4_text_changed(new_text):
-	Global.nombre_guardado4 = new_text
+	guarda4 = new_text
 	pass # replace with function body
 func _on_Guardar4_pressed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
+	Global.nombre_guardado4 = guarda4
 	Global.guardar(Global.nombre_guardado4)
 	$"Baul /Area/Timer".start()
 	guardadoPersistente(Global.nombre_guardado4)
