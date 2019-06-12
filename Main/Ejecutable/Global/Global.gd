@@ -33,6 +33,7 @@ RutaPersonajeSelect = 0
 #__________________________________________________
 
 #Inventario__________________________________________
+var inventario
 var datos_inventario = {
 	Arma = "Vacio",
 	Monedas = "Vacio",
