@@ -11,4 +11,6 @@ Se esta siguiendo  la siguiente organización:
     -Sonido. Con los sonidos que unicamente use ese modelo.
 
 <img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" />
+Hola  otra versión:
+https://github.com/brecabre/3D-Basico0.2
 
