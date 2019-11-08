@@ -4,11 +4,11 @@ var sonido_arma
 var preBazoka = load("res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn")
 
 var Bazoka
-var PoseedorBazoka
-var Posicion
+#var PoseedorBazoka
+#var Posicion
 
 onready var rutaPlayer = (Global.personaje.get_path())
-onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
+#onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 onready var NodoEsqueleto = get_node((str(Global.personaje.get_path()) + "/" + str(get_node(rutaPlayer).get_child(0).name) + "/rig/Skeleton"))
 
 var posi
@@ -22,7 +22,7 @@ var cogida = false
 #	print(get_node("Audio_carga_arma").play())
 #	pass
 
-func _process(delta):
+func _process(_delta):
 	
 	$".".rotate_x(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
 
@@ -32,8 +32,8 @@ func _unhandled_input(event):
 			match event.button_index:
 				BUTTON_LEFT:
 					bala = preBala.instance()
-					get_parent().get_parent().add_child(bala)
-					bala.set_global_transform($".".get_global_transform())
+					get_tree().get_root().get_node("partida").add_child(bala)
+					bala.set_global_transform(get_global_transform())
 					bala.apply_impulse($".".get_rotation(), bala.get_global_transform().basis[0]*50)
 					get_node("Audio_disparo").play()
 		pass
