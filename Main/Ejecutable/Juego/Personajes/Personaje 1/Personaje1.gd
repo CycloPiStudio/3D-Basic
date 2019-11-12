@@ -7,7 +7,7 @@ func _ready():
 
 	pass
 
-func _process(_delta):
-	vida = Global.vida
-#	print (vida)
+#func _process(_delta):
+#	vida = Global.vida
+##	print (vida)
 	pass
