@@ -16,4 +16,3 @@ margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 2 )
 toggle_mode = true
-

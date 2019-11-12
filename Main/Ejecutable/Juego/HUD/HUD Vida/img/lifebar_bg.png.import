@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot_demo.png-2bafd7759580910d083cf19d815398eb.stex"
+path="res://.import/lifebar_bg.png-3df69a09b0301ffbc153117f975fa646.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ejecutable/Juego/HUD/HUD 7 3D/robot_demo.png"
-dest_files=[ "res://.import/robot_demo.png-2bafd7759580910d083cf19d815398eb.stex" ]
+source_file="res://Ejecutable/Juego/HUD/HUD Vida/img/lifebar_bg.png"
+dest_files=[ "res://.import/lifebar_bg.png-3df69a09b0301ffbc153117f975fa646.stex" ]
 
 [params]
 

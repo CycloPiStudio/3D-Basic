@@ -12,7 +12,7 @@ func _ready():
 	
 	pass 
 	
-func _process(delta):
+func _process(_delta):
 	vidaPadre = get_parent().vida
 #	print ("Nombre del padre: " + str(get_parent().name))
 #	print ("Padre: " + str(vidaPadre))

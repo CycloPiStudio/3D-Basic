@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot_demo.png-2bafd7759580910d083cf19d815398eb.stex"
+path="res://.import/background.png-b04192b62484ea9fa198cc7adc75917a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ejecutable/Juego/HUD/HUD 7 3D/robot_demo.png"
-dest_files=[ "res://.import/robot_demo.png-2bafd7759580910d083cf19d815398eb.stex" ]
+source_file="res://Ejecutable/Juego/HUD/HUD 2 Tiempo/img/background.png"
+dest_files=[ "res://.import/background.png-b04192b62484ea9fa198cc7adc75917a.stex" ]
 
 [params]
 
