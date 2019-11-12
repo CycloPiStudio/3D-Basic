@@ -45,10 +45,7 @@ var datos_inventario = {
 
 
 
-func _process(delta):
-#	print (RutaNivelSelect)
-	pass
-	
+
 func _ready():
 	crearArchivoGuardado()
 	
@@ -106,7 +103,7 @@ func crearArchivoInventario():
 		
 func guardar(nombre_guardado):
 	var save = File.new()
-	var sav = File.new()
+#	var sav = File.new()
 	save.open("user://game_saves/" + str(nombre_guardado) + ".sav", File.WRITE)
 	
 	var datos_guardar = datos_partida
@@ -157,9 +154,9 @@ func cargarPlayer(RutaPersonajeSelect):
 	personaje.set_name("personaje")
 	print ("carga player")
 	
-func cargarNivel(RutaNivelSelect):
+func cargarNivel(_RutaNivelSelect):
 	partida = load(str(RutaNivelSelect)).instance()
-	RutaNivelSelect = partida.get_name()
+	_RutaNivelSelect = partida.get_name()
 	personaje = load(str(RutaPersonajeSelect)).instance()
 	personaje.set_name("personaje")
 	partida.set_name("partida")
@@ -168,4 +165,3 @@ func cargarNivel(RutaNivelSelect):
 #	print (Global.personaje.get_path())
 	get_parent().get_node("Global Menus/Musica Menus/").stop()
 	pass
-		

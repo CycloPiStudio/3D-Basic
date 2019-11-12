@@ -4,26 +4,11 @@
 [ext_resource path="res://Ejecutable/Menus/Sonidos/Musica.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Ejecutable/Menus/Sonidos/boton.wav" type="AudioStream" id=3]
 
-[node name="Global Menus" type="Node" index="0"]
-
+[node name="Global Menus" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Musica Menus" type="AudioStreamPlayer" parent="." index="0"]
-
+[node name="Musica Menus" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="boton" type="AudioStreamPlayer" parent="." index="1"]
-
+[node name="boton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-
