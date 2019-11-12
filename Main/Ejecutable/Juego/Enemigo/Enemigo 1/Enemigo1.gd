@@ -7,7 +7,7 @@ var posPlayer
 var vida = 500
 
 	
-func _process(delta):
+func _process(_delta):
 	posicion = get_global_transform()[3]
 	posPlayer = player.get_global_transform()[3]
 	var direccion = posPlayer - posicion
