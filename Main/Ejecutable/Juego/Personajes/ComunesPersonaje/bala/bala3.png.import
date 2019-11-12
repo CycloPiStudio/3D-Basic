@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bala.png-0539f5c29ac6f3e3432f6548c374ee64.stex"
+path="res://.import/bala3.png-3b9e119211e04517f6f94176f5433b97.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ejecutable/Juego/Personajes/ComunesPersonaje/bala/bala.png"
-dest_files=[ "res://.import/bala.png-0539f5c29ac6f3e3432f6548c374ee64.stex" ]
+source_file="res://Ejecutable/Juego/Personajes/ComunesPersonaje/bala/bala3.png"
+dest_files=[ "res://.import/bala3.png-3b9e119211e04517f6f94176f5433b97.stex" ]
 
 [params]
 

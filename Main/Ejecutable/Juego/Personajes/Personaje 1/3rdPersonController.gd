@@ -27,7 +27,7 @@ var IsAirborne = false
 var preGameOver = preload("res://Ejecutable/Menus/Game Over/GameOver.tscn").instance()
 var Personaje1Muerto
 var ang_vertical
-
+var ruta_arbol	
 onready var rutaPlayer = (Global.personaje.get_path())
 onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 
@@ -132,8 +132,7 @@ func _physics_process(delta):
 		Global.vida -= 1
 		SonidoDanno.play()
 		
-		
-		
+	
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
 #		print("muere")
@@ -141,6 +140,6 @@ func _physics_process(delta):
 #		Esto no va bien se queda pillao el ratón
 		get_node("/root/Global Menus").add_child(preGameOver)
 		$".".queue_free()
-		get_tree().get_root() # Access via scene main loop.
+		ruta_arbol = get_tree().get_root() # Access via scene main loop.
 		Personaje1Muerto = get_parent()
 		Personaje1Muerto.get_parent().get_parent().queue_free()
