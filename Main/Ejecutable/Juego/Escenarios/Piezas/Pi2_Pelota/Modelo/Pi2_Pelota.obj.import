@@ -15,3 +15,4 @@ dest_files=[ "res://.import/Pi2_Pelota.obj-58852e2161eecad51ece6695c1ecaa56.mesh
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
