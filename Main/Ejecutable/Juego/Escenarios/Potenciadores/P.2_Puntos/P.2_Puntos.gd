@@ -11,7 +11,7 @@ var tiempoEntra = 20
 var banderaVisible = false
 var VeloNum =100
 var contColor
-var posicion
+#var posicion
 var posicionSalida = Vector2(700,0)
 var posiPot = Vector3()
 var posiPotTransform
@@ -35,7 +35,7 @@ func _process(delta):
 		#esto pa mover el potenciador
 		posiPot.y = posiPot.y+1
 		posiPotTransform[3] = posiPot
-		posiPotTransform
+#		posiPotTransform
 		$".".set_global_transform(posiPotTransform)
 		#esto pa mover el numeriko
 		PuntosP1.set_position(Vector2(PuntosP1.get_position().x , PuntosP1.get_position().y+VeloNum*delta))

@@ -2,7 +2,7 @@ extends RigidBody
 
 var preNoMensa = preload("res://Ejecutable/Juego/HUD/HUD 8 Mensaje/Hud_mensaje_info.tscn")
 var NoMensa 
-var padreBala
+#var padreBala
 #func _ready():
 #	pass
 
@@ -10,9 +10,9 @@ var padreBala
 #	pass
 
 
-func _on_VisibilityNotifier_screen_exited():
-	queue_free()
-	pass # replace with function body
+#func _on_VisibilityNotifier_screen_exited():
+#	queue_free()
+#	pass # replace with function body
 
 func _on_Timer_timeout():
 	queue_free()

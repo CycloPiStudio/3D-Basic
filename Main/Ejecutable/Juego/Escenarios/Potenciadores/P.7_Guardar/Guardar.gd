@@ -1,7 +1,10 @@
 extends Spatial
 
 var tiempo = false
-
+#var nombre_guardado1 
+#var nombre_guardado2 
+#var nombre_guardado3 
+#var nombre_guardado4 
 func _on_Area_body_entered(body):
 	if tiempo == false:
 		if body.is_in_group("Player"):
@@ -24,10 +27,10 @@ func _on_Timer_timeout():
 
 func _ready():
 	$Popup.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/4))
-	$"Popup/Guardados/Guardado 1/NombreGuardado1".set_text(Global.nombre_guardado1)
-	$"Popup/Guardados/Guardado 2/NombreGuardado2".set_text(Global.nombre_guardado2)
-	$"Popup/Guardados/Guardado 3/NombreGuardado3".set_text(Global.nombre_guardado3)
-	$"Popup/Guardados/Guardado 4/NombreGuardado4".set_text(Global.nombre_guardado4)
+#	$"Popup/Guardados/Guardado 1/NombreGuardado1".set_text(Global.nombre_guardado1)
+#	$"Popup/Guardados/Guardado 2/NombreGuardado2".set_text(Global.nombre_guardado2)
+#	$"Popup/Guardados/Guardado 3/NombreGuardado3".set_text(Global.nombre_guardado3)
+#	$"Popup/Guardados/Guardado 4/NombreGuardado4".set_text(Global.nombre_guardado4)
 	
 
 # Ranura 1 de guardado___________________________________________
@@ -52,20 +55,25 @@ func _on_Guardado_1_pressed():
 	$"Popup/Guardados/Guardado 3".set_pressed(false)
 	$"Popup/Guardados/Guardado 4".set_pressed(false)
 	pass
+
+
 func _on_Nombre1_text_changed(new_text):
 	guarda1 = new_text
 	pass
+
+
 func _on_Guardar1_pressed():
 	get_tree().paused = false
+	
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Popup.hide()
 	tiempo = true
-	Global.nombre_guardado1 =guarda1
+	Global.nombre_guardado1 = guarda1
 	Global.guardar(Global.nombre_guardado1)
 	$"Baul /Area/Timer".start()
 	guardadoPersistente(Global.nombre_guardado1)
-	pass	
-
+	pass # replace with function body
 # Ranura 2 de guardado___________________________________________
 var guarda2
 func _on_Guardado_2_pressed():
@@ -175,19 +183,16 @@ func _on_Guardar4_pressed():
 	pass # replace with function body
 
 
-func guardadoPersistente(nombre):
+func guardadoPersistente(_nombre):
 	Global.guardadoPersistente.open("user://game_saves/guardado_persistenete.sav", File.WRITE)
-	var nombre_guardado1 
-	var nombre_guardado2 
-	var nombre_guardado3 
-	var nombre_guardado4 
+	
 	var persistencia = {
 	nombre_guardado1 = Global.nombre_guardado1,
 	nombre_guardado2 = Global.nombre_guardado2,
 	nombre_guardado3 = Global.nombre_guardado3,
 	nombre_guardado4 = Global.nombre_guardado4
 	}
-	
+
 	Global.guardadoPersistente.store_line(to_json(persistencia))	
 	Global.guardadoPersistente.close()
 	

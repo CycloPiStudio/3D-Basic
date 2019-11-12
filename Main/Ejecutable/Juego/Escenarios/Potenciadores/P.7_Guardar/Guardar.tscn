@@ -42,8 +42,7 @@ margin_right = 47.7001
 margin_bottom = 120.32
 
 [node name="Guardado 1" type="CheckBox" parent="Popup/Guardados"]
-editor/display_folded = true
-margin_right = 40.0
+margin_right = 39.0
 margin_bottom = 24.0
 
 [node name="Nombre1" type="LineEdit" parent="Popup/Guardados/Guardado 1"]
@@ -61,16 +60,15 @@ margin_bottom = 20.0
 
 [node name="Guardar1" type="Button" parent="Popup/Guardados/Guardado 1"]
 visible = false
-margin_left = 229.0
-margin_top = 3.0
-margin_right = 262.0
-margin_bottom = 23.0
+margin_left = 232.095
+margin_top = 2.22622
+margin_right = 294.095
+margin_bottom = 22.2262
 text = "Guardar"
 
 [node name="Guardado 2" type="CheckBox" parent="Popup/Guardados"]
-editor/display_folded = true
 margin_top = 28.0
-margin_right = 40.0
+margin_right = 39.0
 margin_bottom = 52.0
 
 [node name="Nombre2" type="LineEdit" parent="Popup/Guardados/Guardado 2"]
@@ -97,7 +95,7 @@ text = "Guardar"
 [node name="Guardado 3" type="CheckBox" parent="Popup/Guardados"]
 editor/display_folded = true
 margin_top = 56.0
-margin_right = 40.0
+margin_right = 39.0
 margin_bottom = 80.0
 
 [node name="Nombre3" type="LineEdit" parent="Popup/Guardados/Guardado 3"]
@@ -124,7 +122,7 @@ text = "Guardar"
 [node name="Guardado 4" type="CheckBox" parent="Popup/Guardados"]
 editor/display_folded = true
 margin_top = 84.0
-margin_right = 40.0
+margin_right = 39.0
 margin_bottom = 108.0
 
 [node name="Nombre4" type="LineEdit" parent="Popup/Guardados/Guardado 4"]

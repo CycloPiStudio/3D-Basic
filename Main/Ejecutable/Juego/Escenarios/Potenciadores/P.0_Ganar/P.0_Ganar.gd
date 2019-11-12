@@ -1,8 +1,8 @@
 extends Spatial
 
 var preGameOver = preload("res://Ejecutable/Menus/Win/Win.tscn").instance()
-var Personaje1Muerto
-
+#var Personaje1Muerto
+var elroot
 #func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -29,6 +29,7 @@ func _on_Area_body_entered(body):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_node("/root/Global Menus").add_child(preGameOver)
 		$".".queue_free()
-		get_tree().get_root() # Access via scene main loop.
-		Personaje1Muerto = get_parent().get_parent().queue_free()
+		elroot = get_tree().get_root() # Access via scene main loop.
+		get_parent().get_parent().queue_free()
+#		Personaje1Muerto = get_parent().get_parent().queue_free()
 		pass # replace with function body

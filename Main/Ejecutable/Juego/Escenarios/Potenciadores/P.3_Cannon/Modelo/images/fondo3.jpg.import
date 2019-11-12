@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.s3tc.stex"
-path.etc2="res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.etc2.stex"
+path.s3tc="res://.import/fondo3.jpg-b8c2560521c1625d5dc7363fa454f267.s3tc.stex"
+path.etc2="res://.import/fondo3.jpg-b8c2560521c1625d5dc7363fa454f267.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Modelo/images/Textura_bazoka.png"
-dest_files=[ "res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.s3tc.stex", "res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.etc2.stex" ]
+source_file="res://Ejecutable/Juego/Escenarios/Potenciadores/P.3_Cannon/Modelo/images/fondo3.jpg"
+dest_files=[ "res://.import/fondo3.jpg-b8c2560521c1625d5dc7363fa454f267.s3tc.stex", "res://.import/fondo3.jpg-b8c2560521c1625d5dc7363fa454f267.etc2.stex" ]
 
 [params]
 

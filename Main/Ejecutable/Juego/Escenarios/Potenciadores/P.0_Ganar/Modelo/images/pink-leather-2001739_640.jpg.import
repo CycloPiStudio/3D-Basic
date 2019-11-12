@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.s3tc.stex"
-path.etc2="res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.etc2.stex"
+path.s3tc="res://.import/pink-leather-2001739_640.jpg-b8c68c040c0fea0b5887b3c2f6035d35.s3tc.stex"
+path.etc2="res://.import/pink-leather-2001739_640.jpg-b8c68c040c0fea0b5887b3c2f6035d35.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Modelo/images/Textura_bazoka.png"
-dest_files=[ "res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.s3tc.stex", "res://.import/Textura_bazoka.png-ea8caf0a2ffe34c20a7b207d3c8edbbe.etc2.stex" ]
+source_file="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/Modelo/images/pink-leather-2001739_640.jpg"
+dest_files=[ "res://.import/pink-leather-2001739_640.jpg-b8c68c040c0fea0b5887b3c2f6035d35.s3tc.stex", "res://.import/pink-leather-2001739_640.jpg-b8c68c040c0fea0b5887b3c2f6035d35.etc2.stex" ]
 
 [params]
 
