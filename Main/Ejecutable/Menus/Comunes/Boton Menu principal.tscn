@@ -3,57 +3,17 @@
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD Datos Comunes/Boton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.gd" type="Script" id=2]
 
-[node name="Boton Menu principal" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Boton Menu principal" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Boton" parent="." index="0" instance=ExtResource( 1 )]
-
-anchor_left = 0.0
-anchor_top = 0.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+[node name="Boton" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Button_datos_comunes" parent="Boton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 233.0
+margin_right = 225.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Menu principal"
-flat = false
-align = 1
-
 [connection signal="pressed" from="Boton/Button_datos_comunes" to="Boton" method="_on_Button_datos_comunes_pressed"]
-
 
 [editable path="Boton"]

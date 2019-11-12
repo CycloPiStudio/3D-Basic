@@ -25,7 +25,9 @@ func PasarASelectecNivel():
 #	Global.personaje.set_name("personaje")
 #	Global.RutaPersonajeSelect = personaje
 	get_node("/root/Global Menus").add_child(SelecNiveles)
-	Global.personaje.get_path()
+#	Global.personaje.get_path()
+#	print(Global.personaje.get_path())
+	
 	$".".queue_free()
 	
 

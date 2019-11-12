@@ -1,7 +1,7 @@
 extends Node
 
 onready var botonGuardados = preload("res://Ejecutable/Juego/HUD/HUD Datos Comunes/Boton.tscn")
-signal boton
+
 
 func _ready():
 	$Guardados/Cargar1.set_text(Global.nombre_guardado1)
@@ -34,7 +34,7 @@ func mostrarGuardados():
 	
 
 func listarGuardados():	
-	var Boton = botonGuardados.instance()
+	botonGuardados.instance()
 	partidasGuardadas.list_dir_begin()
 	file_name = partidasGuardadas.get_next()
 	while (file_name != ""):

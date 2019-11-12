@@ -2,8 +2,6 @@ extends Control
 
 onready var MenPrincipal = load("res://Ejecutable/Menus/Menu Principal/MenuPrincipal.tscn").instance()
 
-func ready():
-	var nodoAbuelo = get_parent().get_parent()
 
 func _on_Button_datos_comunes_pressed():
 	var nodoAbuelo = get_parent().get_parent()
