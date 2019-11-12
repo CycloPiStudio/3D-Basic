@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/textura_nivel2.png-fc3d1c2c7db8668efc9254a29d637087.s3tc.stex"
-path.etc2="res://.import/textura_nivel2.png-fc3d1c2c7db8668efc9254a29d637087.etc2.stex"
+path.s3tc="res://.import/tex_n4.png-71eb6d4c32d5b25d38233e21dd99d570.s3tc.stex"
+path.etc2="res://.import/tex_n4.png-71eb6d4c32d5b25d38233e21dd99d570.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Ejecutable/Juego/Escenarios/Niveles/Nivel3/Modelo/images/textura_nivel2.png"
-dest_files=[ "res://.import/textura_nivel2.png-fc3d1c2c7db8668efc9254a29d637087.s3tc.stex", "res://.import/textura_nivel2.png-fc3d1c2c7db8668efc9254a29d637087.etc2.stex" ]
+source_file="res://Ejecutable/Juego/Escenarios/Niveles/Nivel4/Modelo/images/tex_n4.png"
+dest_files=[ "res://.import/tex_n4.png-71eb6d4c32d5b25d38233e21dd99d570.s3tc.stex", "res://.import/tex_n4.png-71eb6d4c32d5b25d38233e21dd99d570.etc2.stex" ]
 
 [params]
 
