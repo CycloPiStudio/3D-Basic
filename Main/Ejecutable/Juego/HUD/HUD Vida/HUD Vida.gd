@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var vida 
+#var vida 
 var poseedorVida 		#Esta variable es para el personaje, enemigo u objeto al que le vamos a aplicar la vida
 var barraVida
 
@@ -14,9 +14,10 @@ func _ready():
 func _process(_delta):
 #	print (get_parent().name)
 #	print (get_parent().vida)
-#	print (Global.vida)
-	vida = poseedorVida.vida #El padre al que se instancie este nodo tiene que tener una variable vida
-	barraVida.value = vida
+#	esto solo vale sino son las mismas barras de los enemigos
+	barraVida.value = Global.vida
+#	vida = poseedorVida.vida #El padre al que se instancie este nodo tiene que tener una variable vida
+#	barraVida.value = vida
 	
 	pass
 
