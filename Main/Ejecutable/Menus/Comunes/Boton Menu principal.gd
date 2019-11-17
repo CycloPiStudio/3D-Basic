@@ -13,5 +13,14 @@ func _on_Button_datos_comunes_pressed():
 		get_node("/root/partida").queue_free()
 		get_tree().paused = false
 #	print(nodoAbuelo.name)	
+
+	if str(Global.nivel) == "nivel1":
+		Global.nivel = 0
+	if str(Global.nivel) == "nivel2":
+		Global.nivel = 1
+	if str(Global.nivel) == "nivel3":
+		Global.nivel = 2
+	if str(Global.nivel) == "nivel4":
+		Global.nivel = 3
 	
 	pass
