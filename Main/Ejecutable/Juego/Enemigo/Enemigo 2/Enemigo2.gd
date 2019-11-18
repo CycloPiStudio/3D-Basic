@@ -41,7 +41,7 @@ func _on_Timer_timeout():
 func _on_Area_body_entered(body):
 	proyectil = get_node(body.get_path())# coge el body
 	
-	if proyectil.get_parent().get_name() == "rig" and Global.arma == 1:
+	if proyectil.get_parent().get_name() == "partida" and Global.arma == 1:
 		mata_malo(10)
 		
 	if proyectil.get_parent().get_name() == "rig" and Global.arma == 2:
