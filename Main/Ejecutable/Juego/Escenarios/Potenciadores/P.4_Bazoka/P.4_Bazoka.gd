@@ -24,7 +24,21 @@ var cogida = false
 
 func _process(_delta):
 	
-	$".".rotate_x(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+	if cogida == true:
+		$".".rotate_x(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+		if $".".global_transform.basis.get_euler().x  > 0.0025:
+#			print(" mayor que 1 ", $".".global_transform.basis.get_euler().x)
+			$".".rotate_x(get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+		if $".".global_transform.basis.get_euler().x  < -0.004:
+#			print(" menor que 1 ", $".".global_transform.basis.get_euler().x)
+			$".".rotate_x(get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+#			set_global_transform.basic.get_euler().x = -0.002
+
+
+#		if $".".global_transform.basis.get_euler().x  < 0.003 or $".".global_transform.basis.get_euler().x  > 0.0025:
+#			$".".rotate_x(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+##	print(-get_node("/root/partida/PosicionSalida/personaje/Controller").ang_vertical)
+	
 
 func _unhandled_input(event):
 	if cogida == true:
