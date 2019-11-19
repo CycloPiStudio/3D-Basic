@@ -16,6 +16,8 @@ Se esta siguiendo  la siguiente organización:
 
 <img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" = 600x300/>
 
+<a href="url"><img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" ><a>
+
 Hola:
 
 https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2019/3d_basic_plantilla/3d_basic_plantilla.html
