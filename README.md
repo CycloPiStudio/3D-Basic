@@ -10,8 +10,10 @@ Se esta siguiendo  la siguiente organización:
         -modelo.blend, modelo.dae, modelo.tscn y la carpeta imagenes, para las texturas.
     -Sonido. Con los sonidos que unicamente use ese modelo.
 
-#   <img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" />
-<img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" width="600 height="300"/>
+<img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" />
+
+<img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" {width="600 height="300"}/>
+
 Hola:
 
 https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2019/3d_basic_plantilla/3d_basic_plantilla.html
