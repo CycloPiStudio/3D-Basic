@@ -28,6 +28,7 @@ func _process(_delta):
 		if collision.get_collider().is_in_group("Player"):
 #			print (Global.vida)
 			Global.vida -= 10
+			vida -=10
 		
 		if collision.get_collider().name == "Bala":
 #			print (vida)
