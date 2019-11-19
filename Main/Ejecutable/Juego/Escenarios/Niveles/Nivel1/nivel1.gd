@@ -1,8 +1,6 @@
 #	esto hay cambiarlo o quitarlo
-extends Node2D
+extends Spatial
 var cancion
-
-onready var Fondo = $Fondo
 
 func _ready():
 	centrar_Fondo()
