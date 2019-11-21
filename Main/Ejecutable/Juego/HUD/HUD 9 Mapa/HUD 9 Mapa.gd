@@ -10,6 +10,7 @@ func _ready():
 	viewport_sprite = $"ViewPortSprite"
 	viewport_sprite.texture = viewport.get_texture()
 	camaraMinimapa = $Viewport/Camera
+	viewport_sprite.set_flip_v(true)
 #	$".".set_position(Vector2($"ViewPortSprite".texture.get_size().x , $"ViewPortSprite".texture.get_size().y))
 
 #	modelo = $"HUD 3D/Viewport/modelo"
