@@ -1,17 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Modelo/bazoka.dae" type="PackedScene" id=2]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Sonido/Carga_Arma_by_Cyclo_Pi_Studio.wav" type="AudioStream" id=3]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Sonido/Disparo_by_Cyclo_Pi_tudio.wav" type="AudioStream" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Sonido/Carga_Arma_by_Cyclo_Pi_Studio.wav" type="AudioStream" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Sonido/Disparo_by_Cyclo_Pi_tudio.wav" type="AudioStream" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/Modelo/Scene Root.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.487973, 0.101642, 0.0905033 )
 
 [node name="P4_Bazoka" type="Spatial"]
 script = ExtResource( 1 )
-
-[node name="Scene Root" parent="." instance=ExtResource( 2 )]
 
 [node name="Area" type="Area" parent="."]
 input_ray_pickable = false
@@ -21,8 +19,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.524174, -0.0111389, 0 )
 shape = SubResource( 1 )
 
 [node name="Audio_carga_arma" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 
 [node name="Audio_disparo" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 4 )]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
