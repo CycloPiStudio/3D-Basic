@@ -8,8 +8,8 @@ var vida = 500
 var proyectil
 	
 func _process(_delta):
-#	posicion = get_global_transform()[3]
-#	posPlayer = player.get_global_transform()[3]
+	posicion = get_global_transform()[3]
+	posPlayer = player.get_global_transform()[3]
 	var direccion = posPlayer - posicion
 	var objetivoXZ = posPlayer - Vector3(0,posPlayer[1],0)
 		
@@ -29,7 +29,7 @@ func _process(_delta):
 		if collision.get_collider().is_in_group("Player"):
 #			print (Global.vida)
 			Global.vida -= 10
-			vida -=0.0000000000000000000000000000000000000000000000000000000000001
+			vida -=0.1
 		
 		if collision.get_collider().name == "Bala":
 #			print (vida)
@@ -38,11 +38,11 @@ func _process(_delta):
 		queue_free()
 		
 
-var proyectil
+
 func _on_Area_body_entered(body):
 	proyectil = get_node(body.get_path())
-	print (proyectil.name)
-	print (proyectil.get_parent().get_name())
+#	print (proyectil.name)
+#	print (proyectil.get_parent().get_name())
 	if proyectil.get_parent().get_name() == "partida" and Global.arma == 1:
 		mata_malo(10)
 		
