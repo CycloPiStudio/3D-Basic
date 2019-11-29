@@ -7,7 +7,7 @@ var velocity = Vector2()
 #var rebote = 1
 
 func apretarGatillo(position, rotation):
-
+	print(position)
 	velocity = Vector2(speed, 0).rotated(rotation)
 #	print ("pos bala player: " + str(position))
 	
