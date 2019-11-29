@@ -4,7 +4,7 @@ extends KinematicBody2D
 var speed = 50
 var velocity = Vector2()
 #Establecer el valor para rebote entre 0.5 y 1.1 y añadir limites.
-var rebote = 1
+#var rebote = 1
 
 func apretarGatillo(position, rotation):
 
