@@ -36,7 +36,7 @@ func _process(delta):
 #	pass
 
 #
-func _on_VisibilityNotifier2D_viewport_exited(viewport):
+func _on_VisibilityNotifier2D_viewport_exited():
 #	print ("La bala sale de la viewport y desaparece")
 	queue_free()
 	pass 
