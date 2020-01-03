@@ -1,3 +1,17 @@
+--------- CRÉDITOS / CREDITS --------- 
+
+--------- Motor de render / Render engine:--------- 
+Godot Engine v3.1.1
+https://godotengine.org/
+
+--------- Desarrollo / Development:  ---------
+Cyclo π Studio
+https://cyclopistudio.github.io/
+
+--------- Mecánicas estructura mechanical and structure  --------- 
+"Template 3d Basic" Cyclo π Studio
+https://github.com/CycloPiStudio/3D-Basic/tree/fb38ce04c99d58c9bc76eef5dced8d3d3155cc07
+
 --------- Música / Music:  --------- 
 "Northern Glade" Kevin MacLeod (incompetech.com)
 https://incompetech.com/music/royalty-free/music.html
