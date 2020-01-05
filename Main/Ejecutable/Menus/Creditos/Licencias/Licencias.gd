@@ -88,7 +88,9 @@ Material metálico
 https://pxhere.com/es/photo/488140
 Licensed: CC0 Public Domain - https://creativecommons.org/publicdomain/zero/1.0/
 
-
+Material Ruido
+https://sftextures.com/2015/07/27/black-and-white-artificial-rock-texture/
+Licensed: https://creativecommons.org/licenses/by-sa/4.0/
 
 ------------------Fuentes-----------------------
 
