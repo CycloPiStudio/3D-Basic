@@ -57,13 +57,12 @@ editor/display_folded = true
 transform = Transform( 0.874292, 0.112432, -0.4722, 0.108045, 0.903322, 0.415132, 0.473223, -0.413966, 0.777619, 0, 1.91752, 3.53064 )
 
 [node name="Enemigos" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Enemigo2" parent="Enemigos" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5907, 0.514639, 15.6507 )
 
 [node name="Enemigo1" parent="Enemigos" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6984, 1.12835, 21.8002 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6984, 1.12835, 54.9837 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
