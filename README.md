@@ -1,4 +1,4 @@
-# 3D-Basic
+# POCAS LUCES Juego 3D
 
 Plantilla para crear juego en 3D utilizando Godot 3.
 
