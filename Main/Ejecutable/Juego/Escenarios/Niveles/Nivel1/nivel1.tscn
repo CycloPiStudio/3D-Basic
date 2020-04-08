@@ -22,13 +22,12 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4686, 2.09692, 56.4696 )
 
 [node name="Potenciadores" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Potenciador2" parent="Potenciadores" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4471, 0.072998, 21.4884 )
 
 [node name="Potenciador0Salir" parent="Potenciadores" instance=ExtResource( 3 )]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -11.9345, 0.489491, 26.4145 )
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.2466, 0.489491, 1.81342 )
 
 [node name="P4_Bazoka" parent="Potenciadores" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3569, 0.771351, 4.34143 )
