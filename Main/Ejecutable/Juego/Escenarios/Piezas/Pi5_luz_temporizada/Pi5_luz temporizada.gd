@@ -15,24 +15,23 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	tiempo_luz = OS.get_ticks_msec()
 	disminuyeIntensidadLuz()
+	print (luz.light_energy)
 #	pass
 
 func disminuyeIntensidadLuz():
-	luz.light_energy = 10-((tiempo_luz - toca_luz)/1000)
+	if luz.light_energy > 1:
+		luz.light_energy = 10-((tiempo_luz - toca_luz)/1000)
+	if luz.light_energy <= 1:
+		luz.light_energy = 0.01
 	pass
-
-func _on_Timer_timeout():
-	print ("se acabo el tiempo")
-	luz.light_energy = 0
-	pass # Replace with function body.
 
 
 func _on_Area_body_entered(body):
 	toca_luz = OS.get_ticks_msec()
 	if body.name == "personaje":
-		luz.light_energy = 7
+		luz.light_energy = 100
 
 	pass # Replace with function body.

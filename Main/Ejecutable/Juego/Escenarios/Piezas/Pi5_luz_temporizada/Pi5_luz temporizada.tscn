@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi5_luz_temporizada/Pi5_luz temporizada.gd" type="Script" id=1]
 
@@ -9,20 +9,12 @@
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.941176, 0, 0, 1 )
 
-[sub_resource type="Environment" id=4]
-ambient_light_energy = 0.0
-ambient_light_sky_contribution = 0.0
-
 [node name="luz temporizada" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 light_energy = 6.82
 omni_range = 35.6387
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
 
 [node name="Area" type="Area" parent="."]
 
@@ -33,8 +25,4 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
