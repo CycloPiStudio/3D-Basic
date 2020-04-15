@@ -12,8 +12,8 @@
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi6_luzEnviromenControladaPulsadores/Pi6_WorldEnvironment.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi6_luzEnviromenControladaPulsadores/Pi6.1_InterruptorDelEnviromen/Pi6.1_InterruptorDelEnviromen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/nivel_1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel2/Modelo/nivel_2.tscn" type="PackedScene" id=14]
 
 [node name="nivel2" type="Spatial"]
 script = ExtResource( 1 )
@@ -22,6 +22,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4686, 2.09692, 56.4696 )
 
 [node name="Potenciadores" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Potenciador2" parent="Potenciadores" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4471, 0.072998, 21.4884 )
@@ -39,13 +40,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8599, 0, 16.5291 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00580108, -1.96261 )
 
 [node name="Piezas" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 7 )]
 transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
 
 [node name="Pi2_Pelotikaka" parent="Piezas" instance=ExtResource( 8 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.66551, 2.67395, -2.57294 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.642308, 2.67395, -2.57294 )
 
 [node name="Pi3_Ladrillo" parent="Piezas" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.9105, 0.296387, 10.96 )
@@ -190,15 +190,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.094, 0, 13.819 )
 
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
-[node name="HBoxContainer" parent="HUD" index="0"]
-margin_bottom = 137.0
-
-[node name="VBoxContainer2" parent="HUD/HBoxContainer" index="0"]
-margin_bottom = 137.0
-
-[node name="VBoxContainer" parent="HUD/HBoxContainer" index="1"]
-margin_bottom = 137.0
-
 [node name="HUD 9 Mapa" parent="HUD/HBoxContainer/VBoxContainer" index="3"]
 visible = false
 
@@ -206,10 +197,10 @@ visible = false
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.39713, 100.287, 0 )
 size = 172.16
 
-[node name="Nivel1" parent="." instance=ExtResource( 13 )]
-
 [node name="AudioMusicNivel_01" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
+stream = ExtResource( 13 )
+
+[node name="nivel_2" parent="." instance=ExtResource( 14 )]
 
 [editable path="HUD"]
 
