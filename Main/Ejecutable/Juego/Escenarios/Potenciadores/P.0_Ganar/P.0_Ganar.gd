@@ -18,11 +18,11 @@ func _on_Area_body_entered(body):
 #		print ("colision con player")
 #		print(Global.nivel)
 		if str(Global.nivel) == "nivel1":
-			Global.nivel = 4
+			Global.nivel = 1
 		if str(Global.nivel) == "nivel2":
 			Global.nivel = 2
 		if str(Global.nivel) == "nivel3":
-			Global.nivel = 3
+			Global.nivel = 4
 		if str(Global.nivel) == "nivel4":
 			Global.nivel = 4
 		
