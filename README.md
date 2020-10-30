@@ -20,7 +20,7 @@ https://github.com/CycloPiStudio/3D-Basic.git
 
 -------------------------------------------
 
-<a href="url"><img src="https://fotos01.laopiniondemurcia.es/2020/10/29/1024x341/externas20201029215848.jpgl" align="left" height ="360" width ="612" ><a>
+<a href="url"><img src="https://fotos01.laopiniondemurcia.es/2020/10/29/1024x341/externas20201029215848.jpg" align="left" height ="360" width ="612" ><a>
 
 -------------------------------------------
 
