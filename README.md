@@ -8,6 +8,12 @@ Vamos con la Jam
 Venga que lo llevamos en abierto
 
 
+https://github.com/CycloPiStudio/3D-Basic.git
+
+
+
+
+
 # POCAS LUCES Juego 3D
 
 Plantilla para crear juego en 3D utilizando Godot 3.
