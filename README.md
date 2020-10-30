@@ -6,6 +6,8 @@ https://mjam.amudev.es/
 # Cyclo π Studio  retrasmitiendo!
 
 
+
+
 Vamos con la Jam
 
 Venga que lo llevamos en abierto: aquí teneis una plantilla
@@ -15,7 +17,7 @@ https://github.com/CycloPiStudio/3D-Basic.git
 
 
 
-<a href="url"><img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" align="left" height ="360" width ="612" ><a>
+<a href="url"><img src="https://img.itch.zone/aW1nLzQ1MDg0NzUucG5n/original/XglZ00.png" align="left" height ="360" width ="612" ><a>
 
 
 
