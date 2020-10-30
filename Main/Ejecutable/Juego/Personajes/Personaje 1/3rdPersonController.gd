@@ -152,9 +152,9 @@ func _physics_process(delta):
 	
 	#Colisión
 	if Player.is_on_wall():
-#		Player.rotate_y(deg2rad(-Rotation.x+180))
-#		get_node("InnerGimbal/Camera").rotate_y(deg2rad(-Rotation.x+180))
-		dir = dir * (-1)
+		Player.rotate_y(deg2rad(-Rotation.x+180))
+		get_node("InnerGimbal").global_rotate(Vector3(0,1,0),deg2rad(180))
+#		dir = dir * (-1)
 		SonidoDanno.play()
 #		print("choca")
 		
@@ -173,3 +173,4 @@ func _physics_process(delta):
 		ruta_arbol = get_tree().get_root() # Access via scene main loop.
 		Personaje1Muerto = get_parent()
 		Personaje1Muerto.get_parent().get_parent().queue_free()
+
