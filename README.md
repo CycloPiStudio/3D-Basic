@@ -5,16 +5,21 @@ https://mjam.amudev.es/
 
 # Cyclo π Studio  retrasmitiendo!
 
+https://itch.io/jam/mjam20
 
-
+----------------------------------------
 
 Vamos con la Jam
 
 Venga que lo llevamos en abierto: aquí teneis una plantilla
 
-
 https://github.com/CycloPiStudio/3D-Basic.git
 
+-------------------------------------------
+
+<a href="url"><img src="https://pbs.twimg.com/media/EllretXXYAAC0DF?format=jpg&name=small" align="left" height ="360" width ="612" ><a>
+
+-------------------------------------------
 
 
 -------------------------------------------
