@@ -40,7 +40,7 @@ func _ready():
 	pass
 
 func _movimiento():
-	Direction.z = +1
+	Direction.z = -1
 
 
 func _accion():
