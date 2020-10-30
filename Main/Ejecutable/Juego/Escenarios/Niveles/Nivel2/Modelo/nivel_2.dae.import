@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/sueloBasico2.dae-c261c8537e35b7d125d72ec40db691ea.scn"
+path="res://.import/nivel_2.dae-dcbc99cc8287e128514cdd45b024e8da.scn"
 
 [deps]
 
-source_file="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/sueloBasico2.dae"
-dest_files=[ "res://.import/sueloBasico2.dae-c261c8537e35b7d125d72ec40db691ea.scn" ]
+source_file="res://Ejecutable/Juego/Escenarios/Niveles/Nivel2/Modelo/nivel_2.dae"
+dest_files=[ "res://.import/nivel_2.dae-dcbc99cc8287e128514cdd45b024e8da.scn" ]
 
 [params]
 
