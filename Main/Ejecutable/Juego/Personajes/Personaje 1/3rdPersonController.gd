@@ -34,62 +34,72 @@ onready var nombrePlayer = get_node(rutaPlayer).get_child(0).name
 onready var SonidoDanno = get_node("/root/partida/PosicionSalida/personaje/AudioDanno")
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
 	pass
 
+func _movimiento():
+	Direction.z = +1
+
+
+func _accion():
+	print("hacer accion")
+
+
 func _unhandled_input(event):
 	
-	if event is InputEventMouseMotion :
-		Rotation = event.relative * MouseSensitivity
+#	if event is InputEventMouseMotion :
+#		Rotation = event.relative * MouseSensitivity
 	
-	if event is InputEventMouseButton:
-		match event.button_index:
-			BUTTON_WHEEL_UP:
-				ZoomFactor -= 0.05
-			BUTTON_WHEEL_DOWN:
-				ZoomFactor += 0.05
-		ZoomFactor = clamp(ZoomFactor, MaxZoom, MinZoom)
+#	if event is InputEventMouseButton:
+#		match event.button_index:
+#			BUTTON_WHEEL_UP:
+#				ZoomFactor -= 0.05
+#			BUTTON_WHEEL_DOWN:
+#				ZoomFactor += 0.05
+#		ZoomFactor = clamp(ZoomFactor, MaxZoom, MinZoom)
 	if event is InputEventKey and event.pressed:
 		match event.scancode:
-			KEY_ESCAPE:
+#			KEY_ESCAPE:
 				#get_tree().quit()
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			KEY_W: #FORWARD
-				Direction.z -= 1
+#				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#			KEY_W: #FORWARD
+#				Direction.z -= 1
 				
-			KEY_S: #BACKBAWRD
-				Direction.z += 1
+#			KEY_S: #BACKBAWRD
+#				Direction.z += 1
 				
-			KEY_A: #LEFT
-				Direction.x -= 1
-			KEY_D: #RIGHT
-				Direction.x += 1
+#			KEY_A: #LEFT
+#				Direction.x -= 1
+#			KEY_D: #RIGHT
+#				Direction.x += 1
 			KEY_SPACE:
-				if not IsAirborne:
-					CurrentVerticalSpeed = Vector3(0,MaxJump,0)
-					IsAirborne = true
+				_accion()
+#				if not IsAirborne:
+#					CurrentVerticalSpeed = Vector3(0,MaxJump,0)
+#					IsAirborne = true
 
-	if event is InputEventKey and not event.pressed:
-		match event.scancode:
-			KEY_W:
-				Direction.z += 1
-			KEY_S:
-				Direction.z -= 1
-			KEY_A:
-				Direction.x += 1
-			KEY_D:
-				Direction.x -= 1
+#	if event is InputEventKey and not event.pressed:
+#		match event.scancode:
+#			KEY_W:
+#				Direction.z += 1
+#			KEY_S:
+#				Direction.z -= 1
+#			KEY_A:
+#				Direction.x += 1
+#			KEY_D:
+#				Direction.x -= 1
 
-	Direction.z = clamp(Direction.z, -1,1)
-	Direction.x = clamp(Direction.x, -1,1)
+#	Direction.z = clamp(Direction.z, -1,1)
+#	Direction.x = clamp(Direction.x, -1,1)
 	
 
 
 func _physics_process(delta):
+	print(Rotation)
+	_movimiento()
 	#Rotation
-	
 	Player.rotate_y(deg2rad(-Rotation.x)*delta*MouseSensitivity)
 	InnerGimbal.rotate_x(deg2rad(-Rotation.y)*delta*MouseSensitivity)
 	ang_vertical = deg2rad(-Rotation.y)*delta*MouseSensitivity
@@ -103,6 +113,7 @@ func _physics_process(delta):
 	CurrentVerticalSpeed.y += gravity * delta * JumpAcceleration
 	Movement += CurrentVerticalSpeed
 	Player.move_and_slide(Movement,Vector3(0,1,0))
+	
 	
 	if Player.is_on_floor() :
 		CurrentVerticalSpeed.y = 0
@@ -130,9 +141,12 @@ func _physics_process(delta):
 	
 	#Colisión
 	if Player.is_on_wall():
-		Global.vida -= 1
+		Direction.z = Direction.z *(-1)
+		Player.rotate_y(deg2rad(-Rotation.x+90))
+#		Global.vida -= 1
 		SonidoDanno.play()
-		print("gggggggggggggggggggggggggggggggggggg")
+		print("choca")
+		
 	
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
