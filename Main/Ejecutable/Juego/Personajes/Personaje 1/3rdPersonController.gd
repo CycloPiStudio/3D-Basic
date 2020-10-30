@@ -3,7 +3,7 @@ extends Spatial
 export(NodePath) var PlayerPath  = "" #You must specify this in the inspector!
 export(float) var MovementSpeed = 20
 export(float) var Acceleration = 3
-export(float) var MaxJump = 10
+export(float) var MaxJump = 20
 export(float) var MouseSensitivity = 5
 export(float) var RotationLimit = 45
 export(float) var MaxZoom = 0.5
@@ -45,6 +45,12 @@ func _movimiento():
 
 func _accion():
 	print("hacer accion")
+	salto()
+
+func salto():
+	if not IsAirborne:
+		CurrentVerticalSpeed = Vector3(0,MaxJump,0)
+		IsAirborne = true
 
 
 func _unhandled_input(event):
@@ -97,7 +103,8 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-	print(Rotation)
+	print(get_global_transform()[3].y )
+	
 	_movimiento()
 	#Rotation
 	Player.rotate_y(deg2rad(-Rotation.x)*delta*MouseSensitivity)
@@ -141,17 +148,19 @@ func _physics_process(delta):
 	
 	#Colisión
 	if Player.is_on_wall():
-		Direction.z = Direction.z *(-1)
 		Player.rotate_y(deg2rad(-Rotation.x+180))
-#		Global.vida -= 1
 		SonidoDanno.play()
-		print("choca")
+#		print("choca")
 		
-	
+# Si estas por debajo de la altura 0 pierdes vida
+	if get_global_transform()[3].y < 0:
+		Global.vida -= 1
+#		$".".queue_free()
+		
 	#la muerte de la cucuracha :) :) 
 	if Global.vida < 0:
-#		print("muere")
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		print("muere")
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #		Esto no va bien se queda pillao el ratón
 		get_node("/root/Global Menus").add_child(preGameOver)
 		$".".queue_free()
