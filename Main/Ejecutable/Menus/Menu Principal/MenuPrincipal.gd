@@ -44,3 +44,13 @@ func _on_Controles_pressed():
 	get_parent().get_node("boton").play()
 	$".".queue_free()
 	pass # Replace with function body.
+
+
+func _on_TextureButton_button_down():
+	print("mi primer prin JAm")
+	get_node("/root/Global Menus").add_child(Jugar)
+	get_parent().get_node("boton").play()
+	$".".queue_free()
+	pass 
+	
+	pass # Replace with function body.
