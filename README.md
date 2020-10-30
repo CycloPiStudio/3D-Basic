@@ -17,10 +17,9 @@ https://github.com/CycloPiStudio/3D-Basic.git
 
 
 
+-------------------------------------------
+
 <a href="url"><img src="https://img.itch.zone/aW1nLzQ1MDg0NzUucG5n/original/XglZ00.png" align="left" height ="360" width ="612" ><a>
-
-
-
 
 -------------------------------------------
 
