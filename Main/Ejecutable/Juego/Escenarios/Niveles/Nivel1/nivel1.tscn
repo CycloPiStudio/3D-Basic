@@ -39,6 +39,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8599, 0, 16.5291 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00580108, -1.96261 )
 
 [node name="Piezas" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 7 )]
 transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
@@ -141,6 +142,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70288, 0, -7.66679 )
 [node name="Enemigos" type="Spatial" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource( 11 )]
+editor/display_folded = true
 
 [node name="HBoxContainer" parent="HUD" index="0"]
 margin_bottom = 137.0
