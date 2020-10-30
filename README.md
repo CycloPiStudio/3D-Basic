@@ -8,9 +8,14 @@ https://mjam.amudev.es/
 
 Vamos con la Jam
 
-Venga que lo llevamos en abierto
+Venga que lo llevamos en abierto: aquí teneis una plantilla
+
 
 https://github.com/CycloPiStudio/3D-Basic.git
+
+
+
+<a href="url"><img src="https://github.com/CycloPiStudio/3D-Basic/blob/master/Imagenes/Captura%20juego%201.png" align="left" height ="360" width ="612" ><a>
 
 
 
