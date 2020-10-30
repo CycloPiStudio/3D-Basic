@@ -1,3 +1,11 @@
+# 3DMJAM20!
+
+# Cyclo π Studio  retrasmitiendo!
+
+
+Vamos con la Jam
+
+Retasmitiendo 
 # POCAS LUCES Juego 3D
 
 Plantilla para crear juego en 3D utilizando Godot 3.
