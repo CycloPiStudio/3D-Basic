@@ -6,8 +6,8 @@ export(float) var Acceleration = 3
 export(float) var MaxJump = 20
 export(float) var MouseSensitivity = 5
 export(float) var RotationLimit = 45
-export(float) var MaxZoom = 0.5
-export(float) var MinZoom = 1.5
+#export(float) var MaxZoom = 0.5
+#export(float) var MinZoom = 1.5
 export(float) var ZoomSpeed = 2
 
 var Player
@@ -38,9 +38,10 @@ func _ready():
 	Player = get_node(PlayerPath)
 	InnerGimbal =  $InnerGimbal
 	pass
-
-func _movimiento():
-	Direction.z = -1
+var dir = -1
+func _movimiento(dir):
+	
+	Direction.z = dir
 
 
 func _accion():
@@ -103,9 +104,12 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
-	print(get_global_transform()[3].y )
+#	print(get_global_transform()[3].y )
+
+	print (dir)
+	print (get_global_transform()[3].y)
 	
-	_movimiento()
+	_movimiento(dir)
 	#Rotation
 	Player.rotate_y(deg2rad(-Rotation.x)*delta*MouseSensitivity)
 	InnerGimbal.rotate_x(deg2rad(-Rotation.y)*delta*MouseSensitivity)
@@ -148,13 +152,15 @@ func _physics_process(delta):
 	
 	#Colisión
 	if Player.is_on_wall():
-		Player.rotate_y(deg2rad(-Rotation.x+180))
+#		Player.rotate_y(deg2rad(-Rotation.x+180))
+#		get_node("InnerGimbal/Camera").rotate_y(deg2rad(-Rotation.x+180))
+		dir = dir * (-1)
 		SonidoDanno.play()
 #		print("choca")
 		
 # Si estas por debajo de la altura 0 pierdes vida
-	if get_global_transform()[3].y < 0:
-		Global.vida -= 1
+	if get_global_transform()[3].y < -1:
+		Global.vida -= 2
 #		$".".queue_free()
 		
 	#la muerte de la cucuracha :) :) 
