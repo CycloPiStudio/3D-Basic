@@ -142,7 +142,7 @@ func _physics_process(delta):
 	#Colisión
 	if Player.is_on_wall():
 		Direction.z = Direction.z *(-1)
-		Player.rotate_y(deg2rad(-Rotation.x+90))
+		Player.rotate_y(deg2rad(-Rotation.x+180))
 #		Global.vida -= 1
 		SonidoDanno.play()
 		print("choca")
