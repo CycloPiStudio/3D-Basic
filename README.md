@@ -5,7 +5,9 @@
 
 Vamos con la Jam
 
-Retasmitiendo 
+Venga que lo llevamos en abierto
+
+
 # POCAS LUCES Juego 3D
 
 Plantilla para crear juego en 3D utilizando Godot 3.
