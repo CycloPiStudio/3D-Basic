@@ -34,7 +34,7 @@ func _process(_delta):
 func _on_Area_body_entered(body):
 #	toca_luz = OS.get_ticks_msec()
 	if body.name == "personaje":
-		print ("se hizo la luz")
+#		print ("se hizo la luz")
 #		luz.light_energy = 7
 #		luzEnviroment.get_environment(set_bg_energy(7))
 		get_parent().get_node("WorldEnvironment").rojo = 1.0
