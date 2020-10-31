@@ -15,6 +15,13 @@ Venga que lo llevamos en abierto: aquí teneis una plantilla
 
 https://github.com/CycloPiStudio/3D-Basic.git
 
+----------------------------------------
+
+Hay que probar 
+
+Venga que lo llevamos en abierto: aquí teneis una plantilla
+
+----------------------------------------
 
 # Cyclo π Studio 
 
