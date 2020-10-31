@@ -62,6 +62,19 @@ func _on_Nivel4_pressed():
 
 
 func _on_TextureButton_pressed():
+	meter_escena()
+#	_load_scene("res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.tscn")
+#	get_parent().get_node("boton").play()
+	pass # Replace with function body.
+
+func _input(ev):
+	if ev is InputEventKey:
+		if ev.pressed:
+#			print(ev)
+			meter_escena()
+
+func meter_escena():
 	_load_scene("res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.tscn")
 	get_parent().get_node("boton").play()
-	pass # Replace with function body.
+	print("meto escana?")
+	pass 
