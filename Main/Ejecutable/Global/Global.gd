@@ -46,7 +46,16 @@ var partida
 #
 #
 #
-#func _ready():
+func _ready():
+	print("MJam20")
+	print(nivel, vida,puntos, arma)
+#var RutaPersonajeSelect = 0
+#var nivel = 0
+#var RutaNivelSelect = 0
+#var vida = 0
+#var puntos = 0
+#var arma = 0
+#var partida	)
 #	crearArchivoGuardado()
 #
 #
