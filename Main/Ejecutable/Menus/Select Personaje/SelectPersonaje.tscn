@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Ejecutable/Menus/Select Personaje/SelectPersonaje.gd" type="Script" id=1]
 [ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2/Modelo/Extrat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 1/Modelo/Gooblin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Menus/Select Personaje/Imagenes/titulo-creditos.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
@@ -77,17 +78,11 @@ current = true
 margin_right = 1074.0
 margin_bottom = 662.0
 
-[node name="Label" type="Label" parent="TextureButton"]
-margin_right = 538.0
-margin_bottom = 385.0
-text = "press"
-
-[node name="Label2" type="Label" parent="TextureButton"]
-margin_left = 203.997
-margin_top = 160.725
-margin_right = 741.997
-margin_bottom = 545.725
-text = "press"
+[node name="Sprite" type="Sprite" parent="TextureButton"]
+position = Vector2( 3.05176e-005, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+centered = false
 [connection signal="mouse_entered" from="VBoxContainer/Player 1" to="." method="_on_Player_1_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/Player 1" to="." method="_on_Player_1_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Player 1" to="." method="_on_Player_1_pressed"]
