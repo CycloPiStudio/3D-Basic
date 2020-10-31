@@ -14,8 +14,9 @@ var elroot
 #	pass
 
 func _on_Area_body_entered(body):
+	print ("Ganar")
 	if body.is_in_group("Player"):
-#		print ("colision con player")
+		print ("colision con player")
 #		print(Global.nivel)
 		if str(Global.nivel) == "nivel1":
 			Global.nivel = 1
@@ -33,3 +34,7 @@ func _on_Area_body_entered(body):
 		get_parent().get_parent().queue_free()
 #		Personaje1Muerto = get_parent().get_parent().queue_free()
 		pass # replace with function body
+
+
+func _on_Area_area_entered(area):
+	pass # Replace with function body.
