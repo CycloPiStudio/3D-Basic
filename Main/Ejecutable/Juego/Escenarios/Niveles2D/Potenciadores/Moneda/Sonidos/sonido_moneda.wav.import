@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sonido_moneda.wav-5744dc6245ceb533d644d1efe9085e2e.sample"
+
+[deps]
+
+source_file="res://Ejecutable/Juego/Escenarios/Niveles2D/Potenciadores/Moneda/Sonidos/sonido_moneda.wav"
+dest_files=[ "res://.import/sonido_moneda.wav-5744dc6245ceb533d644d1efe9085e2e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

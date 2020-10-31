@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/salto.wav-6ae366c977f62a5eb57bf4737771889f.sample"
+
+[deps]
+
+source_file="res://Ejecutable/Juego/Escenarios/Niveles2D/recursos/Sonidos/salto.wav"
+dest_files=[ "res://.import/salto.wav-6ae366c977f62a5eb57bf4737771889f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/game_over.wav-662daee9e419adc85512877f755fbb36.sample"
+
+[deps]
+
+source_file="res://Ejecutable/Juego/Escenarios/Niveles2D/recursos/Sonidos/game_over.wav"
+dest_files=[ "res://.import/game_over.wav-662daee9e419adc85512877f755fbb36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
