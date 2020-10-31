@@ -59,3 +59,9 @@ func _on_Nivel4_pressed():
 	_load_scene("res://Ejecutable/Juego/Escenarios/Niveles/Nivel4/nivel4.tscn")
 	get_parent().get_node("boton").play()
 	pass # replace with function body
+
+
+func _on_TextureButton_pressed():
+	_load_scene("res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.tscn")
+	get_parent().get_node("boton").play()
+	pass # Replace with function body.
