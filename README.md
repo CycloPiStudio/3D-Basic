@@ -19,7 +19,9 @@ https://github.com/CycloPiStudio/3D-Basic.git
 
 Hay que probar 
 
-Venga que lo llevamos en abierto: aquí teneis una plantilla
+Venga que lo llevamos en abierto: aquí teneis una plantilla: Testeando
+
+https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2020/mjam20/prueba-html-jam/3d_basic_plantilla_mjam20-01-jo.html
 
 ----------------------------------------
 
