@@ -47,10 +47,20 @@ func _on_Controles_pressed():
 
 
 func _on_TextureButton_button_down():
-	print("mi primer prin JAm")
+	print("mi primer print JAm")
+	iralmenu()
+
+	pass 
+
+func _input(ev):
+	if ev is InputEventKey:
+		print(ev)
+		iralmenu()
+	pass # Replace with function body.
+
+func iralmenu():
+	print("funcion ir al menu")
 	get_node("/root/Global Menus").add_child(Jugar)
 	get_parent().get_node("boton").play()
 	$".".queue_free()
-	pass 
 	
-	pass # Replace with function body.
