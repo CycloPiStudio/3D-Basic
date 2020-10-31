@@ -15,7 +15,7 @@ func _ready():
 #	pass
 
 func disminuyeIntensidadLuz():
-	print("disminuye luz")
+#	print("disminuye luz")
 	if rojo > 0:
 		rojo -= 0.1
 		verde -= 0.1
