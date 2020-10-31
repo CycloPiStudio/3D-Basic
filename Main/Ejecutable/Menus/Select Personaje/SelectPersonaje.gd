@@ -57,3 +57,12 @@ func _on_Player_2_mouse_entered():
 func _on_Player_2_mouse_exited():
 	$"HUD 3D/Viewport/modelo/Scene RootP2".hide()
 	pass 
+
+
+func _on_TextureButton_pressed():
+	Global.cargarPlayer("res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.tscn")
+	Global.RutaPersonajeSelect = str("res://Ejecutable/Juego/Personajes/Personaje 1/Personaje1.tscn")
+	get_parent().get_node("boton").play()
+	PasarASelectecNivel()
+	pass 
+	pass # Replace with function body.
