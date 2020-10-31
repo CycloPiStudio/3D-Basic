@@ -18,7 +18,7 @@ func _ready():
 func _process(_delta):
 	tiempo_luz = OS.get_ticks_msec()
 	disminuyeIntensidadLuz()
-	print (luz.light_energy)
+#	print (luz.light_energy)
 #	pass
 
 func disminuyeIntensidadLuz():
