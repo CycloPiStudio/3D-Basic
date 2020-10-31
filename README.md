@@ -21,6 +21,13 @@ Venga venga a reventar
 
 ----------------------------------------
 
+Aquí podeis ver los avances durante la Jam: 
+
+https://github.com/CycloPiStudio/3D-Basic/network
+
+----------------------------------------
+----------------------------------------
+
 Hay que probar 
 
 Venga que lo llevamos en abierto: aquí teneis una plantilla: Testeando
