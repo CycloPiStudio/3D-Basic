@@ -2,7 +2,7 @@ extends Node
 
 var Creditos = preload("res://Ejecutable/Menus/Creditos/Creditos.tscn").instance()
 var Jugar = preload("res://Ejecutable/Menus/Select Personaje/SelectPersonaje.tscn").instance()
-var Cargar = preload("res://Ejecutable/Menus/Cargar/Cargar.tscn").instance()
+#var Cargar = preload("res://Ejecutable/Menus/Cargar/Cargar.tscn").instance()
 var Multiplayer = preload("res://Ejecutable/Menus/MultiPlayer/Menu muliplayer.tscn").instance()
 var Controles = preload("res://Ejecutable/Menus/Controles/controles.tscn").instance()
 
@@ -28,7 +28,7 @@ func _on_Salir_pressed():
 	pass 
 
 func _on_Cargar_pressed():
-	get_node("/root/Global Menus").add_child(Cargar)
+#	get_node("/root/Global Menus").add_child(Cargar)
 	get_parent().get_node("boton").play()
 	$".".queue_free()
 	pass
