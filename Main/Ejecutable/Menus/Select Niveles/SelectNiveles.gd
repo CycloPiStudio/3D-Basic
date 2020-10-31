@@ -1,24 +1,24 @@
 extends Node
 
 var partida 
-
-func _ready():
-	$VBoxContainer.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/4))
-	if Global.nivel == 0:
-#		print(get_node("VBoxContainer/Nivel2").get_global_transform()[2])
-		get_node("VBoxContainer/Nivel2").hide()
-		get_node("VBoxContainer/Nivel3").hide()
-		get_node("VBoxContainer/Nivel4").hide()
-
-	if Global.nivel == 1:
-		get_node("VBoxContainer/Nivel3").hide()
-		get_node("VBoxContainer/Nivel4").hide()
-
-	if Global.nivel == 2:
-		get_node("VBoxContainer/Nivel4").hide()
-	
-	if Global.nivel == 3:
-		pass
+#
+#func _ready():
+#	$VBoxContainer.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/4))
+#	if Global.nivel == 0:
+##		print(get_node("VBoxContainer/Nivel2").get_global_transform()[2])
+#		get_node("VBoxContainer/Nivel2").hide()
+#		get_node("VBoxContainer/Nivel3").hide()
+#		get_node("VBoxContainer/Nivel4").hide()
+#
+#	if Global.nivel == 1:
+#		get_node("VBoxContainer/Nivel3").hide()
+#		get_node("VBoxContainer/Nivel4").hide()
+#
+#	if Global.nivel == 2:
+#		get_node("VBoxContainer/Nivel4").hide()
+#
+#	if Global.nivel == 3:
+#		pass
 
 
 
