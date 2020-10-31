@@ -1,6 +1,6 @@
-extends Node
+#	extends Node
 
-onready var botonGuardados = preload("res://Ejecutable/Juego/HUD/HUD Datos Comunes/Boton.tscn")
+#	onready var botonGuardados = preload("res://Ejecutable/Juego/HUD/HUD Datos Comunes/Boton.tscn")
 #
 #
 #func _ready():
