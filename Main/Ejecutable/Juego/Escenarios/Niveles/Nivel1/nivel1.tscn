@@ -1,18 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.2_Puntos/P.2_Puntos.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/P.0_Ganar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.4_Bazoka/P.4_Bazoka.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.5_Vida/P.5_Vida.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.7_Guardar/Guardar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi1_Panel_2D/Pi1_Panel_2D.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi3_Ladrillo/Pi3_Ladrillo.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi6_luzEnviromenControladaPulsadores/Pi6_WorldEnvironment.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Piezas/Pi6_luzEnviromenControladaPulsadores/Pi6.1_InterruptorDelEnviromen/Pi6.1_InterruptorDelEnviromen.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/Modelo/nivel_1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=13]
+[ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/cubos_set2.tres" type="MeshLibrary" id=4]
 
 [node name="nivel1" type="Spatial"]
 script = ExtResource( 1 )
@@ -20,128 +11,7 @@ script = ExtResource( 1 )
 [node name="PosicionSalida" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4686, 2.09692, 56.4696 )
 
-[node name="Potenciadores" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Potenciador2" parent="Potenciadores" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4471, 0.072998, 21.4884 )
-
-[node name="Potenciador0Salir" parent="Potenciadores" instance=ExtResource( 3 )]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.2466, 0.489491, 1.81342 )
-
-[node name="P4_Bazoka" parent="Potenciadores" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3569, 0.771351, 4.34143 )
-
-[node name="P5_Vida" parent="Potenciadores" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8599, 0, 16.5291 )
-
-[node name="Guardar" parent="Potenciadores" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00580108, -1.96261 )
-
-[node name="Piezas" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="Pi1_Panel_2D" parent="Piezas" instance=ExtResource( 7 )]
-transform = Transform( -0.260685, 0, 0.965424, 0, 1, 0, -0.965424, 0, -0.260685, -3.83178, 1.09928, 2.17496 )
-
-[node name="Pi3_Ladrillo" parent="Piezas" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.9105, 0.296387, 10.96 )
-
-[node name="Iluminacion" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="WorldEnvironment" parent="Iluminacion" instance=ExtResource( 9 )]
-
-[node name="InterruptorDelEnviromen" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.7091, 0, 55.6142 )
-
-[node name="InterruptorDelEnviromen2" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0716, 0, 46.1796 )
-
-[node name="InterruptorDelEnviromen3" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64241, 0, 32.1026 )
-
-[node name="InterruptorDelEnviromen4" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.8301, 0, 45.7303 )
-
-[node name="InterruptorDelEnviromen5" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6902, 0, 27.1606 )
-
-[node name="InterruptorDelEnviromen6" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9029, 0, 27.1606 )
-
-[node name="InterruptorDelEnviromen7" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9029, 0, 27.1606 )
-
-[node name="InterruptorDelEnviromen8" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0141, 0, 38.5421 )
-
-[node name="InterruptorDelEnviromen9" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69072, 0, 32.1026 )
-
-[node name="InterruptorDelEnviromen10" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69072, 0, 24.6148 )
-
-[node name="InterruptorDelEnviromen11" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7244, 0, 24.6148 )
-
-[node name="InterruptorDelEnviromen12" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7629, 0, 24.6148 )
-
-[node name="InterruptorDelEnviromen13" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1443, 0, 16.2285 )
-
-[node name="InterruptorDelEnviromen14" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7097, 0, 2.30117 )
-
-[node name="InterruptorDelEnviromen15" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.3326, 0, -8.03197 )
-
-[node name="InterruptorDelEnviromen16" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.879, 0, -15.37 )
-
-[node name="InterruptorDelEnviromen17" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0331, 0, -22.2588 )
-
-[node name="InterruptorDelEnviromen18" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.637, 0, -34.6885 )
-
-[node name="InterruptorDelEnviromen19" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5068, 0, -48.0167 )
-
-[node name="InterruptorDelEnviromen20" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5114, 0, -48.0167 )
-
-[node name="InterruptorDelEnviromen21" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1841, 0, -28.6278 )
-
-[node name="InterruptorDelEnviromen22" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1841, 0, -8.19082 )
-
-[node name="InterruptorDelEnviromen23" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4328, 0, 16.7877 )
-
-[node name="InterruptorDelEnviromen24" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4458, 0, 5.78319 )
-
-[node name="InterruptorDelEnviromen25" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8653, 0, -18.322 )
-
-[node name="InterruptorDelEnviromen26" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80814, 0, -39.1083 )
-
-[node name="InterruptorDelEnviromen27" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3275, 0, -39.1083 )
-
-[node name="InterruptorDelEnviromen28" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63348, 0, -22.6889 )
-
-[node name="InterruptorDelEnviromen29" parent="Iluminacion" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70288, 0, -7.66679 )
-
-[node name="Enemigos" type="Spatial" parent="."]
-
-[node name="HUD" parent="." instance=ExtResource( 11 )]
+[node name="HUD" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
 
 [node name="HBoxContainer" parent="HUD" index="0"]
@@ -157,14 +27,22 @@ margin_bottom = 137.0
 visible = false
 
 [node name="Camera" parent="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa/Viewport" index="0"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.39713, 100.287, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 2.39713, 100.287, 0 )
 size = 172.16
 
-[node name="Nivel1" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205355, 0.00770378, -0.00815535 )
-
 [node name="AudioMusicNivel_01" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 3 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 4 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 28, 18, 0, 28, 19, 0, 28, 20, 0, 28, 21, 0, 28, 22, 536870912, 28, 23, 536870912, 28, 24, 0, 28, 25, 0, 28, 26, 536870912, 28, 27, 536870912, 28, 28, 0, 28, 29, 0, 56, 38, 0, 57, 38, 0, 55, 39, 536870912, 57, 39, 0, 57, 40, 0, 54, 41, 0, 55, 41, 536870912, 54, 42, 0, 56, 42, 0, 57, 42, 0, -65481, 42, 537657344, 57, 43, 0, -65481, 43, 786432, -65480, 43, 537657344, 57, 44, 0, -65480, 44, 786432, 56, 45, 537657344, 57, 45, 0, -65480, 45, 786432, 56, 46, 786432, -65480, 46, 786432, -65480, 47, 537657344, -65480, 48, 537657344, -65480, 49, 537657344, 52, 50, 0, -65480, 50, 537657344, -65481, 51, 537657344, -65480, 51, 537657344, -65479, 51, 537657344, -65481, 52, 786432, -65480, 52, 537657344, -65479, 52, 537657344, -65480, 53, 786432, -65480, 54, 786432, -65480, 55, 537657344, 56, 56, 537657344, 131128, 56, 786432, 131129, 56, 786432, -65480, 56, 786432, 56, 57, 786432, 131129, 57, 537657344, -65480, 57, 537657344, 56, 58, 786432, -65480, 58, 537657344 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, -1, 0 )
+}
 
 [editable path="HUD"]
 
