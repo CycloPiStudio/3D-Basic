@@ -11,9 +11,13 @@ https://itch.io/jam/mjam20
 
 Vamos con la Jam
 
-Venga que lo llevamos en abierto: aquí teneis una plantilla
+# # Venga que lo llevamos en abierto: aquí teneis una plantillas
+
+https://github.com/CycloPiStudio/plataformas/commit/95cadfc793653e441796ded7ae73b15979d0165f
 
 https://github.com/CycloPiStudio/3D-Basic.git
+
+Venga venga a reventar
 
 ----------------------------------------
 
