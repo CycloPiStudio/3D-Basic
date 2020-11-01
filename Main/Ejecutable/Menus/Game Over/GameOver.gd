@@ -1,7 +1,7 @@
 extends Node
 
-var tope = 160
-var contador = 0
+#var tope = 160
+#var contador = 0
 var preMenuPrincipal = load("res://Ejecutable/Menus/Menu Principal/MenuPrincipal.tscn")
 var MenuPrincipal
 
