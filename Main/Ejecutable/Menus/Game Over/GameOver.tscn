@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ejecutable/Menus/Game Over/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ejecutable/Menus/Sonidos/GameOver.wav" type="AudioStream" id=3]
+[ext_resource path="res://Ejecutable/Menus/Menu Principal/Imagenes/titulo.png" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Menus/Comunes/Boton Menu principal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ejecutable/Menus/Sonidos/GameOver.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
@@ -14,18 +15,23 @@ font_data = SubResource( 1 )
 [node name="GameOver" type="Node"]
 script = ExtResource( 1 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 520.458, 240.552 )
+texture = ExtResource( 2 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 357.0
-margin_top = 188.0
-margin_right = 432.0
-margin_bottom = 202.0
+margin_left = 383.427
+margin_top = 390.606
+margin_right = 535.427
+margin_bottom = 411.606
 custom_fonts/font = SubResource( 2 )
 text = "Game Over"
 
-[node name="Boton Menu principal" parent="." instance=ExtResource( 2 )]
+[node name="Boton Menu principal" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="AudioGameOver" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 0.04
 
 [node name="Timer" type="Timer" parent="."]
