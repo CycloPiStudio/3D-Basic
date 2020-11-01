@@ -2,7 +2,7 @@ extends Spatial
 
 var win = preload("res://Ejecutable/Menus/Win/Win.tscn").instance()
 #var Personaje1Muerto
-var elroot
+#var elroot
 #func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
