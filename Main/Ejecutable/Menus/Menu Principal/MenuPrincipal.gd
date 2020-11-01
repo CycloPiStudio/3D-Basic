@@ -14,6 +14,7 @@ var Jugar2D = preload("res://Ejecutable/Juego/Escenarios/Niveles2D/Nivel_1/Nivel
 
 func _ready():
 	$VBoxContainer.set_position(Vector2(get_viewport().size.x/4 , get_viewport().size.y/4))
+	print(Jugar2D, Jugar)
 	pass
 
 func _on_Creditos_pressed():
@@ -68,11 +69,14 @@ func iralmenu():
 	print("funcion ir al menu")
 	
 	#2D
-#	get_node("/root/Global Menus").add_child(Jugar2D)
+#	get_node("/root").add_child(Jugar2D)
+#	get_parent().get_node("Musica Menus").stop()
+	
 	#3D
 	get_node("/root/Global Menus").add_child(Jugar)
 
 	#Musica y salida
+#	get_parent().get_node("Musica Menus").stop()
 	get_parent().get_node("boton").play()
 	$".".queue_free()
 	
