@@ -20,7 +20,10 @@ var direction_x = right
 
 #Cyclo Pi variables
 var bandera_boton_pulsao = false
-#onready var gameover = load("res://Menus/GameOver/GameOver.tscn").instance()
+
+onready var GameOver2D = preload("res://Ejecutable/Menus/Game Over/GameOver.tscn").instance()
+#res://Ejecutable/Menus/Game Over/GameOver.tscn
+#on_ready var gameover = preload("res://Menus/GameOver/GameOver.tscn")
 var bandera_muerto = false
 var bandera_sonido_pasos = true
 
@@ -112,6 +115,11 @@ func _on_AudioPasos_finished():
 	
 func morir():
 	bandera_muerto = true
+	print("morir2")
+	get_node("/root/Global Menus").add_child(GameOver2D)
+	get_parent().queue_free()
+#	get_parent().get_node("Musica Menus").play()
+#	$".".queue_free()
 #	Global.puntuacion = 0
 	
 #	quitar_vida()
