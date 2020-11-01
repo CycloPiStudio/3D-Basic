@@ -40,6 +40,9 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.583, -32.749 )
 [node name="GridMap_nivel1" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.25, 0, 0 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.87897, 0.288137, 0.379985, -0.476876, 0.531088, 0.700381, 0, -0.79682, 0.604216, 4.80552, 11.0028, 1.00135 )
+
 [editable path="HUD"]
 
 [editable path="HUD/HBoxContainer/VBoxContainer/HUD 9 Mapa"]
