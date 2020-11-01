@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Juego/Caracteres/Enemigos/Enemigo_01/Enemigo_01.gd" type="Script" id=1]
-[ext_resource path="res://Juego/Caracteres/Enemigos/Enemigo_01/Imgs/enemigo_01.1.png" type="Texture" id=2]
-[ext_resource path="res://Juego/Caracteres/Enemigos/Enemigo_01/Imgs/enemigo_01.2.png" type="Texture" id=3]
-[ext_resource path="res://Juego/Caracteres/Enemigos/Enemigo_01/Imgs/enemigo_01.3.png" type="Texture" id=4]
-[ext_resource path="res://Juego/Caracteres/Enemigos/Enemigo_01/Imgs/enemigo_01.4.png" type="Texture" id=5]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Enemigo_01/Enemigo_01.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Enemigo_01/Imgs/enemigo_01.1.png" type="Texture" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Enemigo_01/Imgs/enemigo_01.2.png" type="Texture" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Enemigo_01/Imgs/enemigo_01.3.png" type="Texture" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Enemigo_01/Imgs/enemigo_01.4.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 14.2424
@@ -30,7 +30,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "caminar"
-frame = 1
 playing = true
 
 [node name="Area2Denemigo" type="Area2D" parent="."]
