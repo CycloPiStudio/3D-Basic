@@ -9,6 +9,7 @@ var puntos = 0
 var arma = 0
 var partida	
 #
+var nivel2D = 0
 ##Partidas guardadas _______________________________
 #var guardadoPersistente = null
 #var nombre_guardado1 = "Vacío"
@@ -48,7 +49,7 @@ var partida
 #
 func _ready():
 	print("MJam20")
-	print(nivel, vida,puntos, arma)
+	print(nivel, vida,puntos, arma, nivel2D)
 #var RutaPersonajeSelect = 0
 #var nivel = 0
 #var RutaNivelSelect = 0
