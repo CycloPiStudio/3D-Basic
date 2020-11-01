@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Ejecutable/Global/Global.gd"
+Global_cambiar_nivel="*res://Ejecutable/Juego/Escenarios/Niveles2D/recursos/Global/Global_cambiar_nivel.gd"
 
 [display]
 
