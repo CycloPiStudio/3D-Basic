@@ -36,6 +36,15 @@ https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2020/mjam20/prueba-htm
 
 ----------------------------------------
 
+Control: funcionado:
+
+https://github.com/CycloPiStudio/3D-Basic/tree/771d84f467deb0307a0dcd06d2ab646ee6c12516
+
+----------------------------------------
+
+# Cyclo π Studio 
+
+
 # Cyclo π Studio 
 
 -------------------------------------------
