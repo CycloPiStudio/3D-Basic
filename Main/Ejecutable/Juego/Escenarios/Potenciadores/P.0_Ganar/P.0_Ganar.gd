@@ -1,6 +1,6 @@
 extends Spatial
 
-var preGameOver = preload("res://Ejecutable/Menus/Win/Win.tscn").instance()
+var win = preload("res://Ejecutable/Menus/Win/Win.tscn").instance()
 #var Personaje1Muerto
 var elroot
 #func _ready():
@@ -14,9 +14,9 @@ var elroot
 #	pass
 
 func _on_Area_body_entered(body):
-	print ("Ganar")
 	if body.is_in_group("Player"):
 		print ("colision con player")
+
 #		print(Global.nivel)
 		if str(Global.nivel) == "nivel1":
 			Global.nivel = 1
@@ -26,15 +26,15 @@ func _on_Area_body_entered(body):
 			Global.nivel = 4
 		if str(Global.nivel) == "nivel4":
 			Global.nivel = 4
-		
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_node("/root/Global Menus").add_child(preGameOver)
-		$".".queue_free()
-		elroot = get_tree().get_root() # Access via scene main loop.
-		get_parent().get_parent().queue_free()
+
+		get_parent().queue_free()
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_node("/root/Global Menus").add_child(win)
+
+#		elroot = get_tree().get_root() # Access via scene main loop.
+#		get_parent().get_parent().queue_free()
 #		Personaje1Muerto = get_parent().get_parent().queue_free()
 		pass # replace with function body
 
 
-func _on_Area_area_entered(area):
-	pass # Replace with function body.
+
