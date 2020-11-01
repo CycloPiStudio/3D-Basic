@@ -9,6 +9,10 @@ https://itch.io/jam/mjam20
 
 ----------------------------------------
 
+Nuestro título: Truco o Jam
+
+----------------------------------------
+
 Vamos con la Jam
 
 # # Venga que lo llevamos en abierto: aquí teneis una plantillas
