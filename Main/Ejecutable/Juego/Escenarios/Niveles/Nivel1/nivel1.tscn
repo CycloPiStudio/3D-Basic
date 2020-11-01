@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/nivel1.gd" type="Script" id=1]
 [ext_resource path="res://Ejecutable/Juego/HUD/HUD/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Sonidos/Sampler_Nivel_1.wav" type="AudioStream" id=3]
-[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/cubos_set2.tres" type="MeshLibrary" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Potenciadores/P.0_Ganar/P.0_Ganar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/Nivel1/GridMap_nivel1.tscn" type="PackedScene" id=5]
 
 [node name="nivel1" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="PosicionSalida" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4686, 2.09692, 56.4696 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48123, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
@@ -33,16 +34,11 @@ size = 172.16
 [node name="AudioMusicNivel_01" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource( 4 )
-cell_size = Vector3( 1, 1, 1 )
-data = {
-"cells": PoolIntArray( 28, 18, 0, 28, 19, 0, 28, 20, 0, 28, 21, 0, 28, 22, 0, 28, 23, 0, 28, 24, 0, 28, 25, 0, 28, 26, 0, 28, 27, 0, 28, 28, 0, 28, 29, 0, 56, 38, 0, 57, 38, 536870912, 55, 39, 0, 57, 39, 0, 57, 40, 0, 54, 41, 0, 55, 41, 0, 54, 42, 0, 56, 42, 0, 57, 42, 0, -65481, 42, 786432, 57, 43, 0, -65481, 43, 786432, -65480, 43, 786432, 57, 44, 0, -65480, 44, 786432, 56, 45, 786432, 57, 45, 0, -65480, 45, 786432, 56, 46, 786432, -65480, 46, 786432, -65480, 47, 786432, -65480, 48, 786432, -65480, 49, 786432, 52, 50, 0, -65480, 50, 786432, -65481, 51, 786432, -65480, 51, 786432, -65479, 51, 786432, -65481, 52, 786432, -65480, 52, 786432, -65479, 52, 786432, -65480, 53, 786432, -65480, 54, 786432, -65480, 55, 786432, 56, 56, 786432, 131128, 56, 786432, 131129, 56, 786432, -65480, 56, 786432, 56, 57, 786432, 131129, 57, 786432, -65480, 57, 786432, 56, 58, 786432, -65480, 58, 786432 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, -1, 0 )
-}
+[node name="P0_Ganar" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.583, -32.749 )
+
+[node name="GridMap_nivel1" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.25, 0, 0 )
 
 [editable path="HUD"]
 
