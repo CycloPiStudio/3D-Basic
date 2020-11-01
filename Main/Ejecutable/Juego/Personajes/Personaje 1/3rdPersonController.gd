@@ -106,8 +106,8 @@ func _unhandled_input(event):
 func _physics_process(delta):
 #	print(get_global_transform()[3].y )
 
-	print (dir)
-	print (get_global_transform()[3].y)
+#	print (dir)
+#	print (get_global_transform()[3].y)
 	
 	_movimiento(dir)
 	#Rotation
@@ -174,3 +174,8 @@ func _physics_process(delta):
 		Personaje1Muerto = get_parent()
 		Personaje1Muerto.get_parent().get_parent().queue_free()
 
+
+
+func _on_TextureButton_pressed():
+	salto()
+	pass # Replace with function body.

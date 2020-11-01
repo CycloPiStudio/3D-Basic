@@ -11,5 +11,10 @@ PlayerPath = NodePath("..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45646, 0 )
 
 [node name="Camera" type="Camera" parent="InnerGimbal"]
-transform = Transform( -0.00649669, -0.182612, 0.278787, -1.09257e-05, 0.27884, 0.182646, -0.33327, 0.00355065, -0.00544059, 3.34694, 1.66243, 0 )
+transform = Transform( -0.00649669, -0.182612, 0.278787, -1.09257e-005, 0.27884, 0.182646, -0.33327, 0.00355065, -0.00544059, 3.34694, 1.66243, 0 )
 current = true
+
+[node name="TextureButton" type="TextureButton" parent="InnerGimbal/Camera"]
+margin_right = 1050.0
+margin_bottom = 624.0
+[connection signal="pressed" from="InnerGimbal/Camera/TextureButton" to="." method="_on_TextureButton_pressed"]
