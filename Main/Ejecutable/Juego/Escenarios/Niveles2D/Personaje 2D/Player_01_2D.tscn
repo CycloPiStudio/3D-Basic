@@ -1,28 +1,22 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Player_01_2D.gd" type="Script" id=1]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-walk-1.png" type="Texture" id=2]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-walk-2.png" type="Texture" id=3]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-walk-3.png" type="Texture" id=4]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-walk-4.png" type="Texture" id=5]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-jump-1.png" type="Texture" id=6]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Imgs/player-jump-2.png" type="Texture" id=7]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Sonidos/paso.wav" type="AudioStream" id=8]
-[ext_resource path="res://Ejecutable/Juego/Personajes/Personaje 2D/Sonidos/salto.wav" type="AudioStream" id=9]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Personaje 2D/Player_01_2D.gd" type="Script" id=1]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Personaje 2D/Sonidos/paso.wav" type="AudioStream" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles2D/Personaje 2D/Sonidos/salto.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ null, null, null, null ],
 "loop": true,
 "name": "caminar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ null ],
 "loop": true,
 "name": "saltar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ null ],
 "loop": true,
 "name": "caer",
 "speed": 5.0
@@ -54,13 +48,13 @@ margin_right = 240.0
 margin_bottom = 133.0
 
 [node name="AudioPasos" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 2 )
 volume_db = -15.0
 pitch_scale = 0.5
 autoplay = true
 
 [node name="AudioSalto" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 3 )
 [connection signal="button_down" from="TextureButton" to="." method="_on_TextureButton_button_down"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="finished" from="AudioPasos" to="." method="_on_AudioPasos_finished"]
