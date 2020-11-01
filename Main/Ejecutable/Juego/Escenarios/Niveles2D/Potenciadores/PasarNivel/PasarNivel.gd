@@ -11,7 +11,11 @@ func _on_Area2D_body_entered(body):
 		
 		if get_parent().filename == "res://Ejecutable/Juego/Escenarios/Niveles2D/Nivel_1/Nivel_1.tscn":
 			print("ganar")
-#			Global_cambiar_nivel.goto_scene("res://Ejecutable/Menus/Select Personaje/SelectPersonaje.tscn")
+			Global.nivel2D = 2
+#			Global_cambiar_nivel.goto_scene("res://Ejecutable/Juego/Escenarios/Niveles2D/Nivel_1/Nivel_1.tscn")
+		if get_parent().filename == "res://Ejecutable/Juego/Escenarios/Niveles2D/Nivel_2/Nivel_2.tscn":
+			print("ganar")
+			Global.nivel2D = 3
 		if get_parent().filename == "res://Juego/Escenarios/Niveles/Nivel_2/Nivel_2.tscn":
 			Global_cambiar_nivel.wait_frames = 0
 			Global_cambiar_nivel.goto_scene("res://Menus/Creditos/Creditos.tscn")
