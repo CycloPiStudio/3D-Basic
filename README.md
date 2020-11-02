@@ -1,4 +1,4 @@
-# 3DMJAM20!
+# MJAM20!
 
 
 https://mjam.amudev.es/
