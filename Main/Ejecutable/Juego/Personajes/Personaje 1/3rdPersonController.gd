@@ -50,8 +50,9 @@ func _accion():
 
 func salto():
 	if not IsAirborne:
-		CurrentVerticalSpeed = Vector3(0,MaxJump,0)
 		IsAirborne = true
+		CurrentVerticalSpeed = Vector3(0,MaxJump,0)
+		
 
 
 func _unhandled_input(event):
@@ -66,7 +67,7 @@ func _unhandled_input(event):
 #			BUTTON_WHEEL_DOWN:
 #				ZoomFactor += 0.05
 #		ZoomFactor = clamp(ZoomFactor, MaxZoom, MinZoom)
-	if event is InputEventKey and event.pressed:
+	if event is InputEventKey and event.is_pressed():
 		match event.scancode:
 #			KEY_ESCAPE:
 				#get_tree().quit()
@@ -152,6 +153,7 @@ func _physics_process(delta):
 	
 	#Colisión
 	if Player.is_on_wall():
+		IsAirborne = false
 		Player.rotate_y(deg2rad(-Rotation.x+180))
 		get_node("InnerGimbal").global_rotate(Vector3(0,1,0),deg2rad(180))
 #		dir = dir * (-1)
