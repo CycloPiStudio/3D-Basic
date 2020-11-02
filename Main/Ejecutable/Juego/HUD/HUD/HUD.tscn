@@ -34,19 +34,22 @@ margin_right = 200.0
 margin_bottom = 51.0
 
 [node name="HUD3puntosNodo" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+visible = false
 margin_top = 55.0
 margin_right = 200.0
 margin_bottom = 106.0
 
 [node name="Pause" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+visible = false
 margin_top = 110.0
 margin_right = 200.0
 margin_bottom = 137.0
 
 [node name="HUD 9 Mapa" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 141.0
+visible = false
+margin_top = 110.0
 margin_right = 200.0
-margin_bottom = 141.0
+margin_bottom = 110.0
 
 [node name="ViewPortSprite" parent="HBoxContainer/VBoxContainer/HUD 9 Mapa" index="0"]
 centered = false
