@@ -38,15 +38,11 @@ Venga que lo llevamos en abierto: aquí teneis una plantilla: Testeando
 
 https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2020/mjam20/prueba-html-jam/3d_basic_plantilla_mjam20-01-jo.html
 
-----------------------------------------
+Calibración:
 
-Control: funcionado:
-
-https://github.com/CycloPiStudio/3D-Basic/tree/771d84f467deb0307a0dcd06d2ab646ee6c12516
+https://cyclopistudio.github.io/CyloPi-Studio-Web/testing_2020/mjam20/prueba2D/3d_basic_plantilla_mjam20-01-jo.html
 
 ----------------------------------------
-
-# Cyclo π Studio 
 
 
 # Cyclo π Studio 
