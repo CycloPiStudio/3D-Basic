@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Ejecutable/Global/Fuentes/04B_30__.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[node name="Label" type="Label"]
+margin_left = 383.427
+margin_top = 390.606
+margin_right = 535.427
+margin_bottom = 411.606
+custom_fonts/font = SubResource( 2 )
+text = "Game Over"
