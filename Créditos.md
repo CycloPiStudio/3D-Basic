@@ -1,5 +1,10 @@
 # 3DMJAM20!
+# Cyclo π Studio  retrasmitiendo!
+# Céditos:
 
+
+
+----------------------------------------
 
 https://mjam.amudev.es/
 
@@ -47,24 +52,6 @@ https://github.com/CycloPiStudio/3D-Basic/tree/771d84f467deb0307a0dcd06d2ab646ee
 ----------------------------------------
 
 # Cyclo π Studio 
-
-
-# Cyclo π Studio 
-
--------------------------------------------
-
-<a href="url"><img src="https://fotos01.laopiniondemurcia.es/2020/10/29/1024x341/externas20201029215848.jpg" align="left" height ="360" width ="612" ><a>
-
--------------------------------------------
-
-<a href="url"><img src="https://pbs.twimg.com/media/EllretXXYAAC0DF?format=jpg&name=small" align="left" height ="360" width ="612" ><a>
-
--------------------------------------------
-
-
--------------------------------------------
-
-<a href="url"><img src="https://img.itch.zone/aW1nLzQ1MDg0NzUucG5n/original/XglZ00.png" align="left" height ="360" width ="612" ><a>
 
 -------------------------------------------
 
