@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/Material_ladrillo.material" type="Material" id=1]
 [ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/Material_ladrillo2.material" type="Material" id=2]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/telarana.material" type="Material" id=3]
+[ext_resource path="res://Ejecutable/Juego/Escenarios/Niveles/tileset 3d/cubo/Material_ladrillo_gris.material" type="Material" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 1 )
@@ -12,6 +14,12 @@ size = Vector3( 1, 1, 1 )
 [sub_resource type="CubeMesh" id=3]
 material = ExtResource( 2 )
 size = Vector3( 1, 1, 1 )
+
+[sub_resource type="QuadMesh" id=4]
+material = ExtResource( 3 )
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 4 )
 
 [node name="cubos" type="Spatial"]
 
@@ -26,11 +34,28 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="ladrillos_amarillos" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="StaticBody2" type="StaticBody" parent="ladrillos_amarillos"]
 
 [node name="collision" type="CollisionShape" parent="ladrillos_amarillos/StaticBody2"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="telaraña1" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="ladrillos_grises" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody3" type="StaticBody" parent="ladrillos_grises"]
+
+[node name="collision" type="CollisionShape" parent="ladrillos_grises/StaticBody3"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 shape = SubResource( 2 )
