@@ -6,7 +6,7 @@
 
 # # Proyecto 3D-Basic:
 
-https://github.com/CycloPiStudio/plataformas/commit/95cadfc793653e441796ded7ae73b15979d0165f
+https://github.com/CycloPiStudio/3D-Basic.git
 
 # # Créditos Proyecto 3D-Basic :
 
